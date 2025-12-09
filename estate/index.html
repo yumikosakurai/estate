@@ -1,11 +1,338 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+
+<head prefix="og: https://ogp.me/ns#">
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<meta name="format-detection" content="telephone=no, email=no" />
+	<title>株式会社北村建設興業</title>
+	<meta name="description" content="不動産会社 ホームページ" />
+	<meta name="keywords" content="ホームページ制作 webデザイン" />
+	<meta name="robots" content="noindex" />
+
+	<!-- OGP設定 -->
+	<meta property="og:title" content="不動産会社" />
+	<meta property="og:type" content="website" />
+	<meta property="og:image" content="https://example.com/images/thumbnail.png" />
+	<meta property="og:url" content="ページのURL" />
+	<meta property="og:description" content="株式会社北村建設興業のホームページ" />
+	<meta property="og:site_name" content="北村建設興業" />
+	<meta property="og:locale" content="ja_JP" />
+
+	<link rel="stylesheet" href="https://use.typekit.net/mzd4mgq.css" />
+
+	<link rel="icon" href="./images/favicon.png" type="image/png" />
+
+	<link rel="stylesheet" href="./css/reset.css" />
+	<link rel="stylesheet" href="./css/style.css" />
+
 </head>
+
 <body>
-  
+	<header class="header">
+		<div class="header__inner">
+			<div class="site-title">
+				<h1>
+					<a href="#">
+						株式会社北村建設興業
+					</a>
+				</h1>
+			</div>
+			<div class="header__nav">
+				<nav>
+					<ul>
+						<li><a href="#about">ABOUT</a></li>
+						<li><a href="#service">SERVICE</a></li>
+						<li><a href="#works">WORKS</a></li>
+						<li><a href="#news">NEWS</a></li>
+						<li><a href="#company">COMPANY</a></li>
+						<li><a href="#contact">CONTACT</a></li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+	</header>
+	<main>
+		<section id="fv">
+			<div class="fv-content">
+				<div class="fv-wrap">
+					<div class="fv__image">
+						<picture class="image-wrap__photo">
+							<source media="(max-width:768px)" srcset="images/SP_FirstView-01.jpg" />
+							<img src="images/FirstView_01.jpg" alt="FV大きな家" />
+						</picture>
+						<picture class="image-wrap__grid">
+							<source media="(max-width:768px)" srcset="images/First View-sp02.png" />
+							<img src="images/First View02.png" alt="FV大きな家" />
+						</picture>
+
+
+					</div>
+
+					<div class="fv-catch">
+						<div class="fv-text">
+							<p>永遠も。瞬間も<br>
+								あなたと共に。</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- ここからABOUT -->
+		<section id="about">
+			<div class="about">
+				<div class="about-image">
+						<picture>
+							<source media="(min-width:768px)" srcset="./images/About.jpg">
+							<img src="./images/About-sp.jpg" alt="スーツを着た女性">
+						</picture>
+					</div>
+					<div class="about-text">
+						<h2>伝統とイマを繋ぐ</h2>
+						<div class="about-catch">
+							<p>
+								古来から伝わる伝統文化<br>
+								昔からそこにある材料<br>
+								その土地に長い間かけて<br>
+								最適化してきた<br>
+								たくさんのヒントを<br>
+								イマを生きる私たちの<br>
+								心地よさに取り入れ<br>
+								新たな技術革新を<br>
+								起こし続ける会社です<br>
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- ここからSERVICE -->
+		<section id="service">
+			<div class="service">
+				<div class="inner">
+					<h2 class="title-wrap">SERVICE</h2>
+						<p class="title">サービス</p>
+					<div class="servlce-items">
+						<div class="service-item">
+							<div class="service-image">
+								<picture>
+									<source media="(min-width:768px)" srcset="images/PC_SERVICE01.jpg">
+									<img src="images/SP_SERVICE_01.jpg" alt="新築">
+								</picture>
+								<p>静岡県U.I様自宅</p>
+							</div>
+							<div service-text>
+								<h3>
+									新築
+									（土地探し〜建築）
+								</h3>
+								<p>
+									客様にあった土地探しから
+									建築、施工までサポートいたします。
+									風水的観点からもご提案。
+								</p>
+							</div>
+						</div>
+
+						<div class="service-item">
+							<div class="service-image">
+								<picture>
+									<source media="(min-width:768px)" srcset="images/PC_SERVICE_02.jpg">
+									<img src="images/SP_SERVICE_02.jpg" alt="リフォーム">
+								</picture>
+								<p>北海道富良野市ブックカフェ</p>
+							</div>
+							<div service-text>
+								<h3>
+									リフォーム
+									リノベーション
+								</h3>
+								<p>
+									温かみと雰囲気をそのままに
+									住み心地、使い心地を
+									追求しご提供いたします。
+								</p>
+							</div>
+						</div>
+						<div class="service-item">
+							<div class="service-image">
+								<picture>
+									<source media="(min-width:768px)" srcset="images/PC_SERVICE_03.jpg">
+									<img src="imeges/SP_SERVICE_03.jpg" alt="都市計画〜開発">
+								</picture>
+								<p>広島県竹原市</p>
+							</div>
+							<div service-text>
+								<h3>
+									都市計画〜開発
+									公共施設
+								</h3>
+								<p>
+									都市計画から都市開発まで
+									ご提案いたします。
+									公共施設もさらに居心地良く。
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- ここからworks -->
+		<section id="works">
+			<div class="works">
+				<div class="inner">
+					<h2 class="title-wrap">
+						<p class="title">works施工事例</p>
+					</h2>
+					<div class="servlce-items">
+						<div class="service-item">
+							<div class="service-image">
+								<picture>
+									<source media="(max-width:768px)" srcset="images/SP_WORKS_01.jpg">
+									<img src="images/PC_WORKS_01.jpg" alt="新築 長崎県T.O様自宅">
+								</picture>
+							</div>
+							<div service-text>
+								<h3>
+									【新築】
+									長崎県T.O様自宅
+								</h3>
+							</div>
+						</div>
+						<div class="service-item">
+							<div class="service-image">
+								<picture>
+									<source media="(max-width:768px)" srcset="images/SP_WORKS_02.jpg">
+									<img src="images/PC_WORKS_02.jpg" alt="リノベーション">
+								</picture>
+							</div>
+							<div service-text>
+								<h3>
+									【リノベーション】
+									京都府カトリック丹波教会
+								</h3>
+							</div>
+						</div>
+						<div class="service-item">
+							<div class="service-image">
+								<picture>
+									<source media="(max-width:768px)" srcset="images/SP_WORKS_03.jpg">
+									<img src="images/PC_WORKS_03.jpg" alt="新築 東京都A.F様自宅件事務所">
+								</picture>
+							</div>
+							<div service-text>
+								<h3>
+									【新築】
+									東京都A.F様自宅件事務所
+								</h3>
+							</div>
+						</div>
+						<div class="service-item">
+							<div class="service-image">
+								<picture>
+									<source media="(max-width:768px)" srcset="images/SP_WORKS_04.jpg">
+									<img src="images/PC_WORKS_04.jpg" alt="都市開発 山形県銀山温泉協同組合">
+								</picture>
+							</div>
+							<div service-text>
+								<h3>
+									【都市開発】
+									山形県銀山温泉協同組合
+								</h3>
+							</div>
+						</div>
+						<!-- ここからNEWS -->
+						<section id="news">
+							<div class="news">
+								<div class="inner">
+									<h2 class="title-wrap">
+										NEWSお知らせ</h2>
+
+									<div class="border-texts">
+										<ul class="left-items">
+											<li class="news-item">
+												<h3>お知らせ</h3>
+											<li class="news-item">
+												<a href="#" class="news-link">
+													<time datetime="0000-00-00" class="news-date">0000.00.00</time>
+													<div class="news-text">
+														公式Instagram、YouTubeはじめました。
+													</div>
+												</a>
+											</li>
+											<li class="news-item">
+												<a href="#" class="news-link">
+													<time datetime="0000-00-00" class="news-date">0000.00.00</time>
+													<div class="news-text">
+														非住宅 木造建築フェアに出展します。
+													</div>
+												</a>
+											</li>
+											<li class="news-item">
+												<a href="#" class="news-link">
+													<time datetime="0000-00-00" class="news-date">0000.00.00</time>
+													<div class="news-text">
+														公式ホームページがリニューアルしました。
+													</div>
+												</a>
+											</li>
+										</ul>
+										<ul class="left-items">
+											<li class="news-item">
+												<h3>ブログ</h3>
+											<li class="news-item">
+												<a href="#" class="news-link">
+													<time datetime="0000-00-00" class="news-date">0000.00.00</time>
+													<div class="news-text">
+														あけましておめでとうございます。〜会長から社員まで〜
+													</div>
+												</a>
+											</li>
+											<li class="news-item">
+												<a href="#" class="news-link">
+													<time datetime="0000-00-00" class="news-date">0000.00.00</time>
+													<div class="news-text">
+														【検証】土地と人に相性はあるのか？
+													</div>
+												</a>
+											</li>
+											<li class="news-item">
+												<a href="#" class="news-link">
+													<time datetime="0000-00-00" class="news-date">0000.00.00</time>
+													<div class="news-text">
+														弊社創業初の入社式が行われました。
+													</div>
+												</a>
+											</li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</section>
+
+						<!-- ここからcompany -->
+						<section id="company">
+							<div class="company">
+								<div class="inner">
+									<h2 class="title-wrap">
+										COMPANY会社概要
+									</h2>
+
+									<div class="contact-info">
+										<div class="location-map">
+											<iframe
+												src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d6712.633420077972!2d129.879061!3d32.73078!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3515537316d3cc2d%3A0x534f0ac7488092ef!2zKOagqinnjonmnKjlu7roqK0!5e0!3m2!1sja!2sjp!4v1765248505040!5m2!1sja!2sjp" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+										</iframe>
+										</div>
+									</div>
+								</div>
+							</div>
+						</section>	
+	</main>
 </body>
+
 </html>
