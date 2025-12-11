@@ -242,70 +242,85 @@
 		<section id="works">
 			<div class="works">
 				<div class="inner">
-					<h2 class="title-wrap">
-						<p class="title">works施工事例</p>
-					</h2>
-					<div class="servlce-items">
-						<div class="service-item">
-							<div class="service-image">
-								<picture>
-									<source media="(max-width:768px)" srcset="images/SP_WORKS_01.jpg">
-									<img src="images/PC_WORKS_01.jpg" alt="新築 長崎県T.O様自宅">
-								</picture>
-							</div>
-							<div service-text>
-								<h3>
-									【新築】
-									長崎県T.O様自宅
-								</h3>
+					<h2 class="title-wrap">WORKS</h2>
+					<p class="title">施工事例</p>
+
+					<div class="works-items">
+
+						<div class="works-item">
+							<div class="works-image">
+								<div class="card js-open-modal" data-img="images/PC_WORKS_modal_01.jpg" data-text="【新築】 長崎県T.O様自宅">
+
+									<picture>
+										<source media="(max-width:768px)" srcset="images/SP_WORKS_01.jpg">
+										<img src="images/PC_WORKS_01.jpg" alt="新築 長崎県T.O様自宅">
+									</picture>
+
+									<div class="works-text">
+										<h4>
+											【新築】<br>
+											長崎県T.O様自宅
+										</h4>
+									</div>
+								</div>
 							</div>
 						</div>
 
-						<div class="service-item">
-							<div class="service-image">
-								<picture>
-									<source media="(max-width:768px)" srcset="images/SP_WORKS_02.jpg">
-									<img src="images/PC_WORKS_02.jpg" alt="リノベーション">
-								</picture>
-							</div>
-							<div service-text>
-								<h3>
-									【リノベーション】
-									京都府カトリック丹波教会
-								</h3>
-							</div>
-						</div>
-						<div class="service-item">
-							<div class="service-image">
-								<picture>
-									<source media="(max-width:768px)" srcset="images/SP_WORKS_03.jpg">
-									<img src="images/PC_WORKS_03.jpg" alt="新築 東京都A.F様自宅件事務所">
-								</picture>
-							</div>
-							<div service-text>
-								<h3>
-									【新築】
-									東京都A.F様自宅件事務所
-								</h3>
+						<div class="works-item">
+							<div class="works-image">
+								<div class="card js-open-modal" data-img="images/PC_WORKS_modal_02.jpg" data-text="リノベーション">
+
+									<picture>
+										<source media="(max-width:768px)" srcset="images/SP_WORKS_02.jpg">
+										<img src="images/PC_WORKS_02.jpg" alt="リノベーション">
+									</picture>
+								
+									<div class="works-text">
+										<h4>
+										【リノベーション】
+										京都府カトリック丹波教会
+										</h4>
+									</div>
+								</div>
 							</div>
 						</div>
-						<div class="service-item">
-							<div class="service-image">
-								<picture>
-									<source media="(max-width:768px)" srcset="images/SP_WORKS_04.jpg">
-									<img src="images/PC_WORKS_04.jpg" alt="都市開発 山形県銀山温泉協同組合">
-								</picture>
-							</div>
-							<div service-text>
-								<h3>
-									【都市開発】
-									山形県銀山温泉協同組合
-								</h3>
+
+							<div class="works-item">
+								<div class="works-image">
+									<div class="card js-open-modal" data-img="images/PC_WORKS_modal_03.jpg" data-text="新築 東京都A.F様自宅件事務所">
+										<picture>
+											<source media="(max-width:768px)" srcset="images/SP_WORKS_03.jpg">
+											<img src="images/PC_WORKS_03.jpg" alt="【新築】 東京都A.F様自宅件事務所">
+										</picture>
+										<div class="works-text">
+											<h4>
+											【新築】
+											東京都A.F様自宅件事務所
+											</h4>
+										</div>
+									</div>
+								</div>
+							</div>	
+							<div class="works-item">
+									<div class="works-image">
+										<div class="card js-open-modal" data-img="images/PC_WORKS_modal_04.jpg"
+											data-text="都市開発 山形県銀山温泉協同組合">
+											<picture>
+												<source media="(max-width:768px)" srcset="images/SP_WORKS_04.jpg">
+												<img src="images/PC_WORKS_04.jpg" alt="都市開発 山形県銀山温泉協同組合">
+											</picture>
+											<div class="works-text">
+												<h4>
+												【都市開発】
+												山形県銀山温泉協同組合
+												</h4>
+											</div>
+										</div>
+									</div>
+								</div>
 							</div>
 						</div>
-					</div>
-				</div>
-			</div>
+				</div>			
 		</section>
 		<!-- ここからNEWS -->
 		<section id="news">
@@ -396,11 +411,31 @@
 		</section>
 	</main>
 
+
+
+
+<div class="modal">
+  <div class="modal__bg"></div>
+
+  <div class="modal__content">
+    <div class="modal__content-inner">
+      <img id="modalImg" src="" alt="">
+      <p id="modalText"></p>
+    </div>
+  </div>
+</div>
+
+
 	<!-- Swiper本体（必須） -->
 	<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
 	<!-- あなたが作る main.js（Swiperを動かすコード） -->
 	<script src="./js/script.js"></script>
+
+	<!-- モーダルを動かすJS（必須） -->
+<script src="./js/modal.js"></script>
+
+	
 
 </body>
 

@@ -172,9 +172,9 @@ img {
 
 .service {
   background-color:rgba(77, 150, 0, 0.102);
-  padding-block-start: 80px;
 }
 .title-wrap {
+  padding-block-start: 80px;
   display: flex;
   font-size: 30px;
   justify-content: center;
@@ -182,6 +182,7 @@ img {
   letter-spacing: 9px;
 }
 .title {
+  margin-block-start: 6px;
   font-size: 20px;
   letter-spacing: 6px;
   line-height: calc(33 / 20);
@@ -250,6 +251,177 @@ img {
     display: flex;
     flex-direction: row-reverse;
   }
+
+
+  // ここからworks
+
+.works-items {
+  display: flex;
+  column-gap: 40px;
+}
+
+
+.works-image {
+  width: 200px;
+}
+.works-text h4{
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+
+  // 背景（薄暗い）
+  &__bg {
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 1;
+  }
+
+  // コンテンツ（画像・テキスト）
+  &__content {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 2;
+
+    img {
+      max-width: 90%;
+      max-height: 90%;
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
