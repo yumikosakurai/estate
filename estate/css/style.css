@@ -168,11 +168,11 @@ img {
 
 .service {
   background-color: rgba(77, 150, 0, 0.102);
-  -webkit-padding-before: 80px;
-          padding-block-start: 80px;
 }
 
 .title-wrap {
+  -webkit-padding-before: 80px;
+          padding-block-start: 80px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -185,6 +185,8 @@ img {
 }
 
 .title {
+  -webkit-margin-before: 6px;
+          margin-block-start: 6px;
   font-size: 20px;
   letter-spacing: 6px;
   line-height: 1.65;
@@ -279,4 +281,53 @@ span {
   -webkit-box-direction: reverse;
       -ms-flex-direction: row-reverse;
           flex-direction: row-reverse;
+}
+
+.works-items {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-column-gap: 40px;
+     -moz-column-gap: 40px;
+          column-gap: 40px;
+}
+
+.works-image {
+  width: 200px;
+}
+
+.works-text h4 {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+}
+.modal__bg {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+}
+.modal__content {
+  position: absolute;
+  inset: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  z-index: 2;
+}
+.modal__content img {
+  max-width: 90%;
+  max-height: 90%;
 }/*# sourceMappingURL=style.css.map */
