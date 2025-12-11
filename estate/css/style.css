@@ -53,6 +53,10 @@ img {
   }
 }
 
+.fv__image {
+  position: relative;
+}
+
 .image-wrap {
   position: relative;
 }
@@ -162,6 +166,12 @@ img {
   line-height: 137%;
 }
 
+.service {
+  background-color: rgba(77, 150, 0, 0.102);
+  -webkit-padding-before: 80px;
+          padding-block-start: 80px;
+}
+
 .title-wrap {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -184,4 +194,89 @@ img {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-padding-after: 68px;
+          padding-block-end: 68px;
+}
+
+.service-items {
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 80px !important;
+}
+
+.service-image {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+.left-block {
+  position: relative;
+  z-index: 10;
+}
+
+.right-black {
+  position: relative;
+  margin-left: -180px; /* ここで重ね具合を調整 */
+  margin-top: 145px;
+  z-index: 2;
+}
+
+.second-block {
+  position: relative;
+  margin-right: -180px;
+}
+
+.photo-image {
+  width: 600px;
+}
+
+.second-image {
+  width: 500px;
+}
+
+.left-block .right-text {
+  text-align: right;
+  display: block;
+  width: 100%;
+}
+
+.service-text {
+  position: absolute;
+  top: 20px; /* 画像の中での位置を調整 */
+  left: 200px;
+  z-index: 3;
+  color: #fff; /* 文字色（必要に応じて変更） */
+  font-weight: 600;
+}
+
+h3 {
+  font-size: 25px;
+  line-height: 1.32;
+  letter-spacing: 0;
+}
+
+span {
+  font-size: 16px;
+  line-height: 1.5625;
+  letter-spacing: 0;
+}
+
+.second-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
 }/*# sourceMappingURL=style.css.map */
