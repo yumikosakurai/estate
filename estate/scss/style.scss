@@ -205,11 +205,20 @@ img {
   position: relative;
   z-index: 10;
 }
+
+.right-black,
+.right-black-company {
+  position: relative;
+  margin-left: -180px;
+  z-index: 2;
+}
+
 .right-black {
- position: relative;
-  margin-left: -180px; /* ここで重ね具合を調整 */
   margin-top: 145px;
-  z-index: 2; 
+}
+
+.right-black-company {
+  margin-top: 200px;
 }
 .second-block {
   position: relative;
@@ -228,6 +237,7 @@ img {
   width: 100%; 
 }
 .service-text {
+// .company-text {
   position: absolute;
   top: 20px;      /* 画像の中での位置を調整 */
   left: 200px;
@@ -298,6 +308,927 @@ img {
     }
   }
 }
+
+
+// ここからNEWS
+.news {
+    background-color:rgba(77, 150, 0, 0.102);
+    padding-block-end: 80px;
+}
+.border-texts {
+  display: flex;
+  column-gap: 60px;
+  // background-color:rgba(77, 150, 0, 0.102);
+
+}
+
+.news-items h3 {
+  width: 430px;
+  height: 50px;
+  background-color: #4D9600;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: calc(33 /20);
+  padding-inline-start: 20px;
+}
+.news-item {
+  display: flex;
+  justify-content: flex-end;
+  background-color: #fff; 
+padding-block-start: 23px;
+padding-block-end: 37px;
+padding-inline-start: 20px;
+padding-inline-end: 20px;
+border-bottom: 1px solid #4D9600;
+column-gap: 69px;
+}
+.news-items li:last-child {
+	border-bottom: none;
+	/* 最後の線 */
+}
+
+.news-link {
+  display: flex;
+  column-gap: 69px;
+}
+.news-date {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: calc(33 / 16);
+  white-space: nowrap;
+  flex-shrink: 0; /* ← これで日付が縮まない */
+}
+.news-text {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: calc(25 /18);
+}
+.arrow-text {
+  display: grid;
+  align-items: center;
+  font-size: 20px;
+  line-height: calc(33 /20);
+  font-weight: 600;
+  color: #4D9600;
+  // text-align: right;
+  width: 47px;
+  height: 33px;
+}
+.news-arrow-text {
+  white-space: nowrap;
+}
+
+// ここからcompany
+
+.contact-info {
+  display: flex;
+  position: relative;
+}
+.location-map {
+  width: 600px;
+  height: 400px;
+  z-index: 5;
+}
+.company-second-image {
+  width: 500px;
+  height: 262px;
+  z-index: 4;
+  position: absolute;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
