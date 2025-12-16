@@ -395,7 +395,7 @@
 							<li class="news-item">
 								<div class="arrow-text">
 									<p class="news-arrow-text">more</p>
-									<img src="images/パス 21.png" alt="矢印">
+									<img src="images/pass.png" alt="矢印">
 								</div>
 							</li>
 
@@ -517,7 +517,12 @@
 												<label for="email">問い合わせ種別</label>
 											</dt>
 											<dd class="form__input">
-												<input type="email" name="email" id="email" />
+												<div class="select-wrap">
+												<select name="contact_type" id="contact_type" required>
+       									 	<!-- <option value="">選択してください</option> -->
+        									<option value="house">家づくりについて</option>
+												</select>
+												</div>
 											</dd>
 										</dl>
 									</li>
@@ -609,7 +614,43 @@
 		</section>
 	</main>
 
+<!-- ここからFOOTER -->
 
+	<footer>
+		<div class="footer">
+			<div class="inner">
+				<div class="footer-box">
+					<p class="company-name">株式会社 北村建設興業</p>
+						<div class="footer__nav">
+							<ul>
+							<li><a href="#ABOUT">ABOUT</a></li>
+							<li><a href="#SERVICE">SERVICE</a></li>
+							<li><a href="#WORKS">WORKS</a></li>
+							<li><a href="#NEWS">NEWS</a></li>
+							<li><a href="#COMPANY">COMPANY</a></li>
+							<li><a href="#CONTACT">CONTACT</a></li>
+						</ul>
+						</div>
+						<div class="footer-sns sns">
+						<a href="" class="sns__link" target="_blank" rel="noopener noreferrer">
+							<img src="images/icon-twitter.svg" alt="x" /></a>
+						<a href="" class="sns__link" target="_blank" rel="noopener noreferrer">
+							<img src="images/icon-facebook.svg" alt="facebook" /></a>
+						<a href="" class="sns__link" target="_blank" rel="noopener noreferrer">
+							<img src="images/icon-youtube.svg" alt="youtube" /></a>
+						<a href="" class="sns__link" target="_blank" rel="noopener noreferrer">
+							<img src="images/icon-instagram.svg" alt="instagram" /></a>
+						</div>
+				</div>
+				
+			</div>
+		</div>
+		<div class="footer-copyright">
+			<div class="copyright">
+				<p class="mark">©︎Copyright2022　kitamurakensetukogyo</p>
+			</div>
+		</div>	
+	</footer>
 
 
 	<div class="modal">
