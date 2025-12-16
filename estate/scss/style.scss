@@ -368,10 +368,20 @@ column-gap: 69px;
   line-height: calc(33 /20);
   font-weight: 600;
   color: #4D9600;
-  // text-align: right;
   width: 47px;
   height: 33px;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+
+  &:hover {
+    transform: translateX(6px);
+  }
+  &:active {
+    transform: translateX(10px);
+  }
+
 }
+
 .news-arrow-text {
   white-space: nowrap;
 }
@@ -554,6 +564,34 @@ input[type="email"] {
 	}
 }
 
+.select-wrap {
+  position: relative;
+
+  select {
+    width: 100%;
+    padding: 12px 40px 12px 12px;
+    font-size: 1.8rem;
+    border: 1px solid #fff;
+    border-radius: 4px;
+    background: #fff;
+    appearance: none;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 12px;
+    width: 12px;
+    height: 12px;
+    background: url("../images/triangle.png") no-repeat center / contain;
+    transform: translateY(-50%);
+    pointer-events: none;
+  }
+}
+
+
+
 textarea {
 	height: 300px;
 	width: 100%;
@@ -580,6 +618,547 @@ textarea {
   line-height: 1.6;
   margin-bottom: 12px;
 }
+
+// ここからFOOTER
+.footer {
+    padding-block-start: 80px;
+  padding-block-end: 80px;
+}
+.company-name {
+  border-bottom: 1px solid #000000;
+  padding-block-end: 28px;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 500px;
+  line-height: calc(33 /20);
+}
+.footer__nav ul {
+  display: flex;
+  column-gap: 5.4%;
+  font-size: 18px;
+  font-weight: 500px;
+  line-height:  calc(33 / 18);
+}
+.ooter__nav ul li {
+  text-align: center;
+  
+}
+.sns {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  column-gap: 3.6%;
+  margin-block-start: 26px;
+}
+.footer-copyright {
+  display: flex;
+  justify-content: center;
+  // text-align: center;
+  align-items: center;
+  font-size: 20px;
+  background-color: #4D9600;
+  color: #fff;
+  height: 92px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
