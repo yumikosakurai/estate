@@ -114,16 +114,24 @@ img {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  gap: 20px;
+  gap: 30px;
 }
 
 .fv-catch {
   position: absolute;
-  top: 20%;
-  left: 30%;
+  top: 42%;
+  left: 32%;
   z-index: 10;
   color: #ffffff;
+  line-height: 1.75;
+  letter-spacing: 12px;
+}
+
+.fv-text {
   font-size: 40px;
+  font-weight: 600;
+  padding-left: 0.5em; /* 全体を1文字分右へ */
+  text-indent: -0.5em;
 }
 
 .about {
@@ -133,8 +141,8 @@ img {
 .about-text {
   z-index: 10;
   position: absolute;
-  top: 50%;
-  right: 5%;
+  top: 48%;
+  right: 40%;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
   display: -webkit-box;
@@ -163,13 +171,14 @@ img {
           order: 1;
   font-size: 18px;
   font-weight: 500;
-  line-height: 137%;
+  line-height: 1.37;
+  letter-spacing: 0.3em;
 }
 
 .service {
   background-color: rgba(77, 150, 0, 0.102);
-  -webkit-padding-before: 80px;
-          padding-block-start: 80px;
+  -webkit-padding-before: 75px;
+          padding-block-start: 75px;
   -webkit-padding-after: 80px;
           padding-block-end: 80px;
 }
@@ -187,8 +196,6 @@ img {
 }
 
 .title {
-  -webkit-margin-before: 6px;
-          margin-block-start: 6px;
   font-size: 20px;
   letter-spacing: 6px;
   line-height: 1.65;
@@ -226,6 +233,16 @@ img {
 .left-block {
   position: relative;
   z-index: 10;
+  width: 600px;
+}
+
+.left-block .right-text {
+  text-align: right;
+  display: block;
+  width: 100%;
+  font-size: 1.6rem;
+  -webkit-margin-before: 19px;
+          margin-block-start: 19px;
 }
 
 .right-black {
@@ -233,6 +250,7 @@ img {
   margin-left: -180px;
   z-index: 2;
   margin-top: 145px;
+  width: 500px;
 }
 
 .second-block {
@@ -248,19 +266,31 @@ img {
   width: 500px;
 }
 
-.left-block .right-text {
-  text-align: right;
-  display: block;
-  width: 100%;
+.left-text {
+  -webkit-margin-before: 19px;
+          margin-block-start: 19px;
+  font-size: 1.6rem;
+  font-weight: 500;
+  line-height: 1.5625;
 }
 
 .service-text {
   position: absolute;
-  top: 20px; /* 画像の中での位置を調整 */
-  left: 200px;
+  top: 20%; /* 画像の中での位置を調整 */
+  left: 50%;
+  display: grid;
+  row-gap: 17px;
   z-index: 3;
   color: #fff; /* 文字色（必要に応じて変更） */
   font-weight: 600;
+}
+
+.second-text {
+  left: 8%;
+}
+
+.third-text {
+  left: 48%;
 }
 
 h3 {
@@ -285,6 +315,13 @@ span {
           flex-direction: row-reverse;
 }
 
+.works {
+  -webkit-padding-before: 70px;
+          padding-block-start: 70px;
+  -webkit-padding-after: 97px;
+          padding-block-end: 97px;
+}
+
 .works-items {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -296,6 +333,11 @@ span {
 
 .works-image {
   width: 200px;
+}
+
+.works-text {
+  -webkit-margin-before: 19px;
+          margin-block-start: 19px;
 }
 
 .works-text h4 {
@@ -334,8 +376,15 @@ span {
   max-height: 90%;
 }
 
+.modal__content-inner {
+  background-color: #fff;
+  width: 420px;
+}
+
 .news {
   background-color: rgba(77, 150, 0, 0.102);
+  -webkit-padding-before: 70px;
+          padding-block-start: 70px;
   -webkit-padding-after: 80px;
           padding-block-end: 80px;
 }
@@ -347,6 +396,10 @@ span {
   -webkit-column-gap: 60px;
      -moz-column-gap: 60px;
           column-gap: 60px;
+}
+
+.news-items {
+  position: relative;
 }
 
 .news-items h3 {
@@ -375,10 +428,10 @@ span {
       -ms-flex-pack: end;
           justify-content: flex-end;
   background-color: #fff;
-  -webkit-padding-before: 23px;
-          padding-block-start: 23px;
-  -webkit-padding-after: 37px;
-          padding-block-end: 37px;
+  -webkit-padding-before: 20px;
+          padding-block-start: 20px;
+  -webkit-padding-after: 13px;
+          padding-block-end: 13px;
   -webkit-padding-start: 20px;
           padding-inline-start: 20px;
   -webkit-padding-end: 20px;
@@ -389,9 +442,15 @@ span {
           column-gap: 69px;
 }
 
+.news-item-first {
+  -webkit-padding-before: 30px;
+          padding-block-start: 30px;
+}
+
 .news-items li:last-child {
   border-bottom: none;
   /* 最後の線 */
+  height: 74px;
 }
 
 .news-link {
@@ -424,11 +483,10 @@ span {
       -ms-flex-align: center;
           align-items: center;
   font-size: 20px;
-  line-height: 1.65;
+  vertical-align: bottom;
   font-weight: 600;
   color: #4D9600;
-  width: 47px;
-  height: 33px;
+  width: 80px;
   -webkit-transition: -webkit-transform 0.3s ease;
   transition: -webkit-transform 0.3s ease;
   transition: transform 0.3s ease;
@@ -446,11 +504,13 @@ span {
 
 .news-arrow-text {
   white-space: nowrap;
+  position: absolute;
+  top: 85%;
 }
 
 .company {
-  -webkit-padding-before: 80px;
-          padding-block-start: 80px;
+  -webkit-padding-before: 73px;
+          padding-block-start: 73px;
   -webkit-padding-after: 80px;
           padding-block-end: 80px;
 }
@@ -470,6 +530,9 @@ span {
 }
 
 .company-second-image {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   width: 500px;
   height: 262px;
 }
@@ -488,12 +551,56 @@ span {
 
 .location-info {
   position: absolute;
-  top: 50%;
-  left: 50%;
+  top: 51%;
+  left: 66%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
   z-index: 3;
   color: #fff;
+}
+
+.name {
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: 1.65;
+  white-space: nowrap;
+}
+
+.address {
+  -webkit-margin-before: 7px;
+          margin-block-start: 7px;
+  font-size: 1.6rem;
+  line-height: 1.5625;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.tel {
+  font-size: 1.6rem;
+  line-height: 1.5625;
+  font-weight: 600;
+}
+
+.contact-link-tel {
+  font-size: 2.5rem;
+  line-height: 1;
+  font-weight: 600;
+}
+
+.e-mail {
+  -webkit-margin-before: 19px;
+          margin-block-start: 19px;
+  font-size: 1.6rem;
+  line-height: 1.5625;
+  font-weight: 600;
+}
+
+.tel-link {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-margin-before: 15px;
+          margin-block-start: 15px;
 }
 
 .contact {
@@ -619,11 +726,19 @@ span {
   cursor: pointer;
   font-size: 1.4rem;
 }
+.form__input label-question {
+  white-space: nowrap;
+}
 .form__input input[type=radio] {
   margin-right: 6px;
   -webkit-appearance: auto;
      -moz-appearance: auto;
           appearance: auto;
+}
+.form__input-item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .form__la {
@@ -637,6 +752,12 @@ span {
       -ms-flex: 1;
           flex: 1;
   font-weight: normal;
+}
+
+.form-form_input {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 .form__textarea {
@@ -706,6 +827,55 @@ textarea {
   }
 }
 
+.contact-check__list .contact-check-item {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px 24px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.contact-check__list input[type=checkbox] {
+  -moz-appearance: none;
+       appearance: none;
+  -webkit-appearance: none;
+  width: 16px;
+  height: 16px;
+  border: 1px solid #333;
+  border-radius: 2px;
+  margin-right: 8px;
+  position: relative;
+  cursor: pointer;
+}
+
+.contact-check__list input[type=checkbox]:checked {
+  background-color: #333;
+}
+
+.contact-check__list input[type=checkbox]:checked::after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 5px;
+  width: 4px;
+  height: 8px;
+  border: solid #fff;
+  border-width: 0 2px 2px 0;
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+}
+
+.contact-check__list label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+}
+
 .privacy-box {
   max-height: 200px; /* 枠の高さ */
   padding: 16px;
@@ -715,6 +885,62 @@ textarea {
   font-size: 1.4rem;
   line-height: 1.6;
   margin-bottom: 12px;
+}
+
+.contact__button {
+  -webkit-margin-before: 5rem;
+          margin-block-start: 5rem;
+  margin-inline: auto;
+  width: 300px;
+}
+@media screen and (max-width: 767px) {
+  .contact__button {
+    width: 33.5rem;
+    -webkit-margin-before: 5rem;
+            margin-block-start: 5rem;
+  }
+}
+@media screen and (max-width: 370px) {
+  .contact__button {
+    width: 100%;
+    -webkit-margin-before: 5rem;
+            margin-block-start: 5rem;
+  }
+}
+
+input[type=submit] {
+  width: 100%;
+  height: 50px;
+  background-color: #4D9600;
+  color: #fff;
+  font-size: 2rem;
+  cursor: pointer;
+  -webkit-transition: 0.4s ease;
+  transition: 0.4s ease;
+  text-align: center;
+  line-height: 1.65;
+  border: 1px solid transparent;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding-bottom: 2px;
+}
+@media screen and (max-width: 767px) {
+  input[type=submit] {
+    font-size: 2rem;
+    line-height: 1.3;
+    height: 41px;
+    -webkit-padding-before: unset;
+            padding-block-start: unset;
+    -webkit-padding-after: unset;
+            padding-block-end: unset;
+  }
+}
+
+input[type=submit]:hover {
+  color: #4D9600;
+  background-color: #fff;
+  border: 1px solid #4D9600;
 }
 
 .footer {
@@ -746,7 +972,7 @@ textarea {
   line-height: 1.8333333333;
 }
 
-.ooter__nav ul li {
+.footer__nav ul li {
   text-align: center;
 }
 
