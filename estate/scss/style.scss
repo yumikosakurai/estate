@@ -117,18 +117,26 @@ img {
 
   ul {
     display: flex;
-    gap: 20px; // 必要なら余白
+    gap: 30px; // 必要なら余白
   }
 }
 // ここからmain
 
 .fv-catch {
   position: absolute;
-  top: 20%;
-  left: 30%;
+  top: 42%;
+  left: 32%;
   z-index: 10;
   color: #ffffff;
+  line-height: calc(70 / 40);
+  letter-spacing: 12px;
+}
+.fv-text {
   font-size: 40px;
+  font-weight: 600;
+  padding-left: 0.5em;   /* 全体を1文字分右へ */
+  text-indent: -0.5em;   
+
 }
 
 // ここからabout
@@ -140,8 +148,8 @@ img {
 .about-text {
   z-index: 10;
   position: absolute;
-  top: 50%;
-  right: 5%;
+  top: 48%;
+  right: 40%;
   transform: translateY(-50%);
   display: flex;  
 }
@@ -164,15 +172,18 @@ img {
     order: 1;
     font-size: 18px;
     font-weight: 500;
-    line-height: 137%;
+    line-height: 1.37;
+    letter-spacing: 0.3em;
+
   }
 }
+
 
 // ここからservice
 
 .service {
   background-color:rgba(77, 150, 0, 0.102);
-  padding-block-start: 80px;
+  padding-block-start: 75px;
   padding-block-end: 80px;
 }
 .title-wrap {
@@ -183,7 +194,7 @@ img {
   letter-spacing: 9px;
 }
 .title {
-  margin-block-start: 6px;
+  // margin-block-start: 6px;
   font-size: 20px;
   letter-spacing: 6px;
   line-height: calc(33 / 20);
@@ -205,13 +216,23 @@ img {
 .left-block {
   position: relative;
   z-index: 10;
+  width: 600px;
 }
+.left-block .right-text {
+  text-align: right;
+  display: block;
+  width: 100%; 
+  font-size: 1.6rem;
+  margin-block-start: 19px;
+}
+
 
 .right-black {
   position: relative;
   margin-left: -180px;
   z-index: 2;
   margin-top: 145px;
+  width: 500px;
 }
 
 
@@ -226,21 +247,30 @@ img {
 .second-image {
   width: 500px;
 }
-.left-block .right-text {
-  text-align: right;
-  display: block;
-  width: 100%; 
+.left-text {
+  margin-block-start: 19px;
+  font-size: 1.6rem;
+  font-weight: 500;
+  line-height: calc(25 / 16);
 }
 .service-text {
 // .company-text {
   position: absolute;
-  top: 20px;      /* 画像の中での位置を調整 */
-  left: 200px;
+  top: 20%;      /* 画像の中での位置を調整 */
+  left: 50%;
+  display: grid;
+  row-gap: 17px;
   z-index: 3;
   color: #fff;    /* 文字色（必要に応じて変更） */
   font-weight: 600;
-  
   }
+.second-text {
+  left: 8%;
+}
+.third-text {
+  left: 48%;
+}
+
   h3 {
     font-size: 25px; 
     line-height: calc(33 /25);
@@ -259,7 +289,11 @@ img {
 
 
   // ここからworks
+.works {
+  padding-block-start: 70px;
+  padding-block-end: 97px;
 
+}
 .works-items {
   display: flex;
   column-gap: 40px;
@@ -268,6 +302,9 @@ img {
 
 .works-image {
   width: 200px;
+}
+.works-text {
+  margin-block-start: 19px;
 }
 .works-text h4{
   font-size: 16px;
@@ -304,10 +341,17 @@ img {
   }
 }
 
+.modal__content-inner {
+  background-color: #fff;
+  width: 420px;
+}
+
+
 
 // ここからNEWS
 .news {
     background-color:rgba(77, 150, 0, 0.102);
+    padding-block-start: 70px;
     padding-block-end: 80px;
 }
 .border-texts {
@@ -315,6 +359,9 @@ img {
   column-gap: 60px;
   // background-color:rgba(77, 150, 0, 0.102);
 
+}
+.news-items {
+  position: relative;
 }
 
 .news-items h3 {
@@ -333,16 +380,22 @@ img {
   display: flex;
   justify-content: flex-end;
   background-color: #fff; 
-padding-block-start: 23px;
-padding-block-end: 37px;
+padding-block-start: 20px;
+padding-block-end: 13px;
 padding-inline-start: 20px;
 padding-inline-end: 20px;
 border-bottom: 1px solid #4D9600;
 column-gap: 69px;
 }
+.news-item-first {
+ padding-block-start: 30px;
+ 
+}
+
 .news-items li:last-child {
 	border-bottom: none;
 	/* 最後の線 */
+  height: 74px;
 }
 
 .news-link {
@@ -365,30 +418,34 @@ column-gap: 69px;
   display: grid;
   align-items: center;
   font-size: 20px;
-  line-height: calc(33 /20);
+  vertical-align: bottom;
+  // line-height: calc(33 /20);
   font-weight: 600;
   color: #4D9600;
-  width: 47px;
-  height: 33px;
+  width: 80px;
+  // height: 41px;
   transition: transform 0.3s ease;
   cursor: pointer;
-
+  
   &:hover {
     transform: translateX(6px);
   }
   &:active {
     transform: translateX(10px);
   }
-
+  
 }
 
 .news-arrow-text {
   white-space: nowrap;
+  position: absolute;
+  top: 85%;
 }
+
 
 // ここからcompany
 .company {
-  padding-block-start: 80px;
+  padding-block-start: 73px;
   padding-block-end: 80px;
 }
 .contact-info {
@@ -402,6 +459,7 @@ column-gap: 69px;
   z-index: 2;
 }
 .company-second-image {
+  display: flex;
   width: 500px;
   height: 262px;
 }
@@ -417,13 +475,50 @@ column-gap: 69px;
 
 }.location-info {
   position: absolute;
-  top: 50%;
-  left: 50%;
+  top: 51%;
+  left: 66%;
   transform: translate(-50%, -50%); // 中央配置
   z-index: 3;
 
   color: #fff; // 緑の上なので白文字
 }
+.name {
+  font-size: 2rem;
+  font-weight: 600;
+  line-height: calc(33 / 20);
+  white-space: nowrap;
+}
+.address {
+  margin-block-start: 7px;
+  font-size: 1.6rem;
+  line-height: calc(25 / 16);
+  font-weight: 600;
+  white-space: nowrap;
+}
+.tel {
+  font-size: 1.6rem;
+  line-height: calc(25 / 16);
+  font-weight: 600;
+}
+.contact-link-tel {
+  font-size: 2.5rem;
+  line-height: calc(25 / 25);
+  font-weight: 600;
+}
+.e-mail {
+  margin-block-start: 19px;
+  font-size: 1.6rem;
+  line-height: calc(25 / 16);
+  font-weight: 600;
+}
+.tel-link {
+  display: flex;
+  margin-block-start: 15px;
+}
+
+
+ 
+
 
 
 
@@ -525,12 +620,19 @@ column-gap: 69px;
       align-items: center;
       cursor: pointer;
       font-size: 1.4rem;
+
+      &-question {
+        white-space: nowrap;
+      }
     }
 
     input[type="radio"] {
       margin-right: 6px;
       appearance: auto;
 
+    }
+    &-item {
+      display: flex;
     }
   }
 }
@@ -542,6 +644,9 @@ column-gap: 69px;
 .form__input {
 	flex: 1;
 	font-weight: normal;
+}
+.form-form_input {
+  display: flex;
 }
 
 .form__textarea {
@@ -608,6 +713,47 @@ textarea {
 	}
 }
 
+.contact-check__list .contact-check-item {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px 24px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.contact-check__list input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 16px;
+  height: 16px;
+  border: 1px solid #333;
+  border-radius: 2px;
+  margin-right: 8px;
+  position: relative;
+  cursor: pointer;
+}
+
+.contact-check__list input[type="checkbox"]:checked {
+  background-color: #333;
+}
+
+.contact-check__list input[type="checkbox"]:checked::after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 5px;
+  width: 4px;
+  height: 8px;
+  border: solid #fff;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+.contact-check__list label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
 .privacy-box {
   max-height: 200px;        /* 枠の高さ */
   padding: 16px;
@@ -618,6 +764,54 @@ textarea {
   line-height: 1.6;
   margin-bottom: 12px;
 }
+
+.contact__button {
+	margin-block-start: 5rem;
+	margin-inline: auto;
+	width: 300px;
+
+	@media screen and (max-width: 767px) {
+		width: 33.5rem;
+		margin-block-start: 5rem;
+	}
+
+	@media screen and (max-width: 370px) {
+		width: 100%;
+		margin-block-start: 5rem;
+	}
+}input[type="submit"] {
+	width: 100%;
+	height: 50px;
+	background-color: #4D9600;
+	color: #fff;
+	font-size: 2rem;
+	cursor: pointer;
+	transition: 0.4s ease;
+	text-align: center;
+	line-height: calc(33 / 20);
+	border: 1px solid transparent;
+	display: flex;
+	padding-bottom: 2px;
+
+	@media screen and (max-width: 767px) {
+		font-size: 2rem;
+		line-height: calc(26 / 20);
+		height: 41px;
+		padding-block-start: unset;
+		padding-block-end: unset;
+
+	}
+}
+
+input[type="submit"]:hover {
+	color: #4D9600;
+	background-color: #fff;
+	border: 1px solid #4D9600;
+}
+
+
+
+
 
 // ここからFOOTER
 .footer {
@@ -639,7 +833,7 @@ textarea {
   font-weight: 500px;
   line-height:  calc(33 / 18);
 }
-.ooter__nav ul li {
+.footer__nav ul li {
   text-align: center;
   
 }
@@ -660,6 +854,273 @@ textarea {
   color: #fff;
   height: 92px;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

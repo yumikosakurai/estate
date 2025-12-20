@@ -110,7 +110,6 @@
 						</div>
 
 
-
 						<div class="fv-catch">
 							<div class="fv-text">
 								<p>永遠も。瞬間も<br>
@@ -164,7 +163,7 @@
 									<source media="(max-width:768px)" srcset="images/SP_SERVICE_01.jpg">
 									<img src="images/PC_SERVICE01.jpg" alt="新築">
 								</picture>
-								<p>静岡県U.I様自宅</p>
+								<p class="left-text">静岡県U.I様自宅</p>
 							</div>
 							<div class="right-black">
 								<picture class="second-image">
@@ -172,11 +171,11 @@
 									<img src="images/menu01.jpg" alt="緑の長方形">
 								</picture>
 								<h3 class="service-text">
-									新築
+									新築<br>
 									（土地探し〜建築）<br>
 									<span>
-										客様にあった土地探しから<br>
-										建築、施工までサポートいたします。<br>
+										土地探しから建築、施工まで<br>
+										サポートいたします。<br>
 										風水的観点からもご提案。<br>
 									</span>
 								</h3>
@@ -216,14 +215,14 @@
 									<source media="(max-width:768px)" srcset="images/SP_SERVICE_03.jpg">
 									<img src="images/PC_SERVICE_03.jpg" alt="都市計画〜開発">
 								</picture>
-								<p>広島県竹原市</p>
+								<p class="left-text">広島県竹原市</p>
 							</div>
 							<div class="right-black">
 								<picture class="second-image">
 									<source media="(max-width:768px)" srcset="images/menu01-sp.png">
 									<img src="images/menu01.jpg" alt="緑の長方形">
 								</picture>
-								<h3 class="service-text">
+								<h3 class="service-text third-text">
 									都市計画〜開発<br>
 									公共施設<br>
 									<span>
@@ -278,7 +277,7 @@
 
 									<div class="works-text">
 										<h4>
-											【リノベーション】
+											【リノベーション】<br>
 											京都府カトリック丹波教会
 										</h4>
 									</div>
@@ -295,7 +294,7 @@
 									</picture>
 									<div class="works-text">
 										<h4>
-											【新築】
+											【新築】<br>
 											東京都A.F様自宅件事務所
 										</h4>
 									</div>
@@ -311,7 +310,7 @@
 									</picture>
 									<div class="works-text">
 										<h4>
-											【都市開発】
+											【都市開発】<br>
 											山形県銀山温泉協同組合
 										</h4>
 									</div>
@@ -332,7 +331,7 @@
 					<div class="border-texts">
 						<ul class="news-items">
 							<h3>お知らせ</h3>
-							<li class="news-item">
+							<li class="news-item news-item-first">
 								<a href="#" class="news-link">
 									<time datetime="0000-00" class="news-date">0000.00</time>
 									<div class="news-text">
@@ -359,7 +358,7 @@
 							<li class="news-item">
 								<div class="arrow-text">
 									<p class="news-arrow-text">more</p>
-									<img src="images/パス 21.png" alt="矢印">
+									<img src="images/pass.png" alt="矢印">
 								</div>
 							</li>
 
@@ -368,7 +367,7 @@
 
 						<ul class="news-items">
 							<h3>ブログ</h3>
-							<li class="news-item">
+							<li class="news-item news-item-first">
 								<a href="#" class="news-link">
 									<time datetime="0000-00" class="news-date">0000.00</time>
 									<div class="news-text">
@@ -432,15 +431,14 @@
 								<div class="access-item">
 									<p class="name">株式会社 北村建設興業</p>
 									<p class="address">
-										〒852-8065　<br class="pc-p" />長崎県長崎市横尾○丁目○-○ </p>
+										〒852-8065 <br class="pc-p" />長崎県長崎市横尾○丁目○-○ </p>
 									<div class="tel-link">
-										<p class="tel">電話：</p>
-										<a href="tel:000-0000-0000" class="contact-link-tel">000-0000-0000</a>
+										<p class="tel">TEL</p>
+										<a href="tel:000-000-0000" class="contact-link-tel">000-000-0000</a>
 									</div>
 									<div class="e-mail">
-										<p class="mail">メール：</p>
 										<a href="mailto:info@example.com" class="contact-link-mail">
-											info@example.com</a>
+											 Mail  info@example.com</a>
 									</div>
 								</div>
 
@@ -486,7 +484,7 @@
 											<dt class="form__label">
 												<span>性別</span>
 											</dt>
-											<dd class="form__input">
+											<dd class="form__input form-form_input">
 												<label>
 													<input type="radio" name="gender" value="male">
 													男性
@@ -538,12 +536,77 @@
 										</dl>
 									</li>
 
-									<li>
-										<dl class="form__item form__item--column">
-											<dt class="form__label">
+<dl class="contact-check">
+  <dt class="contact-check__title">
+    何を見て当社HPを知りましたか？（複数回答可）
+  </dt>
+
+  <dd class="contact-check__list">
+    <ul class="contact-check-item">
+      <li>
+        <label>
+          <input type="checkbox" name="media[]" value="internet">
+          <span>インターネット</span>
+        </label>
+      </li>
+
+      <li>
+        <label>
+          <input type="checkbox" name="media[]" value="flyer">
+          <span>チラシ</span>
+        </label>
+      </li>
+
+      <li>
+        <label>
+          <input type="checkbox" name="media[]" value="housing exhibition hall">
+          <span>住宅展示場</span>
+        </label>
+      </li>
+
+      <li>
+        <label>
+          <input type="checkbox" name="media[]" value="sign">
+          <span>看板</span>
+        </label>
+      </li>
+
+      <li>
+        <label>
+          <input type="checkbox" name="media[]" value="sns">
+          <span>各種SNS</span>
+        </label>
+      </li>
+
+      <li>
+        <label>
+          <input type="checkbox" name="media[]" value="introduce">
+          <span>紹介</span>
+        </label>
+      </li>
+
+      <li>
+        <label>
+          <input type="checkbox" name="media[]" value="passing">
+          <span>通りがかり</span>
+        </label>
+      </li>
+
+      <li>
+        <label>
+          <input type="checkbox" name="media[]" value="other">
+          <span>その他</span>
+        </label>
+      </li>
+    </ul>
+  </dd>
+</dl>
+									<!-- <li>
+										<dl class="contact-check__title form__item form__item--column">
+											<dt class="contact-check__title form__label form__label-question">
 												<span>何を見て当社HPを知りましたか？ (複数回答可)<span class="required">*</span></span>
 											</dt>
-											<dd class="form__input">
+											<dd class="contact-check__list form__input form__input-item">
 												<label>
 													<input type="checkbox" name="source[]" value="internet">
 													インターネット
@@ -558,7 +621,7 @@
 												</label>
 												<label>
 													<input type="checkbox" name="source[]" value="signboard">
-													看板
+													看板<br>
 												</label>
 												<label>
 													<input type="checkbox" name="source[]" value="sns">
@@ -578,7 +641,7 @@
 												</label>
 											</dd>
 										</dl>
-									</li>
+									</li> -->
 
 									<li>
 										<dl class="form__item">
@@ -603,8 +666,13 @@
 									</li>
 
 								</ul>
+								<div class="contact__button">
+									<input type="submit" value="内容に同意して送信" />
+								</div>
 							</div>
+
 						</form>
+						
 
 
 
@@ -647,7 +715,7 @@
 		</div>
 		<div class="footer-copyright">
 			<div class="copyright">
-				<p class="mark">©︎Copyright2022　kitamurakensetukogyo</p>
+				<p class="mark">©︎Copyright2022 kitamurakensetukogyo</p>
 			</div>
 		</div>	
 	</footer>
@@ -679,3 +747,5 @@
 </body>
 
 </html>
+
+
