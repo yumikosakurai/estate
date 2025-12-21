@@ -604,18 +604,37 @@ span {
 }
 
 .contact {
-  -webkit-padding-before: 80px;
-          padding-block-start: 80px;
+  -webkit-padding-before: 73px;
+          padding-block-start: 73px;
   -webkit-padding-after: 80px;
           padding-block-end: 80px;
   background-color: rgba(77, 150, 0, 0.102);
 }
 
+.contact-title {
+  -webkit-padding-after: 35px;
+          padding-block-end: 35px;
+}
+
+.contact-text {
+  -webkit-margin-start: 60px;
+          margin-inline-start: 60px;
+  font-size: 2rem;
+  font-weight: 500;
+  line-height: 1.65;
+}
+
 .form {
   max-width: 880px;
-  margin-inline: auto;
-  -webkit-margin-before: 3.9rem;
-          margin-block-start: 3.9rem;
+  -webkit-margin-start: 60px;
+          margin-inline-start: 60px;
+  -webkit-margin-before: 70px;
+          margin-block-start: 70px;
+  -webkit-margin-end: 60px;
+          margin-inline-end: 60px;
+  font-size: 2rem;
+  font-weight: 500;
+  line-height: 1.65;
 }
 @media screen and (max-width: 767px) {
   .form {
@@ -632,7 +651,7 @@ span {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  row-gap: 3rem;
+  row-gap: 4.5rem;
 }
 @media screen and (max-width: 767px) {
   .form .form__items ul {
@@ -681,7 +700,7 @@ span {
 }
 
 .form__label {
-  font-size: 2rem;
+  font-size: 20px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -703,9 +722,6 @@ span {
   }
 }
 
-.form__item {
-  margin-bottom: 24px;
-}
 .form__label {
   font-weight: 500;
   margin-bottom: 8px;
@@ -715,7 +731,7 @@ span {
 }
 .form__input {
   display: block;
-  gap: 20px;
+  gap: 77px;
 }
 .form__input label {
   display: block;
@@ -724,21 +740,33 @@ span {
       -ms-flex-align: center;
           align-items: center;
   cursor: pointer;
-  font-size: 1.4rem;
+  font-size: 1.8rem;
+  line-height: 1.3888888889;
+  font-weight: 500;
 }
 .form__input label-question {
   white-space: nowrap;
 }
 .form__input input[type=radio] {
-  margin-right: 6px;
-  -webkit-appearance: auto;
-     -moz-appearance: auto;
-          appearance: auto;
+  margin-right: 9px;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
 }
 .form__input-item {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+}
+
+.form-gender {
+  font-size: 2rem;
+  font-weight: 500;
+  line-height: 1.65;
+}
+
+.form-email {
+  white-space: nowrap;
 }
 
 .form__la {
@@ -767,6 +795,43 @@ span {
   font-weight: normal;
 }
 
+.radio {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  -webkit-margin-start: 6px;
+          margin-inline-start: 6px;
+}
+.radio input[type=radio] {
+  -moz-appearance: none;
+       appearance: none;
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #fff;
+  border: none;
+  position: relative;
+  cursor: pointer;
+}
+.radio input[type=radio]:checked::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 6px;
+  height: 6px;
+  background: #000;
+  border-radius: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
 input[type=text],
 input[type=email] {
   height: 4rem;
@@ -783,12 +848,17 @@ input[type=email] {
   }
 }
 
+.form-type {
+  -webkit-margin-before: 5px;
+          margin-block-start: 5px;
+}
+
 .select-wrap {
   position: relative;
 }
 .select-wrap select {
   width: 100%;
-  padding: 12px 40px 12px 12px;
+  padding: 12px 40px 12px 20px;
   font-size: 1.8rem;
   border: 1px solid #fff;
   border-radius: 4px;
@@ -801,17 +871,21 @@ input[type=email] {
   content: "";
   position: absolute;
   top: 50%;
-  right: 12px;
-  width: 12px;
-  height: 12px;
+  right: 20px;
+  width: 20px;
+  height: 16px;
   background: url("../images/triangle.png") no-repeat center/contain;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
   pointer-events: none;
 }
 
+.form-detail {
+  display: block;
+}
+
 textarea {
-  height: 300px;
+  height: 200px;
   width: 100%;
   resize: none;
   padding: 15px;
