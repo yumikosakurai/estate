@@ -457,7 +457,7 @@
 			<div class="contact">
 				<div class="inner">
 					<h2 class="title-wrap">CONTACT</h2>
-					<p class="title">お問い合わせ</p>
+					<p class="title contact-title">お問い合わせ</p>
 
 					<div class="contact-text">
 						<p>
@@ -471,7 +471,7 @@
 									<li>
 										<dl class="form__item">
 											<dt class="form__label">
-												<label for="name">お名前</label>
+												<label for="name">お名前 *</label>
 											</dt>
 											<dd class="form__input">
 												<input type="text" name="name" id="name" />
@@ -482,14 +482,14 @@
 									<li>
 										<dl class="form__item">
 											<dt class="form__label">
-												<span>性別</span>
+												<span class="form-gender">性別</span>
 											</dt>
 											<dd class="form__input form-form_input">
-												<label>
+												<label class="radio">
 													<input type="radio" name="gender" value="male">
 													男性
 												</label>
-												<label>
+												<label class="radio">
 													<input type="radio" name="gender" value="female">
 													女性
 												</label>
@@ -501,7 +501,7 @@
 									<li>
 										<dl class="form__item">
 											<dt class="form__label">
-												<label for="email">メールアドレス</label>
+												<label class="form-email">メールアドレス *</label>
 											</dt>
 											<dd class="form__input">
 												<input type="email" name="email" id="email" />
@@ -510,15 +510,16 @@
 									</li>
 
 									<li>
-										<dl class="form__item">
-											<dt class="form__label">
-												<label for="email">問い合わせ種別</label>
+										<dl class="form__item form-type">
+											<dt class="form__label ">
+												<label class="form-type-type">問い合わせ種別</label>
 											</dt>
 											<dd class="form__input">
 												<div class="select-wrap">
 												<select name="contact_type" id="contact_type" required>
        									 	<!-- <option value="">選択してください</option> -->
         									<option value="house">家づくりについて</option>
+        									<option value="house">土地について</option>
 												</select>
 												</div>
 											</dd>
@@ -526,9 +527,9 @@
 									</li>
 
 									<li>
-										<dl class="form__item">
+										<dl class="form__item form-detail">
 											<dt class="form__label form__la">
-												<label for="content">内　容</label>
+												<label for="content">内容 *</label>
 											</dt>
 											<dd class="form__textarea">
 												<textarea name="content" id="content"></textarea>
