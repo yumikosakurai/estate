@@ -1,3 +1,20 @@
+// vw関数
+@function vw($pixelSize, $baseWidth: 1080) {
+  @return calc($pixelSize / $baseWidth * 100vw);
+}
+
+@mixin sp {
+  @media (max-width: 767px) {
+    @content;
+  }
+}
+
+@mixin pc {
+  @media (min-width: 768px) {
+    @content;
+  }
+}
+
 body {
   font: {
     family: "Yu Mincho", "YuMincho", "游明朝", "Noto Serif JP", "Hiragino Mincho ProN", "IPAexMincho", serif;
@@ -42,7 +59,7 @@ img {
 .inner {
   width: 100%;
   max-width: 980px;
-  padding-inline: 30px;
+  padding-inline: vw(30, 1080);
   margin-inline: auto;
 
   @media screen and (max-width: 767px) {
@@ -58,6 +75,7 @@ img {
 .fv__image {
   position: relative;
 }
+
 .image-wrap {
   position: relative;
 
@@ -72,7 +90,7 @@ img {
   &__grid {
     position: absolute;
     inset: 0;
-    
+
 
     img {
       width: 100%;
@@ -93,33 +111,34 @@ img {
     justify-content: space-between;
     width: 100%;
     max-width: 980px;
-    padding-inline: 30px;
+    padding-inline: vw(30, 1080);
     margin-inline: auto;
     color: white;
-    padding-block-start: 24px;
+    padding-block-start: vw(24, 1080);
 
   }
 }
 
 .site-title {
-  font-size: 20px;
+  font-size: vw(20, 1080);
   font-weight: 500;
   line-height: 100%;
-  padding: 5px;
+  padding: vw(5, 1080);
 }
 
 .header__nav {
-  font-size: 18px;
+  font-size: vw(18, 1080);
   font-weight: 500;
   line-height: 100%;
-  padding: 5px;
+  padding: vw(5, 1080);
 
 
   ul {
     display: flex;
-    gap: 30px; // 必要なら余白
+    gap: vw(30, 1080); // 必要なら余白
   }
 }
+
 // ここからmain
 
 .fv-catch {
@@ -129,13 +148,20 @@ img {
   z-index: 10;
   color: #ffffff;
   line-height: calc(70 / 40);
-  letter-spacing: 12px;
+  letter-spacing: vw(12, 1080);
 }
+
 .fv-text {
-  font-size: 40px;
+  font-size: calc(40 / 1080 * 100vw);
+  font-size: vw(40, 1080);
   font-weight: 600;
-  padding-left: 0.5em;   /* 全体を1文字分右へ */
-  text-indent: -0.5em;   
+  padding-left: 0.5em;
+  /* 全体を1文字分右へ */
+  text-indent: -0.5em;
+
+  @include sp {
+    font-size: vw(30, 375);
+  }
 
 }
 
@@ -151,17 +177,18 @@ img {
   top: 48%;
   right: 40%;
   transform: translateY(-50%);
-  display: flex;  
+  display: flex;
+  column-gap: vw(45, 1080);
 }
 
 .about-text {
   h2 {
     writing-mode: vertical-rl;
     order: 2;
-    font-size: 30px;
+    font-size: vw(30, 1080);
     font-weight: 500;
-    line-height: 118%;
-
+    // line-height: 118%;
+    letter-spacing: 0.118em;
   }
 }
 
@@ -170,10 +197,10 @@ img {
   p {
     writing-mode: vertical-rl;
     order: 1;
-    font-size: 18px;
+    font-size: vw(18, 1080);
     font-weight: 500;
-    line-height: 1.37;
-    letter-spacing: 0.3em;
+    line-height: calc(48 / 18);
+    letter-spacing: 0.37em;
 
   }
 }
@@ -182,10 +209,11 @@ img {
 // ここからservice
 
 .service {
-  background-color:rgba(77, 150, 0, 0.102);
+  background-color: rgba(77, 150, 0, 0.102);
   padding-block-start: 75px;
   padding-block-end: 80px;
 }
+
 .title-wrap {
   display: flex;
   font-size: 30px;
@@ -193,6 +221,7 @@ img {
   color: #4D9600;
   letter-spacing: 9px;
 }
+
 .title {
   // margin-block-start: 6px;
   font-size: 20px;
@@ -202,26 +231,30 @@ img {
   justify-content: center;
   padding-block-end: 68px;
 }
+
 .service-items {
   display: flex !important;
-  flex-direction: column; 
+  flex-direction: column;
   gap: 80px !important;
 }
+
 .service-image {
   position: relative;
   display: flex;
   align-items: flex-start;
-  
+
 }
+
 .left-block {
   position: relative;
   z-index: 10;
   width: 600px;
 }
+
 .left-block .right-text {
   text-align: right;
   display: block;
-  width: 100%; 
+  width: 100%;
   font-size: 1.6rem;
   margin-block-start: 19px;
 }
@@ -239,61 +272,72 @@ img {
 .second-block {
   position: relative;
   margin-right: -180px;
-  
+
 }
+
 .photo-image {
   width: 600px;
 }
+
 .second-image {
   width: 500px;
 }
+
 .left-text {
   margin-block-start: 19px;
   font-size: 1.6rem;
   font-weight: 500;
   line-height: calc(25 / 16);
 }
+
 .service-text {
-// .company-text {
+  // .company-text {
   position: absolute;
-  top: 20%;      /* 画像の中での位置を調整 */
+  top: 20%;
+  /* 画像の中での位置を調整 */
   left: 50%;
   display: grid;
   row-gap: 17px;
   z-index: 3;
-  color: #fff;    /* 文字色（必要に応じて変更） */
+  color: #fff;
+  /* 文字色（必要に応じて変更） */
   font-weight: 600;
-  }
+}
+
 .second-text {
   left: 8%;
 }
+
 .third-text {
   left: 48%;
 }
 
-  h3 {
-    font-size: 25px; 
-    line-height: calc(33 /25);
-      letter-spacing: 0;
+h3 {
+  font-size: 25px;
+  line-height: calc(33 /25);
+  letter-spacing: 0;
 
 }
-  span {
-    font-size: 16px;
-    line-height: calc(25 /16);
-    letter-spacing: 0;
-  }
-  .second-item {
-    display: flex;
-    flex-direction: row-reverse;
-  }
+
+span {
+  font-size: 16px;
+  line-height: calc(25 /16);
+  letter-spacing: 0;
+}
+
+.second-item {
+  display: flex;
+  flex-direction: row-reverse;
+}
 
 
-  // ここからworks
+// ここからworks
 .works {
   padding-block-start: 70px;
   padding-block-end: 97px;
 
 }
+
 .works-items {
   display: flex;
   column-gap: 40px;
@@ -303,10 +347,12 @@ img {
 .works-image {
   width: 200px;
 }
+
 .works-text {
   margin-block-start: 19px;
 }
-.works-text h4{
+
+.works-text h4 {
   font-size: 16px;
   font-weight: 500;
 }
@@ -350,16 +396,18 @@ img {
 
 // ここからNEWS
 .news {
-    background-color:rgba(77, 150, 0, 0.102);
-    padding-block-start: 70px;
-    padding-block-end: 80px;
+  background-color: rgba(77, 150, 0, 0.102);
+  padding-block-start: 70px;
+  padding-block-end: 80px;
 }
+
 .border-texts {
   display: flex;
   column-gap: 60px;
   // background-color:rgba(77, 150, 0, 0.102);
 
 }
+
 .news-items {
   position: relative;
 }
@@ -376,25 +424,27 @@ img {
   line-height: calc(33 /20);
   padding-inline-start: 20px;
 }
+
 .news-item {
   display: flex;
   justify-content: flex-end;
-  background-color: #fff; 
-padding-block-start: 20px;
-padding-block-end: 13px;
-padding-inline-start: 20px;
-padding-inline-end: 20px;
-border-bottom: 1px solid #4D9600;
-column-gap: 69px;
+  background-color: #fff;
+  padding-block-start: 20px;
+  padding-block-end: 13px;
+  padding-inline-start: 20px;
+  padding-inline-end: 20px;
+  border-bottom: 1px solid #4D9600;
+  column-gap: 69px;
 }
+
 .news-item-first {
- padding-block-start: 30px;
- 
+  padding-block-start: 30px;
+
 }
 
 .news-items li:last-child {
-	border-bottom: none;
-	/* 最後の線 */
+  border-bottom: none;
+  /* 最後の線 */
   height: 74px;
 }
 
@@ -402,18 +452,22 @@ column-gap: 69px;
   display: flex;
   column-gap: 69px;
 }
+
 .news-date {
   font-size: 16px;
   font-weight: 500;
   line-height: calc(33 / 16);
   white-space: nowrap;
-  flex-shrink: 0; /* ← これで日付が縮まない */
+  flex-shrink: 0;
+  /* ← これで日付が縮まない */
 }
+
 .news-text {
   font-size: 18px;
   font-weight: 500;
   line-height: calc(25 /18);
 }
+
 .arrow-text {
   display: grid;
   align-items: center;
@@ -426,14 +480,15 @@ column-gap: 69px;
   // height: 41px;
   transition: transform 0.3s ease;
   cursor: pointer;
-  
+
   &:hover {
     transform: translateX(6px);
   }
+
   &:active {
     transform: translateX(10px);
   }
-  
+
 }
 
 .news-arrow-text {
@@ -448,32 +503,39 @@ column-gap: 69px;
   padding-block-start: 73px;
   padding-block-end: 80px;
 }
+
 .contact-info {
   display: flex;
   position: relative;
 }
+
 .location-map {
   position: relative;
   width: 600px;
   height: 400px;
   z-index: 2;
 }
+
 .company-second-image {
   display: flex;
   width: 500px;
   height: 262px;
 }
+
 .company-second-image img {
   width: 100%;
   display: block;
 }
+
 .right-black-company {
   margin-top: 200px;
   position: relative;
   margin-left: -180px;
   z-index: 1;
 
-}.location-info {
+}
+
+.location-info {
   position: absolute;
   top: 51%;
   left: 66%;
@@ -482,12 +544,14 @@ column-gap: 69px;
 
   color: #fff; // 緑の上なので白文字
 }
+
 .name {
   font-size: 2rem;
   font-weight: 600;
   line-height: calc(33 / 20);
   white-space: nowrap;
 }
+
 .address {
   margin-block-start: 7px;
   font-size: 1.6rem;
@@ -495,22 +559,26 @@ column-gap: 69px;
   font-weight: 600;
   white-space: nowrap;
 }
+
 .tel {
   font-size: 1.6rem;
   line-height: calc(25 / 16);
   font-weight: 600;
 }
+
 .contact-link-tel {
   font-size: 2.5rem;
   line-height: calc(25 / 25);
   font-weight: 600;
 }
+
 .e-mail {
   margin-block-start: 19px;
   font-size: 1.6rem;
   line-height: calc(25 / 16);
   font-weight: 600;
 }
+
 .tel-link {
   display: flex;
   margin-block-start: 15px;
@@ -522,84 +590,96 @@ column-gap: 69px;
 .contact {
   padding-block-start: 73px;
   padding-block-end: 80px;
-  background-color:rgba(77, 150, 0, 0.102);
+  background-color: rgba(77, 150, 0, 0.102);
 }
+
 .contact-title {
   padding-block-end: 35px;
 }
+
 .contact-text {
   margin-inline-start: 60px;
- font-size: 2rem;
- font-weight: 500;
- line-height: calc(33 / 20);
+  font-size: 2rem;
+  font-weight: 500;
+  line-height: calc(33 / 20);
 }
 
 .form {
-	max-width: 880px;
-	margin-inline-start: 60px;
-	margin-block-start: 70px;
+  max-width: 880px;
+  margin-inline-start: 60px;
+  margin-block-start: 70px;
   margin-inline-end: 60px;
   font-size: 2rem;
- font-weight: 500;
- line-height: calc(33 / 20);
+  font-weight: 500;
+  line-height: calc(33 / 20);
 
-	@media screen and (max-width: 767px) {
-		margin-block-start: 3rem;
-	}
-}
-.form .form__items ul {
-	display: flex;
-	flex-direction: column;
-	row-gap: 4.5rem;
-	@media screen and (max-width: 767px) {
-  	row-gap: 1.6rem;
-		}
+  @media screen and (max-width: 767px) {
+    margin-block-start: 3rem;
+  }
 }
 
-.form .form__items ul li {
+// .form .form__items ul {
+// 	display: flex;
+// 	flex-direction: column;
+// 	row-gap: 4.5rem;
+// 	@media screen and (max-width: 767px) {
+//   	row-gap: 1.6rem;
+// 		}
+// }
 
-	@media screen and (max-width: 767px) {
-		/* margin-block-end: 1.6rem; */
-	}
-}
 
 .form__item {
-	display: flex;
-	column-gap: calc(30 /880 * 100%);
-	align-items: flex-start;
+
+  // display: flex;
+  // column-gap: calc(30 /880 * 100%);
+  // align-items: flex-start;
   &--column {
     flex-direction: column;
   }
 
-	@media screen and (max-width: 767px) {
-		display: block;
-		
-	}
+  @media screen and (max-width: 767px) {
+    display: block;
+
+  }
+}
+
+.flex-dl {
+  display: flex;
+  height: 5rem;
+
+  dt {
+    width: 17rem;
+  }
+
+  dd {
+    flex: 1;
+  }
 }
 
 .form__item:not(:first-of-type) {
-	margin-block-start: 3rem;
+  margin-block-start: 4.3rem;
 
-	@media screen and (max-width: 767px) {
-		margin-block-start: 1.5rem;
-	}
+  @media screen and (max-width: 767px) {
+    margin-block-start: 1.5rem;
+  }
 }
 
 .form__label {
-	font-size: 20px;
-	display: flex;
-	align-items: center;
-	line-height: calc(33 / 20);
-	width: 14rem;
-	padding-block-start: 0.5rem;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  line-height: calc(33 / 20);
+  width: 17rem;
+  padding-block-start: 0.5rem;
 
-	@media screen and (max-width: 767px) {
-		width: 100%;
-		font-size: 1.8rem;
-		line-height: calc(33 / 18);
-		padding-block-start: 0.4rem;
-	}
+  @media screen and (max-width: 767px) {
+    width: 100%;
+    font-size: 1.8rem;
+    line-height: calc(33 / 18);
+    padding-block-start: 0.4rem;
+  }
 }
+
 .form {
   &__item {
     // margin-bottom: 24px;
@@ -617,7 +697,8 @@ column-gap: 69px;
   &__input {
     // display: flex;
     display: block;
-    gap: 77px; // 男性・女性の間隔
+    // gap: 77px; 
+    flex: 1;
 
     label {
       // display: flex;
@@ -638,87 +719,152 @@ column-gap: 69px;
       margin-right: 9px;
       appearance: none;
 
+
     }
+
     &-item {
       display: flex;
     }
   }
 }
+
 .form-gender {
   font-size: 2rem;
- font-weight: 500;
- line-height: calc(33 / 20);
+  font-weight: 500;
+  line-height: calc(33 / 20);
 }
+
 .form-email {
   white-space: nowrap;
 }
 
 .form__la {
-	align-items: unset;
+  align-items: unset;
 }
 
 .form__input {
-	flex: 1;
-	font-weight: normal;
+  flex: 1;
+  font-weight: normal;
 }
-.form-form_input {
+
+.form-radio {
   display: flex;
+  column-gap: 50px;
 }
 
 .form__textarea {
-	flex: 1;
-	font-weight: normal;
+  flex: 1;
+  font-weight: normal;
 }
-.radio {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  cursor: pointer;
-  margin-inline-start: 6px;
 
-  input[type="radio"] {
-    appearance: none;
-    -webkit-appearance: none;
+// .radio {
+//   display: inline-flex;
+//   align-items: center;
+//   gap: 8px;
+//   cursor: pointer;
+//   margin-inline-start: 6px;
 
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
+//   input[type="radio"] {
+//     appearance: none;
+//     -webkit-appearance: none;
 
-    background-color: #fff; // 白だけ
-    border: none;           // 縁を消す
-    
-    position: relative;
+//     width: 20px;
+//     height: 20px;
+//     border-radius: 50%;
 
+//     background-color: #fff; // 白だけ
+//     border: none;           // 縁を消す
+
+//     position: relative;
+
+//     cursor: pointer;
+
+//     &:checked::after {
+//       content: "";
+//       position: absolute;
+//       top: 50%;
+//       left: 50%;
+//       width: 6px;   // ← 点のサイズ
+//       height: 6px;
+//       background: #000;
+//       border-radius: 50%;
+//       transform: translate(-50%, -50%);
+//     }
+
+//   }
+// }
+
+// 性別のradioボタン
+.form-radio {
+  label {
+    display: inline-flex;
+    align-items: center;
     cursor: pointer;
-
-    &:checked::after {
+    margin-right: 24px;
+    line-height: 1.4;
+  }
+  
+  input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+  }
+  
+  span {
+    position: relative;
+    padding-left: 42px;
+    font-size: 1.8rem;
+    
+    /* 外側の白丸 */
+    &::before {
       content: "";
       position: absolute;
+      left: 0;
       top: 50%;
-      left: 50%;
-      width: 6px;   // ← 点のサイズ
-      height: 6px;
-      background: #000;
+      transform: translateY(-50%);
+      width: 20px;
+      height: 20px;
       border-radius: 50%;
-      transform: translate(-50%, -50%);
+      background-color: #fff; // 白丸
+      box-sizing: border-box;
     }
 
+    /* 中の黒い小さい丸（初期は非表示） */
+    &::after {
+      content: "";
+      position: absolute;
+      left: 6px;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 6px;
+      height: 6px;
+      background-color: #000; // 黒
+      border-radius: 50%;
+      opacity: 0;
+    }
+  }
+
+  /* クリック（checked）時 */
+  input[type="radio"]:checked+span {
+    &::after {
+      opacity: 1;
+    }
   }
 }
 
 input[type="text"],
 input[type="email"] {
-	height: 4rem;
-	width: 100%;
-	padding-inline: 15px;
-	font-size: 1.7rem;
-	background-color: #fff;
+  height: 4rem;
+  width: 100%;
+  padding-inline: 15px;
+  font-size: 1.7rem;
+  background-color: #fff;
 
-	@media screen and (max-width: 767px) {
-		height: 50px;
-		font-size: 1.6rem;
-	}
+  @media screen and (max-width: 767px) {
+    height: 50px;
+    font-size: 1.6rem;
+  }
 }
+
 .form-type {
   margin-block-start: 5px;
 }
@@ -748,34 +894,61 @@ input[type="email"] {
     pointer-events: none;
   }
 }
+
 .form-detail {
   display: block;
 }
 
+.form-checkbox {
+  display: flex;
+  flex-wrap: wrap;
+
+  label {
+    width: 25%;
+  }
+}
+
 textarea {
-	height: 200px;
-	width: 100%;
-	resize: none;
-	padding: 15px;
-	font-size: 1.7rem;
-	line-height: 1.6;
-	background-color: #fff;
-	word-break: break-word;
-	resize: none;
+  height: 200px;
+  width: 100%;
+  resize: none;
+  padding: 15px;
+  font-size: 1.7rem;
+  line-height: 1.6;
+  background-color: #fff;
+  word-break: break-word;
+  resize: none;
 
-	@media screen and (max-width: 767px) {
-		font-size: 1.6rem;
-	}
+  @media screen and (max-width: 767px) {
+    font-size: 1.6rem;
+  }
+}
+.contact-check__title {
+  white-space: nowrap;
 }
 
-.contact-check__list .contact-check-item {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 12px 24px;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
+// .contact-check__list {
+//   writing-mode: horizontal-tb;
+
+//   ul .contact-check-item {
+//     display: grid !important;
+//     grid-template-columns: repeat(4, 1fr) !important;
+//     gap: 12px 24px;
+//     list-style: none;
+//     padding: 0;
+//     margin: 0;
+
+//     li {
+//       display: flex;
+
+//       label {
+//         display: flex;
+//         align-items: center;
+//       }
+//     }
+//   }
+// }
+
 .contact-check__list input[type="checkbox"] {
   appearance: none;
   -webkit-appearance: none;
@@ -792,83 +965,104 @@ textarea {
   background-color: #333;
 }
 
-.contact-check__list input[type="checkbox"]:checked::after {
-  content: "";
-  position: absolute;
-  top: 2px;
-  left: 5px;
-  width: 4px;
-  height: 8px;
-  border: solid #fff;
-  border-width: 0 2px 2px 0;
-  transform: rotate(45deg);
-}
-.contact-check__list label {
-  display: flex;
-  align-items: center;
-  cursor: pointer;
-}
+// .contact-check__list input[type="checkbox"]:checked::after {
+//   content: "";
+//   position: absolute;
+//   top: 2px;
+//   left: 5px;
+//   width: 4px;
+//   height: 8px;
+//   border: solid #fff;
+//   border-width: 0 2px 2px 0;
+//   transform: rotate(45deg);
+// }
+// .contact-check__list label {
+//   display: flex;
+//   align-items: center;
+//   cursor: pointer;
+// }
 
 .privacy-box {
-  max-height: 200px;        /* 枠の高さ */
-  padding: 16px;
+  width: 800px;
+  height: 300px;
+  /* 枠の高さ */
+  padding-block-start: 40px;
+  padding-block-end: 40px;
+  padding-inline-start: 40px;
+  padding-inline-end: 60px;
+
   border: 1px solid #ccc;
-  overflow-y: auto;        /* 縦スクロール */
+  overflow-y: auto;
+  /* 縦スクロール */
+  overflow-x: hidden;
   background-color: #fff;
-  font-size: 1.4rem;
-  line-height: 1.6;
-  margin-bottom: 12px;
+  font-size: 1.8rem;
+  line-height: calc(31 / 18);
+  -webkit-overflow-scrolling: touch;
+}
+
+.form__input {
+  flex: 1;
+  min-height: 0; // ← これがないと overflow が効かない
+}
+
+.text {
+  margin-top: 2em;
+  /* ← 2行分あけるイメージ */
 }
 
 .contact__button {
-	margin-block-start: 5rem;
-	margin-inline: auto;
-	width: 300px;
+  margin-block-start: 5rem;
+  margin-inline: auto;
+  width: 300px;
 
-	@media screen and (max-width: 767px) {
-		width: 33.5rem;
-		margin-block-start: 5rem;
-	}
+  @media screen and (max-width: 767px) {
+    width: 33.5rem;
+    margin-block-start: 5rem;
+  }
 
-	@media screen and (max-width: 370px) {
-		width: 100%;
-		margin-block-start: 5rem;
-	}
-}input[type="submit"] {
-	width: 100%;
-	height: 50px;
-	background-color: #4D9600;
-	color: #fff;
-	font-size: 2rem;
-	cursor: pointer;
-	transition: 0.4s ease;
-	text-align: center;
-	line-height: calc(33 / 20);
-	border: 1px solid transparent;
-	display: flex;
-	padding-bottom: 2px;
+  @media screen and (max-width: 370px) {
+    width: 100%;
+    margin-block-start: 5rem;
+  }
+}
 
-	@media screen and (max-width: 767px) {
-		font-size: 2rem;
-		line-height: calc(26 / 20);
-		height: 41px;
-		padding-block-start: unset;
-		padding-block-end: unset;
+input[type="submit"] {
+  width: 100%;
+  height: 50px;
+  background-color: #4D9600;
+  color: #fff;
+  font-size: 2rem;
+  cursor: pointer;
+  transition: 0.4s ease;
+  text-align: center;
+  line-height: calc(33 / 20);
+  border: 1px solid transparent;
+  display: flex;
+  padding-bottom: 2px;
 
-	}
+  @media screen and (max-width: 767px) {
+    font-size: 2rem;
+    line-height: calc(26 / 20);
+    height: 41px;
+    padding-block-start: unset;
+    padding-block-end: unset;
+
+  }
 }
 
 input[type="submit"]:hover {
-	color: #4D9600;
-	background-color: #fff;
-	border: 1px solid #4D9600;
+  color: #4D9600;
+  background-color: #fff;
+  border: 1px solid #4D9600;
 }
 
 // ここからFOOTER
 .footer {
-    padding-block-start: 80px;
+  padding-block-start: 80px;
   padding-block-end: 80px;
 }
+
 .company-name {
   border-bottom: 1px solid #000000;
   padding-block-end: 28px;
@@ -877,17 +1071,19 @@ input[type="submit"]:hover {
   font-weight: 500px;
   line-height: calc(33 /20);
 }
+
 .footer__nav ul {
   display: flex;
   column-gap: 5.4%;
   font-size: 18px;
   font-weight: 500px;
-  line-height:  calc(33 / 18);
+  line-height: calc(33 / 18);
 }
+
 .footer__nav ul li {
   text-align: center;
-  
 }
+
 .sns {
   display: flex;
   justify-content: center;
@@ -895,6 +1091,7 @@ input[type="submit"]:hover {
   column-gap: 3.6%;
   margin-block-start: 26px;
 }
+
 .footer-copyright {
   display: flex;
   justify-content: center;
@@ -905,3347 +1102,6 @@ input[type="submit"]:hover {
   color: #fff;
   height: 92px;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
