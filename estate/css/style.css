@@ -41,7 +41,7 @@ img {
 .inner {
   width: 100%;
   max-width: 980px;
-  padding-inline: 30px;
+  padding-inline: 2.7777777778vw;
   margin-inline: auto;
 }
 @media screen and (max-width: 767px) {
@@ -90,31 +90,31 @@ img {
           justify-content: space-between;
   width: 100%;
   max-width: 980px;
-  padding-inline: 30px;
+  padding-inline: 2.7777777778vw;
   margin-inline: auto;
   color: white;
-  -webkit-padding-before: 24px;
-          padding-block-start: 24px;
+  -webkit-padding-before: 2.2222222222vw;
+          padding-block-start: 2.2222222222vw;
 }
 
 .site-title {
-  font-size: 20px;
+  font-size: 1.8518518519vw;
   font-weight: 500;
   line-height: 100%;
-  padding: 5px;
+  padding: 0.462962963vw;
 }
 
 .header__nav {
-  font-size: 18px;
+  font-size: 1.6666666667vw;
   font-weight: 500;
   line-height: 100%;
-  padding: 5px;
+  padding: 0.462962963vw;
 }
 .header__nav ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  gap: 30px;
+  gap: 2.7777777778vw;
 }
 
 .fv-catch {
@@ -124,14 +124,21 @@ img {
   z-index: 10;
   color: #ffffff;
   line-height: 1.75;
-  letter-spacing: 12px;
+  letter-spacing: 1.1111111111vw;
 }
 
 .fv-text {
-  font-size: 40px;
+  font-size: 3.7037037037vw;
+  font-size: 3.7037037037vw;
   font-weight: 600;
-  padding-left: 0.5em; /* 全体を1文字分右へ */
+  padding-left: 0.5em;
+  /* 全体を1文字分右へ */
   text-indent: -0.5em;
+}
+@media (max-width: 767px) {
+  .fv-text {
+    font-size: 8vw;
+  }
 }
 
 .about {
@@ -148,6 +155,9 @@ img {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-column-gap: 4.1666666667vw;
+     -moz-column-gap: 4.1666666667vw;
+          column-gap: 4.1666666667vw;
 }
 
 .about-text h2 {
@@ -157,9 +167,9 @@ img {
   -webkit-box-ordinal-group: 3;
       -ms-flex-order: 2;
           order: 2;
-  font-size: 30px;
+  font-size: 2.7777777778vw;
   font-weight: 500;
-  line-height: 118%;
+  letter-spacing: 0.118em;
 }
 
 .about-catch p {
@@ -169,10 +179,10 @@ img {
   -webkit-box-ordinal-group: 2;
       -ms-flex-order: 1;
           order: 1;
-  font-size: 18px;
+  font-size: 1.6666666667vw;
   font-weight: 500;
-  line-height: 1.37;
-  letter-spacing: 0.3em;
+  line-height: 2.6666666667;
+  letter-spacing: 0.37em;
 }
 
 .service {
@@ -276,12 +286,14 @@ img {
 
 .service-text {
   position: absolute;
-  top: 20%; /* 画像の中での位置を調整 */
+  top: 20%;
+  /* 画像の中での位置を調整 */
   left: 50%;
   display: grid;
   row-gap: 17px;
   z-index: 3;
-  color: #fff; /* 文字色（必要に応じて変更） */
+  color: #fff;
+  /* 文字色（必要に応じて変更） */
   font-weight: 600;
 }
 
@@ -468,7 +480,8 @@ span {
   line-height: 2.0625;
   white-space: nowrap;
   -ms-flex-negative: 0;
-      flex-shrink: 0; /* ← これで日付が縮まない */
+      flex-shrink: 0;
+  /* ← これで日付が縮まない */
 }
 
 .news-text {
@@ -643,39 +656,6 @@ span {
   }
 }
 
-.form .form__items ul {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  row-gap: 4.5rem;
-}
-@media screen and (max-width: 767px) {
-  .form .form__items ul {
-    row-gap: 1.6rem;
-  }
-}
-
-@media screen and (max-width: 767px) {
-  .form .form__items ul li {
-    /* margin-block-end: 1.6rem; */
-  }
-}
-
-.form__item {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-column-gap: 3.4090909091%;
-     -moz-column-gap: 3.4090909091%;
-          column-gap: 3.4090909091%;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
-}
 .form__item--column {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
@@ -688,9 +668,24 @@ span {
   }
 }
 
+.flex-dl {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 5rem;
+}
+.flex-dl dt {
+  width: 17rem;
+}
+.flex-dl dd {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
 .form__item:not(:first-of-type) {
-  -webkit-margin-before: 3rem;
-          margin-block-start: 3rem;
+  -webkit-margin-before: 4.3rem;
+          margin-block-start: 4.3rem;
 }
 @media screen and (max-width: 767px) {
   .form__item:not(:first-of-type) {
@@ -708,7 +703,7 @@ span {
       -ms-flex-align: center;
           align-items: center;
   line-height: 1.65;
-  width: 14rem;
+  width: 17rem;
   -webkit-padding-before: 0.5rem;
           padding-block-start: 0.5rem;
 }
@@ -731,7 +726,9 @@ span {
 }
 .form__input {
   display: block;
-  gap: 77px;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
 }
 .form__input label {
   display: block;
@@ -782,10 +779,13 @@ span {
   font-weight: normal;
 }
 
-.form-form_input {
+.form-radio {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-column-gap: 50px;
+     -moz-column-gap: 50px;
+          column-gap: 50px;
 }
 
 .form__textarea {
@@ -795,41 +795,60 @@ span {
   font-weight: normal;
 }
 
-.radio {
+.form-radio {
+  /* クリック（checked）時 */
+}
+.form-radio label {
   display: -webkit-inline-box;
   display: -ms-inline-flexbox;
   display: inline-flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  gap: 8px;
   cursor: pointer;
-  -webkit-margin-start: 6px;
-          margin-inline-start: 6px;
+  margin-right: 24px;
+  line-height: 1.4;
 }
-.radio input[type=radio] {
-  -moz-appearance: none;
-       appearance: none;
-  -webkit-appearance: none;
+.form-radio input[type=radio] {
+  position: absolute;
+  opacity: 0;
+}
+.form-radio span {
+  position: relative;
+  padding-left: 42px;
+  font-size: 1.8rem;
+  /* 外側の白丸 */
+  /* 中の黒い小さい丸（初期は非表示） */
+}
+.form-radio span::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
   width: 20px;
   height: 20px;
   border-radius: 50%;
   background-color: #fff;
-  border: none;
-  position: relative;
-  cursor: pointer;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
-.radio input[type=radio]:checked::after {
+.form-radio span::after {
   content: "";
   position: absolute;
+  left: 6px;
   top: 50%;
-  left: 50%;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
   width: 6px;
   height: 6px;
-  background: #000;
+  background-color: #000;
   border-radius: 50%;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  opacity: 0;
+}
+.form-radio input[type=radio]:checked + span::after {
+  opacity: 1;
 }
 
 input[type=text],
@@ -884,6 +903,17 @@ input[type=email] {
   display: block;
 }
 
+.form-checkbox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+.form-checkbox label {
+  width: 25%;
+}
+
 textarea {
   height: 200px;
   width: 100%;
@@ -901,13 +931,8 @@ textarea {
   }
 }
 
-.contact-check__list .contact-check-item {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 12px 24px;
-  list-style: none;
-  padding: 0;
-  margin: 0;
+.contact-check__title {
+  white-space: nowrap;
 }
 
 .contact-check__list input[type=checkbox] {
@@ -927,38 +952,38 @@ textarea {
   background-color: #333;
 }
 
-.contact-check__list input[type=checkbox]:checked::after {
-  content: "";
-  position: absolute;
-  top: 2px;
-  left: 5px;
-  width: 4px;
-  height: 8px;
-  border: solid #fff;
-  border-width: 0 2px 2px 0;
-  -webkit-transform: rotate(45deg);
-          transform: rotate(45deg);
-}
-
-.contact-check__list label {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  cursor: pointer;
-}
-
 .privacy-box {
-  max-height: 200px; /* 枠の高さ */
-  padding: 16px;
+  width: 800px;
+  height: 300px;
+  /* 枠の高さ */
+  -webkit-padding-before: 40px;
+          padding-block-start: 40px;
+  -webkit-padding-after: 40px;
+          padding-block-end: 40px;
+  -webkit-padding-start: 40px;
+          padding-inline-start: 40px;
+  -webkit-padding-end: 60px;
+          padding-inline-end: 60px;
   border: 1px solid #ccc;
-  overflow-y: auto; /* 縦スクロール */
+  overflow-y: auto;
+  /* 縦スクロール */
+  overflow-x: hidden;
   background-color: #fff;
-  font-size: 1.4rem;
-  line-height: 1.6;
-  margin-bottom: 12px;
+  font-size: 1.8rem;
+  line-height: 1.7222222222;
+  -webkit-overflow-scrolling: touch;
+}
+
+.form__input {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  min-height: 0;
+}
+
+.text {
+  margin-top: 2em;
+  /* ← 2行分あけるイメージ */
 }
 
 .contact__button {
