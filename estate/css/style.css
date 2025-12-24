@@ -1,15 +1,15 @@
 @charset "UTF-8";
 body {
   font-family: "Yu Mincho", "YuMincho", "游明朝", "Noto Serif JP", "Hiragino Mincho ProN", "IPAexMincho", serif;
-  font-weight: 700;
+  font-optical-sizing: auto;
+  font-weight: 500;
   font-style: normal;
+  letter-spacing: 0;
   color: #000000;
   line-height: 1.5625;
 }
 
-html,
-body {
-  overflow-x: hidden;
+html {
   -moz-appearance: none;
        appearance: none;
   -webkit-appearance: none;
@@ -19,6 +19,11 @@ body {
   font-size: 10px;
   scroll-behavior: smooth;
   scroll-padding-top: 80px;
+}
+
+html,
+body {
+  overflow-x: hidden;
 }
 
 a {
@@ -44,7 +49,7 @@ img {
   padding-inline: 2.7777777778vw;
   margin-inline: auto;
 }
-@media screen and (max-width: 767px) {
+@media (max-width: 767px) {
   .inner {
     max-width: 767px;
     padding-inline: 20px !important;
@@ -80,6 +85,8 @@ img {
   position: absolute;
   inset: 0;
   z-index: 10;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 .header .header__inner {
   display: -webkit-box;
@@ -89,12 +96,19 @@ img {
       -ms-flex-pack: justify;
           justify-content: space-between;
   width: 100%;
-  max-width: 980px;
   padding-inline: 2.7777777778vw;
   margin-inline: auto;
   color: white;
   -webkit-padding-before: 2.2222222222vw;
           padding-block-start: 2.2222222222vw;
+}
+@media (max-width: 767px) {
+  .header .header__inner {
+    max-width: 767px;
+    padding-inline: 2rem;
+    margin-inline: auto;
+    margin: 0 auto;
+  }
 }
 
 .site-title {
@@ -102,6 +116,9 @@ img {
   font-weight: 500;
   line-height: 100%;
   padding: 0.462962963vw;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .header__nav {
@@ -115,6 +132,9 @@ img {
   display: -ms-flexbox;
   display: flex;
   gap: 2.7777777778vw;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .fv-catch {
@@ -206,7 +226,7 @@ img {
 }
 
 .title {
-  font-size: 20px;
+  font-size: 2rem;
   letter-spacing: 6px;
   line-height: 1.65;
   display: -webkit-box;
@@ -227,7 +247,7 @@ img {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  gap: 80px !important;
+  gap: 80px;
 }
 
 .service-image {
@@ -266,14 +286,7 @@ img {
 .second-block {
   position: relative;
   margin-right: -180px;
-}
-
-.photo-image {
-  width: 600px;
-}
-
-.second-image {
-  width: 500px;
+  margin-left: unset;
 }
 
 .left-text {
@@ -306,13 +319,13 @@ img {
 }
 
 h3 {
-  font-size: 25px;
+  font-size: 2.5rem;
   line-height: 1.32;
   letter-spacing: 0;
 }
 
 span {
-  font-size: 16px;
+  font-size: 1.6rem;
   line-height: 1.5625;
   letter-spacing: 0;
 }
@@ -338,12 +351,12 @@ span {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-column-gap: 40px;
-     -moz-column-gap: 40px;
-          column-gap: 40px;
+  -webkit-column-gap: 4%;
+     -moz-column-gap: 4%;
+          column-gap: 4%;
 }
 
-.works-image {
+.works-item {
   width: 200px;
 }
 
@@ -672,7 +685,6 @@ span {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  height: 5rem;
 }
 .flex-dl dt {
   width: 17rem;
@@ -681,6 +693,7 @@ span {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
+  height: 5rem;
 }
 
 .form__item:not(:first-of-type) {
@@ -704,8 +717,6 @@ span {
           align-items: center;
   line-height: 1.65;
   width: 17rem;
-  -webkit-padding-before: 0.5rem;
-          padding-block-start: 0.5rem;
 }
 @media screen and (max-width: 767px) {
   .form__label {
@@ -719,7 +730,6 @@ span {
 
 .form__label {
   font-weight: 500;
-  margin-bottom: 8px;
 }
 .form__label span {
   display: inline-block;
@@ -732,7 +742,6 @@ span {
 }
 .form__input label {
   display: block;
-  margin-top: 8px;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -770,6 +779,7 @@ span {
   -webkit-box-align: unset;
       -ms-flex-align: unset;
           align-items: unset;
+  padding-top: 10px;
 }
 
 .form__input {
@@ -853,7 +863,7 @@ span {
 
 input[type=text],
 input[type=email] {
-  height: 4rem;
+  height: 5rem;
   width: 100%;
   padding-inline: 15px;
   font-size: 1.7rem;
@@ -903,17 +913,6 @@ input[type=email] {
   display: block;
 }
 
-.form-checkbox {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-}
-.form-checkbox label {
-  width: 25%;
-}
-
 textarea {
   height: 200px;
   width: 100%;
@@ -931,25 +930,78 @@ textarea {
   }
 }
 
+.contact-check {
+  padding-top: 1.7rem;
+}
 .contact-check__title {
   white-space: nowrap;
 }
 
-.contact-check__list input[type=checkbox] {
-  -moz-appearance: none;
-       appearance: none;
-  -webkit-appearance: none;
-  width: 16px;
-  height: 16px;
-  border: 1px solid #333;
-  border-radius: 2px;
-  margin-right: 8px;
-  position: relative;
+.form-checkbox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-margin-start: 15px;
+          margin-inline-start: 15px;
+}
+.form-checkbox label {
+  width: 25%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   cursor: pointer;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  padding: 8px 0;
+}
+.form-checkbox input[type=checkbox] {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+.form-checkbox span {
+  position: relative;
+  padding-left: 28px;
+  font-size: 1.8rem;
+  line-height: 1.3888888889;
+}
+.form-checkbox span::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  width: 18px;
+  height: 18px;
+  color: #fff;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
+  background-color: #fff;
+}
+.form-checkbox span::after {
+  content: "";
+  position: absolute;
+  left: 4px;
+  top: 50%;
+  width: 10px;
+  height: 6px;
+  border-left: 2px solid #000;
+  border-bottom: 2px solid #000;
+  -webkit-transform: translateY(-60%) rotate(-45deg);
+          transform: translateY(-60%) rotate(-45deg);
+  opacity: 0;
+}
+.form-checkbox input[type=checkbox]:checked + span::after {
+  opacity: 1;
 }
 
-.contact-check__list input[type=checkbox]:checked {
-  background-color: #333;
+.text-title {
+  font-size: 2rem;
+  line-height: 1.65;
 }
 
 .privacy-box {
@@ -987,8 +1039,8 @@ textarea {
 }
 
 .contact__button {
-  -webkit-margin-before: 5rem;
-          margin-block-start: 5rem;
+  -webkit-margin-before: 9rem;
+          margin-block-start: 9rem;
   margin-inline: auto;
   width: 300px;
 }
@@ -1059,15 +1111,22 @@ input[type=submit]:hover {
   line-height: 1.65;
 }
 
+.footer__nav {
+  -webkit-margin-before: 25px;
+          margin-block-start: 25px;
+  -webkit-margin-start: 105px;
+          margin-inline-start: 105px;
+}
+
 .footer__nav ul {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-column-gap: 5.4%;
-     -moz-column-gap: 5.4%;
-          column-gap: 5.4%;
+  -webkit-column-gap: 6%;
+     -moz-column-gap: 6%;
+          column-gap: 6%;
   font-size: 18px;
-  font-weight: 500px;
+  font-weight: 500;
   line-height: 1.8333333333;
 }
 
@@ -1083,11 +1142,17 @@ input[type=submit]:hover {
       -ms-flex-pack: center;
           justify-content: center;
   text-align: center;
-  -webkit-column-gap: 3.6%;
-     -moz-column-gap: 3.6%;
-          column-gap: 3.6%;
+  -webkit-column-gap: 3%;
+     -moz-column-gap: 3%;
+          column-gap: 3%;
   -webkit-margin-before: 26px;
           margin-block-start: 26px;
+}
+
+.sns img {
+  height: 28px; /* 高さを統一 */
+  width: auto; /* 横は自動 */
+  display: block; /* 余計な隙間防止 */
 }
 
 .footer-copyright {
