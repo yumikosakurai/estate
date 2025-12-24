@@ -18,17 +18,18 @@
 body {
   font: {
     family: "Yu Mincho", "YuMincho", "游明朝", "Noto Serif JP", "Hiragino Mincho ProN", "IPAexMincho", serif;
-    weight: 700;
-    style: normal;
+    optical-sizing: auto;
+	  weight: 500;
+	  style: normal;
+    
   }
-
+  
+  letter-spacing: 0;
   color: #000000;
   line-height: calc(25 / 16);
 }
 
-html,
-body {
-  overflow-x: hidden;
+html {
   appearance: none;
   -webkit-appearance: none;
   -webkit-text-size-adjust: 100%;
@@ -37,8 +38,13 @@ body {
   font-size: 10px;
   scroll-behavior: smooth;
   scroll-padding-top: 80px;
-
 }
+
+html,
+body {
+	overflow-x: hidden;
+}
+
 
 a {
   display: inline-block;
@@ -62,7 +68,7 @@ img {
   padding-inline: vw(30, 1080);
   margin-inline: auto;
 
-  @media screen and (max-width: 767px) {
+  @include sp {
     max-width: 767px;
     padding-inline: 20px !important;
     margin-inline: auto;
@@ -105,25 +111,33 @@ img {
   position: absolute;
   inset: 0; // top:0; left:0; right:0;
   z-index: 10;
+  box-sizing: border-box;
 
-  .header__inner {
+    .header__inner {
     display: flex;
     justify-content: space-between;
     width: 100%;
-    max-width: 980px;
+    // max-width: 980px;
     padding-inline: vw(30, 1080);
     margin-inline: auto;
     color: white;
     padding-block-start: vw(24, 1080);
-
+    @include sp {
+    max-width: 767px;
+		padding-inline: 2rem;
+		margin-inline: auto;
+		margin: 0 auto;
+  }
   }
 }
+
 
 .site-title {
   font-size: vw(20, 1080);
   font-weight: 500;
   line-height: 100%;
   padding: vw(5, 1080);
+  align-items: center;
 }
 
 .header__nav {
@@ -132,10 +146,10 @@ img {
   line-height: 100%;
   padding: vw(5, 1080);
 
-
   ul {
     display: flex;
     gap: vw(30, 1080); // 必要なら余白
+    align-items: center;
   }
 }
 
@@ -224,7 +238,7 @@ img {
 
 .title {
   // margin-block-start: 6px;
-  font-size: 20px;
+  font-size: 2rem;
   letter-spacing: 6px;
   line-height: calc(33 / 20);
   display: flex;
@@ -235,15 +249,14 @@ img {
 .service-items {
   display: flex !important;
   flex-direction: column;
-  gap: 80px !important;
+  gap: 80px;
 }
 
 .service-image {
   position: relative;
   display: flex;
   align-items: flex-start;
-
-}
+  }
 
 .left-block {
   position: relative;
@@ -272,16 +285,16 @@ img {
 .second-block {
   position: relative;
   margin-right: -180px;
-
+  margin-left: unset;
 }
 
-.photo-image {
-  width: 600px;
-}
+// .photo-image {
+//   width: 600px;
+// }
 
-.second-image {
-  width: 500px;
-}
+// .second-image {
+//   width: 500px;
+// }
 
 .left-text {
   margin-block-start: 19px;
@@ -313,14 +326,14 @@ img {
 }
 
 h3 {
-  font-size: 25px;
+  font-size: 2.5rem;
   line-height: calc(33 /25);
   letter-spacing: 0;
 
 }
 
 span {
-  font-size: 16px;
+  font-size: 1.6rem;
   line-height: calc(25 /16);
   letter-spacing: 0;
 }
@@ -340,11 +353,9 @@ span {
 
 .works-items {
   display: flex;
-  column-gap: 40px;
+  column-gap: 4%;
 }
-
-
-.works-image {
+.works-item {
   width: 200px;
 }
 
@@ -645,7 +656,6 @@ span {
 
 .flex-dl {
   display: flex;
-  height: 5rem;
 
   dt {
     width: 17rem;
@@ -653,6 +663,7 @@ span {
 
   dd {
     flex: 1;
+    height: 5rem;
   }
 }
 
@@ -670,7 +681,7 @@ span {
   align-items: center;
   line-height: calc(33 / 20);
   width: 17rem;
-  padding-block-start: 0.5rem;
+  // padding-block-start: 0.5rem;
 
   @media screen and (max-width: 767px) {
     width: 100%;
@@ -687,7 +698,7 @@ span {
 
   &__label {
     font-weight: 500;
-    margin-bottom: 8px;
+    // margin-bottom: 8px;
 
     span {
       display: inline-block;
@@ -703,7 +714,7 @@ span {
     label {
       // display: flex;
       display: block;
-      margin-top: 8px;
+      // margin-top: 8px;
       align-items: center;
       cursor: pointer;
       font-size: 1.8rem;
@@ -740,6 +751,7 @@ span {
 
 .form__la {
   align-items: unset;
+  padding-top: 10px;
 }
 
 .form__input {
@@ -757,42 +769,6 @@ span {
   font-weight: normal;
 }
 
-// .radio {
-//   display: inline-flex;
-//   align-items: center;
-//   gap: 8px;
-//   cursor: pointer;
-//   margin-inline-start: 6px;
-
-//   input[type="radio"] {
-//     appearance: none;
-//     -webkit-appearance: none;
-
-//     width: 20px;
-//     height: 20px;
-//     border-radius: 50%;
-
-//     background-color: #fff; // 白だけ
-//     border: none;           // 縁を消す
-
-//     position: relative;
-
-//     cursor: pointer;
-
-//     &:checked::after {
-//       content: "";
-//       position: absolute;
-//       top: 50%;
-//       left: 50%;
-//       width: 6px;   // ← 点のサイズ
-//       height: 6px;
-//       background: #000;
-//       border-radius: 50%;
-//       transform: translate(-50%, -50%);
-//     }
-
-//   }
-// }
 
 // 性別のradioボタン
 .form-radio {
@@ -853,7 +829,7 @@ span {
 
 input[type="text"],
 input[type="email"] {
-  height: 4rem;
+  height: 5rem;
   width: 100%;
   padding-inline: 15px;
   font-size: 1.7rem;
@@ -899,14 +875,14 @@ input[type="email"] {
   display: block;
 }
 
-.form-checkbox {
-  display: flex;
-  flex-wrap: wrap;
+// .form-checkbox {
+//   display: flex;
+//   flex-wrap: wrap;
 
-  label {
-    width: 25%;
-  }
-}
+//   label {
+//     width: 25%;
+//   }
+// }
 
 textarea {
   height: 200px;
@@ -923,64 +899,76 @@ textarea {
     font-size: 1.6rem;
   }
 }
-.contact-check__title {
-  white-space: nowrap;
+.contact-check {
+padding-top: 1.7rem;
+  &__title {
+   white-space: nowrap;
+  }
 }
 
-// .contact-check__list {
-//   writing-mode: horizontal-tb;
+// 内容のチェックボックス
+.form-checkbox {
+  display: flex;
+  flex-wrap: wrap;
+  margin-inline-start: 15px;
 
-//   ul .contact-check-item {
-//     display: grid !important;
-//     grid-template-columns: repeat(4, 1fr) !important;
-//     gap: 12px 24px;
-//     list-style: none;
-//     padding: 0;
-//     margin: 0;
+  label {
+    width: 25%;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    box-sizing: border-box;
+    padding: 8px 0; // 縦の余白だけ
+  }
 
-//     li {
-//       display: flex;
+  input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+  }
+    
+  span {
+    position: relative;
+    padding-left: 28px;
+    font-size: 1.8rem;
+    line-height: calc(25 / 18);
+    
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 50%;
+      width: 18px;
+      height: 18px;
+      color: #fff;
+      // border: 1px solid #666;
+      transform: translateY(-50%);
+      background-color: #fff;
+      
+    }
 
-//       label {
-//         display: flex;
-//         align-items: center;
-//       }
-//     }
-//   }
-// }
+    &::after {
+      content: "";
+      position: absolute;
+      left: 4px;
+      top: 50%;
+      width: 10px;
+      height: 6px;
+      border-left: 2px solid #000;
+      border-bottom: 2px solid #000;
+      transform: translateY(-60%) rotate(-45deg);
+      opacity: 0;
+    }
+  }
 
-.contact-check__list input[type="checkbox"] {
-  appearance: none;
-  -webkit-appearance: none;
-  width: 16px;
-  height: 16px;
-  border: 1px solid #333;
-  border-radius: 2px;
-  margin-right: 8px;
-  position: relative;
-  cursor: pointer;
+  input[type="checkbox"]:checked + span::after {
+    opacity: 1;
+  }
 }
-
-.contact-check__list input[type="checkbox"]:checked {
-  background-color: #333;
+.text-title {
+  font-size: 2rem;
+  line-height: calc(33 / 20);
 }
-
-// .contact-check__list input[type="checkbox"]:checked::after {
-//   content: "";
-//   position: absolute;
-//   top: 2px;
-//   left: 5px;
-//   width: 4px;
-//   height: 8px;
-//   border: solid #fff;
-//   border-width: 0 2px 2px 0;
-//   transform: rotate(45deg);
-// }
-// .contact-check__list label {
-//   display: flex;
-//   align-items: center;
-//   cursor: pointer;
-// }
 
 .privacy-box {
   width: 800px;
@@ -1012,7 +1000,7 @@ textarea {
 }
 
 .contact__button {
-  margin-block-start: 5rem;
+  margin-block-start: 9rem;
   margin-inline: auto;
   width: 300px;
 
@@ -1072,11 +1060,16 @@ input[type="submit"]:hover {
   line-height: calc(33 /20);
 }
 
+.footer__nav {
+  margin-block-start: 25px;
+  margin-inline-start: 105px;
+}
+
 .footer__nav ul {
   display: flex;
-  column-gap: 5.4%;
+  column-gap: 6%;
   font-size: 18px;
-  font-weight: 500px;
+  font-weight: 500;
   line-height: calc(33 / 18);
 }
 
@@ -1088,8 +1081,13 @@ input[type="submit"]:hover {
   display: flex;
   justify-content: center;
   text-align: center;
-  column-gap: 3.6%;
+  column-gap: 3%;
   margin-block-start: 26px;
+}
+.sns img {
+  height: 28px;   /* 高さを統一 */
+  width: auto;    /* 横は自動 */
+  display: block; /* 余計な隙間防止 */
 }
 
 .footer-copyright {
@@ -1102,6 +1100,217 @@ input[type="submit"]:hover {
   color: #fff;
   height: 92px;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
