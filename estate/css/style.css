@@ -263,7 +263,7 @@ img {
 .left-block {
   position: relative;
   z-index: 10;
-  width: 600px;
+  width: 65.21%;
 }
 
 .left-block .right-text {
@@ -277,15 +277,15 @@ img {
 
 .right-black {
   position: relative;
-  margin-left: -180px;
+  margin-left: -20%;
   z-index: 2;
-  margin-top: 145px;
-  width: 500px;
+  margin-top: 15.76%;
+  width: 54.34%;
 }
 
 .second-block {
   position: relative;
-  margin-right: -180px;
+  margin-right: -20%;
   margin-left: unset;
 }
 
@@ -323,11 +323,21 @@ h3 {
   line-height: 1.32;
   letter-spacing: 0;
 }
+@media (min-width: 767px) and (max-width: 858px) {
+  h3 {
+    font-size: 2rem;
+  }
+}
 
 span {
   font-size: 1.6rem;
   line-height: 1.5625;
   letter-spacing: 0;
+}
+@media (min-width: 767px) and (max-width: 858px) {
+  span {
+    font-size: 1.4rem;
+  }
 }
 
 .second-item {

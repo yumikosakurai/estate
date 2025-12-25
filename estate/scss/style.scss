@@ -8,6 +8,11 @@
     @content;
   }
 }
+@mixin tablet {
+  @media (min-width: 767px) and (max-width: 858px) {
+    @content;
+  }
+}
 
 @mixin pc {
   @media (min-width: 768px) {
@@ -261,7 +266,7 @@ img {
 .left-block {
   position: relative;
   z-index: 10;
-  width: 600px;
+  width: 65.21%;
 }
 
 .left-block .right-text {
@@ -275,16 +280,15 @@ img {
 
 .right-black {
   position: relative;
-  margin-left: -180px;
+  margin-left: -20%;
   z-index: 2;
-  margin-top: 145px;
-  width: 500px;
+  margin-top: 15.76%;
+  width: 54.34%;
 }
-
 
 .second-block {
   position: relative;
-  margin-right: -180px;
+  margin-right: -20%;
   margin-left: unset;
 }
 
@@ -329,20 +333,25 @@ h3 {
   font-size: 2.5rem;
   line-height: calc(33 /25);
   letter-spacing: 0;
-
+  @include tablet {
+    font-size: 2rem;
+  }
 }
+
 
 span {
   font-size: 1.6rem;
   line-height: calc(25 /16);
   letter-spacing: 0;
+   @include tablet {
+    font-size: 1.4rem;
+  }
 }
 
 .second-item {
   display: flex;
   flex-direction: row-reverse;
 }
-
 
 // ここからworks
 .works {
