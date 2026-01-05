@@ -412,8 +412,8 @@ img {
 }
 @media (max-width: 767px) {
   .title {
-    -webkit-padding-after: 38px;
-            padding-block-end: 38px;
+    -webkit-padding-after: 37px;
+            padding-block-end: 37px;
   }
 }
 
@@ -608,6 +608,8 @@ span {
   .works {
     -webkit-padding-before: 45px;
             padding-block-start: 45px;
+    -webkit-padding-after: 42px;
+            padding-block-end: 42px;
   }
 }
 
@@ -653,6 +655,12 @@ span {
   }
 }
 
+@media (max-width: 767px) {
+  .works-item:last-child .works-text {
+    -webkit-margin-after: 0;
+            margin-block-end: 0;
+  }
+}
 .works-text h4 {
   font-size: 16px;
   font-weight: 500;
@@ -739,6 +747,14 @@ span {
   -webkit-padding-after: 80px;
           padding-block-end: 80px;
 }
+@media (max-width: 767px) {
+  .news {
+    -webkit-padding-before: 45px;
+            padding-block-start: 45px;
+    -webkit-padding-after: 50px;
+            padding-block-end: 50px;
+  }
+}
 
 .news__blocks {
   display: -webkit-box;
@@ -749,6 +765,15 @@ span {
           column-gap: 6.52%;
   max-width: 920px;
   margin: 0 auto;
+}
+@media (max-width: 767px) {
+  .news__blocks {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 45px;
+  }
 }
 
 .news-block {
@@ -796,6 +821,13 @@ span {
   -webkit-column-gap: 17.6923076923%;
      -moz-column-gap: 17.6923076923%;
           column-gap: 17.6923076923%;
+}
+@media (max-width: 767px) {
+  .news-block__item a {
+    -webkit-column-gap: 6.0317460317%;
+       -moz-column-gap: 6.0317460317%;
+            column-gap: 6.0317460317%;
+  }
 }
 .news-block__item:first-child {
   -webkit-padding-before: 23px;
@@ -885,6 +917,14 @@ span {
   -webkit-padding-after: 80px;
           padding-block-end: 80px;
 }
+@media (max-width: 767px) {
+  .company {
+    -webkit-padding-before: 43px;
+            padding-block-start: 43px;
+    -webkit-padding-after: 50px;
+            padding-block-end: 50px;
+  }
+}
 
 .contact-info {
   display: -webkit-box;
@@ -892,12 +932,26 @@ span {
   display: flex;
   position: relative;
 }
+@media (max-width: 767px) {
+  .contact-info {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    gap: 20px;
+  }
+}
 
 .location-map {
   position: relative;
   width: 100%;
   height: 400px;
   z-index: 2;
+}
+@media (max-width: 767px) {
+  .location-map {
+    height: 300px;
+  }
 }
 
 .location-map iframe {
@@ -919,6 +973,14 @@ span {
   width: 83%;
   height: 262px;
 }
+@media (max-width: 767px) {
+  .right-black-company {
+    margin-top: unset;
+    margin-left: unset;
+    width: 100%;
+    height: 202px;
+  }
+}
 
 .company-second-image {
   display: -webkit-box;
@@ -938,6 +1000,11 @@ span {
           transform: translate(-50%, -50%);
   z-index: 3;
   color: #fff;
+}
+@media (max-width: 767px) {
+  .location-info {
+    left: 40%;
+  }
 }
 
 .name {
