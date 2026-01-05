@@ -473,7 +473,7 @@ img {
   padding-block-end: 68px;
 
   @include sp {
-    padding-block-end: 38px;
+    padding-block-end: 37px;
 
   }
 }
@@ -642,6 +642,7 @@ span {
 
   @include sp {
     padding-block-start: 45px;
+    padding-block-end: 42px;
 
   }
 }
@@ -663,9 +664,10 @@ span {
     width: 100%;
   }
 }
+
 .works-image :first-child {
-    margin-block-start: 0;
-  }
+  margin-block-start: 0;
+}
 
 .works-text {
   margin-block-start: 19px;
@@ -673,6 +675,13 @@ span {
   @include sp {
     margin-block-start: 9px;
     margin-block-end: 22px;
+  }
+}
+
+// SP の最後だけ下余白 0 にする
+@include sp {
+  .works-item:last-child .works-text {
+    margin-block-end: 0;
   }
 }
 
@@ -754,6 +763,11 @@ span {
   background-color: rgba(77, 150, 0, 0.102);
   padding-block-start: 70px;
   padding-block-end: 80px;
+
+  @include sp {
+    padding-block-start: 45px;
+    padding-block-end: 50px;
+  }
 }
 
 .news__blocks {
@@ -762,6 +776,11 @@ span {
   // background-color:rgba(77, 150, 0, 0.102);
   max-width: 920px;
   margin: 0 auto;
+
+  @include sp {
+    flex-direction: column;
+    gap: 45px;
+  }
 }
 
 .news-block {
@@ -800,6 +819,11 @@ span {
   a {
     display: flex;
     column-gap: calc(69 / 390 * 100%);
+
+    @include sp {
+      column-gap: calc(19 / 315 * 100%);
+
+    }
   }
 
   &:first-child {
@@ -811,7 +835,6 @@ span {
     height: 74px;
   }
 }
-
 
 // .news-block__item li:last-child {
 //   border-bottom: none;
@@ -891,11 +914,23 @@ span {
 .company {
   padding-block-start: 73px;
   padding-block-end: 80px;
+
+  @include sp {
+    padding-block-start: 43px;
+    padding-block-end: 50px;
+
+  }
+
 }
 
 .contact-info {
   display: flex;
   position: relative;
+
+  @include sp {
+    flex-direction: column;
+    gap: 20px;
+  }
 }
 
 .location-map {
@@ -903,6 +938,11 @@ span {
   width: 100%;
   height: 400px;
   z-index: 2;
+
+  @include sp {
+    height: 300px;
+
+  }
 }
 
 .location-map iframe {
@@ -924,6 +964,13 @@ span {
   z-index: 1;
   width: 83%;
   height: 262px;
+
+  @include sp {
+    margin-top: unset;
+    margin-left: unset;
+    width: 100%;
+    height: 202px;
+  }
 }
 
 .company-second-image {
@@ -942,8 +989,10 @@ span {
   z-index: 3;
 
   color: #fff; // 緑の上なので白文字
+   @include sp {
+ left: 40%;
 }
-
+}
 .name {
   font-size: 2rem;
   font-weight: 600;
