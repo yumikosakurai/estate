@@ -37,6 +37,10 @@
   }
 }
 
+
+// @include pc {
+// }
+
 body {
   font: {
     family: "Yu Mincho", "YuMincho", "游明朝", "Noto Serif JP", "Hiragino Mincho ProN", "IPAexMincho", serif;
@@ -369,10 +373,12 @@ img {
   z-index: 10;
   color: #ffffff;
   line-height: calc(70 / 40);
-  letter-spacing: vw(12, 1080);
+  // letter-spacing: vw(12, 1080);
+  letter-spacing: 0.7em;
 
   @include sp {
     top: 38%;
+    left: 10%;
   }
 }
 
@@ -393,8 +399,22 @@ img {
   text-indent: -0.5em;
 
   @include sp {
+    display: flex;
     font-size: vw(30, 375);
     line-height: calc(60 / 30);
+    justify-content: center;
+    letter-spacing: 30%;
+  }
+}
+
+.fv-catch .fv-text p {
+  @include sp {
+    display: flex;
+    flex-direction: column;
+    gap: 1.6rem;
+    /* 行間。デザインに合わせて調整 */
+    text-align: center;
+    align-items: center;
   }
 }
 
@@ -416,6 +436,8 @@ img {
   @include sp {
     display: block;
     font-size: vw(25, 375);
+    top: 38%;
+    right: 15%;
   }
 
 
@@ -429,9 +451,13 @@ img {
     font-weight: 500;
     // line-height: 118%;
     letter-spacing: 0.118em;
+
+    @include sp {
+      font-size: vw(25, 375);
+      letter-spacing: 0.119em;
+    }
   }
 }
-
 
 .about-catch {
   p {
@@ -442,9 +468,13 @@ img {
     line-height: calc(48 / 18);
     letter-spacing: 0.37em;
 
+    @include sp {
+      font-size: vw(16, 375);
+      letter-spacing: 0.25em;
+      line-height: calc(26 / 16);
+    }
   }
 }
-
 
 // ここからservice
 
@@ -754,6 +784,11 @@ span {
   padding: 1.5rem 1.5rem 0.6rem;
   box-sizing: border-box;
   pointer-events: all;
+
+  @include sp {
+    width: 315px;
+    padding: 2rem 2rem 1.4rem;
+  }
 }
 
 .modal-item__image {
@@ -762,6 +797,14 @@ span {
 
 .modal-item__name {
   padding-block-start: 0.9rem;
+
+  @include sp {
+    padding-block-start: 0.7rem;
+
+  }
+}
+#modalText {
+  line-height: calc(25 / 16);
 }
 
 // ここからNEWS
@@ -1571,7 +1614,7 @@ textarea {
     width: 100%;
     margin-block-start: 4.5rem;
   }
-  
+
   @media screen and (max-width: 370px) {
     width: 100%;
     margin-block-start: 5rem;
@@ -1610,6 +1653,11 @@ input[type="submit"]:hover {
 .footer {
   padding-block-start: 80px;
   padding-block-end: 80px;
+
+  @include sp {
+    padding-block-start: 50px;
+    padding-block-end: 50px;
+  }
 }
 
 .company-name {
@@ -1619,11 +1667,21 @@ input[type="submit"]:hover {
   font-size: 20px;
   font-weight: 500px;
   line-height: calc(33 /20);
+
+  @include sp {
+    padding-block-end: 20px;
+  }
 }
 
 .footer__nav {
   margin-block-start: 25px;
   margin-inline-start: 105px;
+
+  @include sp {
+    margin-block-start: 0px;
+    margin-inline-start: 0px;
+
+  }
 }
 
 .footer__nav ul {
@@ -1633,8 +1691,13 @@ input[type="submit"]:hover {
   font-weight: 500;
   line-height: calc(33 / 18);
 
-  @include tablet {
+  @include sp {
     font-size: 1.6rem;
+    column-gap: 9%;
+    row-gap: 5px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-block-start: 20px;
   }
 }
 
@@ -1647,7 +1710,11 @@ input[type="submit"]:hover {
   justify-content: center;
   text-align: center;
   column-gap: 3%;
-  margin-block-start: 26px;
+  margin-block-start: 35px;
+
+  @include sp {
+    column-gap: 9.5%;
+  }
 }
 
 .sns img {
@@ -1670,6 +1737,13 @@ input[type="submit"]:hover {
   height: 92px;
 }
 
+.footer-copyright .mark {
+  @include sp {
+    text-align: center;
+    justify-content: center;
+  }
+}
+
 .pagetop {
   position: fixed;
   right: 20px;
@@ -1677,6 +1751,8 @@ input[type="submit"]:hover {
 
   width: 60px;
   height: 60px;
+  z-index: 5;
+
 
   & img {
     width: 100%;
