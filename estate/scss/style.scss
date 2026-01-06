@@ -31,6 +31,12 @@
   }
 }
 
+@include pc {
+  .sp-only {
+    display: none;
+  }
+}
+
 body {
   font: {
     family: "Yu Mincho", "YuMincho", "游明朝", "Noto Serif JP", "Hiragino Mincho ProN", "IPAexMincho", serif;
@@ -989,10 +995,12 @@ span {
   z-index: 3;
 
   color: #fff; // 緑の上なので白文字
-   @include sp {
- left: 40%;
+
+  @include sp {
+    left: 40%;
+  }
 }
-}
+
 .name {
   font-size: 2rem;
   font-weight: 600;
@@ -1039,6 +1047,12 @@ span {
   padding-block-start: 73px;
   padding-block-end: 80px;
   background-color: rgba(77, 150, 0, 0.102);
+
+  @include sp {
+    padding-block-start: 43px;
+    padding-block-end: 50px;
+
+  }
 }
 
 .contact-title {
@@ -1050,6 +1064,11 @@ span {
   font-size: 2rem;
   font-weight: 500;
   line-height: calc(33 / 20);
+
+  @include sp {
+    margin-inline-start: 0;
+
+  }
 }
 
 .form {
@@ -1061,8 +1080,11 @@ span {
   font-weight: 500;
   line-height: calc(33 / 20);
 
-  @media screen and (max-width: 767px) {
-    margin-block-start: 3rem;
+  @include sp {
+    margin-inline-start: 0;
+    margin-block-start: 0;
+    margin-inline-end: 0;
+
   }
 }
 
@@ -1078,17 +1100,11 @@ span {
 
 .form__item {
 
-  // display: flex;
-  // column-gap: calc(30 /880 * 100%);
-  // align-items: flex-start;
   &--column {
     flex-direction: column;
+    // margin-block-start: 30px;
   }
 
-  @media screen and (max-width: 767px) {
-    display: block;
-
-  }
 }
 
 .flex-dl {
@@ -1102,15 +1118,51 @@ span {
     flex: 1;
     height: 5rem;
   }
+
+  @include sp {
+    display: block;
+    margin-block-start: 30px;
+    // flex: unset;
+  }
+}
+
+.flex-dl {
+  dt {
+    @include sp {
+      width: auto;
+    }
+  }
+}
+
+.flex-dl.is-horizontal {
+  @include sp {
+    display: flex;
+    align-items: center;
+  }
+}
+
+.flex-dl.is-horizontal .form__label {
+  @include sp {
+    flex-shrink: 0;
+    white-space: nowrap;
+    margin-inline-end: 0;
+  }
 }
 
 .form__item:not(:first-of-type) {
   margin-block-start: 4.3rem;
 
-  @media screen and (max-width: 767px) {
-    margin-block-start: 1.5rem;
+  @include sp {
+    margin-block-start: 2.5rem;
   }
 }
+
+.form__item.form-dl:not(:first-of-type) {
+  @include sp {
+    margin-block-start: 11px;
+  }
+}
+
 
 .form__label {
   font-size: 20px;
@@ -1118,13 +1170,20 @@ span {
   align-items: center;
   line-height: calc(33 / 20);
   width: 17rem;
-  // padding-block-start: 0.5rem;
 
-  @media screen and (max-width: 767px) {
+  @include sp {
     width: 100%;
-    font-size: 1.8rem;
-    line-height: calc(33 / 18);
-    padding-block-start: 0.4rem;
+    font-size: 2rem;
+    line-height: calc(33 / 20);
+    padding-block-start: 0.6rem;
+    letter-spacing: 0;
+  }
+}
+
+.form__item .form__label.contact-check__title {
+  @include sp {
+    padding-block-start: 0;
+    line-height: 1.5;
   }
 }
 
@@ -1199,13 +1258,33 @@ span {
 .form-radio {
   display: flex;
   column-gap: 50px;
+
+  @include sp {
+    margin-left: 50px;
+    column-gap: 15px;
+  }
+}
+
+.form-radio label {
+  @include sp {
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 6px;
+    margin-right: 6px;
+  }
+}
+
+.form-radio span {
+  @include sp {
+    white-space: nowrap;
+  }
 }
 
 .form__textarea {
   flex: 1;
   font-weight: normal;
 }
-
 
 // 性別のradioボタン
 .form-radio {
@@ -1215,7 +1294,17 @@ span {
     cursor: pointer;
     margin-right: 24px;
     line-height: 1.4;
+
+    @include sp {
+      display: inline-flex;
+      flex-direction: row;
+      align-items: center;
+      // gap: 6px;
+      // margin-right: 6px;
+    }
+
   }
+
 
   input[type="radio"] {
     position: absolute;
@@ -1226,6 +1315,10 @@ span {
     position: relative;
     padding-left: 42px;
     font-size: 1.8rem;
+
+    @include sp {
+      padding-left: 30px;
+    }
 
     /* 外側の白丸 */
     &::before {
@@ -1272,8 +1365,7 @@ input[type="email"] {
   font-size: 1.7rem;
   background-color: #fff;
 
-  @media screen and (max-width: 767px) {
-    height: 50px;
+  @include sp {
     font-size: 1.6rem;
   }
 }
@@ -1340,6 +1432,10 @@ textarea {
 .contact-check {
   padding-top: 1.7rem;
 
+  @include sp {
+    padding-top: 0;
+  }
+
   &__title {
     white-space: nowrap;
   }
@@ -1357,7 +1453,13 @@ textarea {
     align-items: center;
     cursor: pointer;
     box-sizing: border-box;
-    padding: 8px 0; // 縦の余白だけ
+    // padding: 8px 0;  縦の余白だけ
+
+    @include sp {
+      width: auto;
+      padding: 0;
+      flex: none;
+    }
   }
 
   input[type="checkbox"] {
@@ -1398,10 +1500,26 @@ textarea {
       transform: translateY(-60%) rotate(-45deg);
       opacity: 0;
     }
+
+    @include sp {
+      // padding-left: 29px;
+      font-size: 1.6rem;
+      line-height: calc(25 / 16);
+      font-weight: 500;
+    }
   }
 
   input[type="checkbox"]:checked+span::after {
     opacity: 1;
+  }
+
+  @include sp {
+    // display: block;
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    // gap: 5px 16px;
+    row-gap: 5px;
+    margin-inline-start: 0;
   }
 }
 
@@ -1428,6 +1546,10 @@ textarea {
   font-size: 1.8rem;
   line-height: calc(31 / 18);
   -webkit-overflow-scrolling: touch;
+
+  @include sp {
+    height: 323px;
+  }
 }
 
 .form__input {
@@ -1446,10 +1568,10 @@ textarea {
   width: 300px;
 
   @media screen and (max-width: 767px) {
-    width: 33.5rem;
-    margin-block-start: 5rem;
+    width: 100%;
+    margin-block-start: 4.5rem;
   }
-
+  
   @media screen and (max-width: 370px) {
     width: 100%;
     margin-block-start: 5rem;
@@ -1470,13 +1592,11 @@ input[type="submit"] {
   display: flex;
   padding-bottom: 2px;
 
-  @media screen and (max-width: 767px) {
+  @include sp {
     font-size: 2rem;
     line-height: calc(26 / 20);
-    height: 41px;
     padding-block-start: unset;
     padding-block-end: unset;
-
   }
 }
 
