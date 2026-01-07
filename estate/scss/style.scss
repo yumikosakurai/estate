@@ -185,6 +185,39 @@ img {
   //   margin: 0 auto;
   // }
 }
+.header__nav {
+  ul {
+    display: flex;
+    gap: 32px;
+  }
+}
+
+.nav-link {
+  position: relative;
+  text-decoration: none;
+  color: #fff;
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: 1px;
+    background: #fff;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease;
+  }
+
+  &:hover::after {
+    transform: scaleX(1);
+  }
+
+  &.is-active::after {
+    transform: scaleX(1);
+  }
+}
 
 /* PCでは非表示 */
 // @include pc {

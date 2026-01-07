@@ -59,12 +59,12 @@
 			<div class="header__nav">
 				<nav>
 					<ul>
-						<li><a href="#about">ABOUT</a></li>
-						<li><a href="#service">SERVICE</a></li>
-						<li><a href="#works">WORKS</a></li>
-						<li><a href="#news">NEWS</a></li>
-						<li><a href="#company">COMPANY</a></li>
-						<li><a href="#contact">CONTACT</a></li>
+						<li><a href="#about" class="nav-link">ABOUT</a></li>
+    				<li><a href="#service" class="nav-link">SERVICE</a></li>
+						<li><a href="#works" class="nav-link">WORKS</a></li>
+						<li><a href="#news" class="nav-link">NEWS</a></li>
+						<li><a href="#company" class="nav-link">COMPANY</a></li>
+						<li><a href="#contact" class="nav-link">CONTACT</a></li>
 					</ul>
 				</nav>
 
@@ -789,6 +789,19 @@
 			});
 		});
 	</script>
+	  <!-- jQuery本体 -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+  <!-- 自分で書いたスクリプト -->
+  <script>
+    $(function () {
+      $('.nav-link').on('click', function () {
+        $('.nav-link').removeClass('is-active');
+        $(this).addClass('is-active');
+      });
+    });
+  </script>
+
 
 
 </body>

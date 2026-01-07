@@ -41,6 +41,15 @@ jQuery(function ($) {
 	$(".modal__bg, .modal__close").click(function () {
 		$(".modal").hide();
 	});
+
+	// ナビの下線
+	$(function () {
+  $('.nav-link').on('click', function () {
+    $('.nav-link').removeClass('is-active');
+    $(this).addClass('is-active');
+  });
+});
+
 });
 
 
