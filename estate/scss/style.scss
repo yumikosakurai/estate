@@ -163,10 +163,23 @@ img {
   box-sizing: border-box;
   height: 8rem;
 
+    transition: background-color 0.3s ease;
+
   @include sp {
     height: 5rem;
   }
+
+    &.is-bg {
+    background-color: #4D9600;
+  }
 }
+// .header {
+//   transition: background-color 0.3s ease;
+
+//   &.is-bg {
+//     background-color: #4D9600;
+//   }
+// }
 
 .header__inner {
   display: flex;
@@ -185,6 +198,7 @@ img {
   //   margin: 0 auto;
   // }
 }
+
 .header__nav {
   ul {
     display: flex;
@@ -264,7 +278,7 @@ img {
   left: 50%;
   transform: translateX(-50%);
   // left: 0;
-  width: 24px;
+  width: 32px;
   height: 4px;
   border-radius: 2px;
   background-color: #4D9600;
@@ -467,14 +481,20 @@ img {
   column-gap: vw(45, 1080);
 
   @include sp {
-    display: block;
+    // display: block;
+    flex-direction: column-reverse;
+    align-items: center;
+    row-gap: vw(24, 375);
     font-size: vw(25, 375);
-    top: 38%;
-    right: 15%;
+    top: 50%;
+    left: 50%;
+    right: initial;
+    transform: translate(-50%, -50%);
   }
 
 
 }
+
 
 .about-text {
   h2 {
@@ -836,6 +856,7 @@ span {
 
   }
 }
+
 #modalText {
   line-height: calc(25 / 16);
 }
@@ -1255,6 +1276,13 @@ span {
     letter-spacing: 0;
   }
 }
+input,
+textarea {
+  &::placeholder {
+    color: rgba(0, 0, 0, 0.3);
+    font-size: 1.8rem; 
+  }
+}
 
 .form__item .form__label.contact-check__title {
   @include sp {
@@ -1519,20 +1547,35 @@ textarea {
 
 // 内容のチェックボックス
 .form-checkbox {
-  display: flex;
-  flex-wrap: wrap;
-  margin-inline-start: 15px;
+  display: grid;
+  // flex-wrap: wrap;
+  // margin-inline-start: 15px;
+  grid-template-columns: repeat(4, 1fr);
+  row-gap: 1.5rem;
+  justify-items: flex-start;
+
+  @include sp {
+    // display: block;
+    // display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    // gap: 5px 16px;
+    row-gap: 5px;
+    // margin-inline-start: 0;
+  }
+
 
   label {
-    width: 25%;
-    display: flex;
-    align-items: center;
+    // width: 25%;
+    // display: flex;
+    display: inline-block;
+    // align-items: center;
     cursor: pointer;
     box-sizing: border-box;
     // padding: 8px 0;  縦の余白だけ
 
     @include sp {
-      width: auto;
+      display: inline-block;
+      // width: auto;
       padding: 0;
       flex: none;
     }
@@ -1589,14 +1632,14 @@ textarea {
     opacity: 1;
   }
 
-  @include sp {
-    // display: block;
-    display: grid;
-    grid-template-columns: repeat(2, auto);
-    // gap: 5px 16px;
-    row-gap: 5px;
-    margin-inline-start: 0;
-  }
+  // @include sp {
+  //   // display: block;
+  //   display: grid;
+  //   grid-template-columns: repeat(2, 1fr);
+  //   // gap: 5px 16px;
+  //   row-gap: 5px;
+  //   margin-inline-start: 0;
+  // }
 }
 
 .text-title {
@@ -1633,10 +1676,26 @@ textarea {
   min-height: 0; // ← これがないと overflow が効かない
 }
 
-.text {
-  margin-top: 2em;
-  /* ← 2行分あけるイメージ */
+.law-item {
+  // &:not(:first-child) {
+    // 最初以外に適用したいスタイル
+    margin-top: 2em;
+  // }
 }
+.law-item-list li {
+  list-style: none; 
+  padding-left: 1em;
+  text-indent: -1em;
+}
+
+.contact-address-item {
+  margin-top: 1em; 
+}
+
+// .text {
+//   margin-top: 2em;
+//   /* ← 2行分あけるイメージ */
+// }
 
 .contact__button {
   margin-block-start: 9rem;
@@ -1647,7 +1706,7 @@ textarea {
     width: 100%;
     margin-block-start: 4.5rem;
   }
-
+  
   @media screen and (max-width: 370px) {
     width: 100%;
     margin-block-start: 5rem;
@@ -1785,6 +1844,15 @@ input[type="submit"]:hover {
   width: 60px;
   height: 60px;
   z-index: 5;
+
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease;
+
+  &.is-show {
+    opacity: 1;
+    visibility: visible;
+  }
 
 
   & img {
