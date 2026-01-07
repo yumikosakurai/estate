@@ -50,6 +50,36 @@ jQuery(function ($) {
   });
 });
 
+// トップに戻るボタンが消える
+
+$(window).on('load', function () {
+  const $pagetop = $('.pagetop');
+  // const fvHeight = $('#fv').outerHeight();
+
+  $(window).on('scroll', function () {
+    if ($(this).scrollTop() > 100) {
+      $pagetop.addClass('is-show');
+    } else {
+      $pagetop.removeClass('is-show');
+    }
+  });
+});
+
+// aboutからナビの背景に色をつける
+
+$(function () {
+  const $header = $('.header');
+  const aboutTop = $('#about').offset().top;
+
+  $(window).on('scroll', function () {
+    if ($(this).scrollTop() >= aboutTop) {
+      $header.addClass('is-bg');
+    } else {
+      $header.removeClass('is-bg');
+    }
+  });
+});
+
 });
 
 

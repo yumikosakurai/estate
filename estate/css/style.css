@@ -115,11 +115,16 @@ img {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   height: 8rem;
+  -webkit-transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease;
 }
 @media (max-width: 767px) {
   .header {
     height: 5rem;
   }
+}
+.header.is-bg {
+  background-color: #4D9600;
 }
 
 .header__inner {
@@ -196,7 +201,7 @@ img {
   left: 50%;
   -webkit-transform: translateX(-50%);
           transform: translateX(-50%);
-  width: 24px;
+  width: 32px;
   height: 4px;
   border-radius: 2px;
   background-color: #4D9600;
@@ -408,10 +413,20 @@ img {
 }
 @media (max-width: 767px) {
   .about-text {
-    display: block;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: column-reverse;
+            flex-direction: column-reverse;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    row-gap: 6.4vw;
     font-size: 6.6666666667vw;
-    top: 38%;
-    right: 15%;
+    top: 50%;
+    left: 50%;
+    right: initial;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
   }
 }
 
@@ -1305,6 +1320,32 @@ span {
   }
 }
 
+input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
+  color: rgba(0, 0, 0, 0.3);
+  font-size: 1.8rem;
+}
+
+input::-moz-placeholder, textarea::-moz-placeholder {
+  color: rgba(0, 0, 0, 0.3);
+  font-size: 1.8rem;
+}
+
+input:-ms-input-placeholder, textarea:-ms-input-placeholder {
+  color: rgba(0, 0, 0, 0.3);
+  font-size: 1.8rem;
+}
+
+input::-ms-input-placeholder, textarea::-ms-input-placeholder {
+  color: rgba(0, 0, 0, 0.3);
+  font-size: 1.8rem;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: rgba(0, 0, 0, 0.3);
+  font-size: 1.8rem;
+}
+
 @media (max-width: 767px) {
   .form__item .form__label.contact-check__title {
     -webkit-padding-before: 0;
@@ -1577,29 +1618,26 @@ textarea {
 }
 
 .form-checkbox {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
-  -webkit-margin-start: 15px;
-          margin-inline-start: 15px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  row-gap: 1.5rem;
+  justify-items: flex-start;
+}
+@media (max-width: 767px) {
+  .form-checkbox {
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 5px;
+  }
 }
 .form-checkbox label {
-  width: 25%;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  display: inline-block;
   cursor: pointer;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
 }
 @media (max-width: 767px) {
   .form-checkbox label {
-    width: auto;
+    display: inline-block;
     padding: 0;
     -webkit-box-flex: 0;
         -ms-flex: none;
@@ -1652,15 +1690,6 @@ textarea {
 .form-checkbox input[type=checkbox]:checked + span::after {
   opacity: 1;
 }
-@media (max-width: 767px) {
-  .form-checkbox {
-    display: grid;
-    grid-template-columns: repeat(2, auto);
-    row-gap: 5px;
-    -webkit-margin-start: 0;
-            margin-inline-start: 0;
-  }
-}
 
 .text-title {
   font-size: 2rem;
@@ -1701,9 +1730,18 @@ textarea {
   min-height: 0;
 }
 
-.text {
+.law-item {
   margin-top: 2em;
-  /* ← 2行分あけるイメージ */
+}
+
+.law-item-list li {
+  list-style: none;
+  padding-left: 1em;
+  text-indent: -1em;
+}
+
+.contact-address-item {
+  margin-top: 1em;
 }
 
 .contact__button {
@@ -1902,6 +1940,14 @@ input[type=submit]:hover {
   width: 60px;
   height: 60px;
   z-index: 5;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease;
+}
+.pagetop.is-show {
+  opacity: 1;
+  visibility: visible;
 }
 .pagetop img {
   width: 100%;
