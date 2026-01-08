@@ -550,7 +550,7 @@ img {
 .left-block {
   position: relative;
   z-index: 10;
-  width: 64%;
+  width: 65.21%;
 }
 @media (max-width: 767px) {
   .left-block {
@@ -597,6 +597,15 @@ img {
 @media (max-width: 767px) {
   .second-block {
     margin-right: unset;
+  }
+}
+
+@media (max-width: 767px) {
+  .second-image {
+    height: 146px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
   }
 }
 
@@ -1068,20 +1077,22 @@ span {
 }
 
 .location-map {
-  width: 600px;
-  max-width: 100%;
-  aspect-ratio: 3/2;
   position: relative;
+  width: 100%;
+  max-height: 400px;
+  height: 37vw;
   z-index: 2;
-  -ms-flex-item-align: start;
-      align-self: flex-start;
+}
+@media (max-width: 767px) {
+  .location-map {
+    height: 300px;
+  }
 }
 
 .location-map iframe {
-  position: absolute;
-  inset: 0;
   width: 100%;
   height: 100%;
+  border: 0;
 }
 
 .company-second-image img {
@@ -1130,12 +1141,22 @@ span {
     left: 40%;
   }
 }
+@media (min-width: 530px) and (max-width: 767px) {
+  .location-info {
+    left: 30%;
+  }
+}
 
 .name {
   font-size: 2rem;
   font-weight: 600;
   line-height: 1.65;
   white-space: nowrap;
+}
+@media (max-width: 350px) {
+  .name {
+    font-size: 1.8rem;
+  }
 }
 
 .address {
@@ -1146,17 +1167,32 @@ span {
   font-weight: 600;
   white-space: nowrap;
 }
+@media (max-width: 350px) {
+  .address {
+    font-size: 1.4rem;
+  }
+}
 
 .tel {
   font-size: 1.6rem;
   line-height: 1.5625;
   font-weight: 600;
 }
+@media (max-width: 350px) {
+  .tel {
+    font-size: 1.4rem;
+  }
+}
 
 .contact-link-tel {
   font-size: 2.5rem;
   line-height: 1;
   font-weight: 600;
+}
+@media (max-width: 350px) {
+  .contact-link-tel {
+    font-size: 2rem;
+  }
 }
 
 .e-mail {
@@ -1165,6 +1201,11 @@ span {
   font-size: 1.6rem;
   line-height: 1.5625;
   font-weight: 600;
+}
+@media (max-width: 350px) {
+  .e-mail {
+    font-size: 1.4rem;
+  }
 }
 
 .tel-link {
@@ -1230,6 +1271,11 @@ span {
             margin-block-start: 0;
     -webkit-margin-end: 0;
             margin-inline-end: 0;
+  }
+}
+@media (max-width: 340px) {
+  .form {
+    font-size: 1.2rem;
   }
 }
 
@@ -1853,6 +1899,8 @@ input[type=submit]:hover {
             margin-block-start: 0px;
     -webkit-margin-start: 0px;
             margin-inline-start: 0px;
+    -webkit-margin-end: 0;
+            margin-inline-end: 0;
   }
 }
 
