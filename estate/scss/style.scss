@@ -163,16 +163,17 @@ img {
   box-sizing: border-box;
   height: 8rem;
 
-    transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease;
 
   @include sp {
     height: 5rem;
   }
 
-    &.is-bg {
+  &.is-bg {
     background-color: #4D9600;
   }
 }
+
 // .header {
 //   transition: background-color 0.3s ease;
 
@@ -183,7 +184,7 @@ img {
 
 .header__inner {
   display: flex;
-  justify-content: space-between;
+  // justify-content: space-between;
   align-items: center;
   width: 100%;
   // max-width: 980px;
@@ -191,6 +192,7 @@ img {
   margin-inline: auto;
   color: white;
   padding-block-start: vw(24, 1080);
+  margin-inline-start: vw(45, 1080);
 
   // @include sp {
   //   max-width: 767px;
@@ -342,7 +344,6 @@ img {
 
 .site-title {
   font-size: vw(20, 1080);
-  font-weight: 500;
   line-height: 100%;
   padding: vw(5, 1080);
 
@@ -356,9 +357,9 @@ img {
 
 .header__nav {
   font-size: vw(18, 1080);
-  font-weight: 500;
   line-height: 100%;
   padding: vw(5, 1080);
+  margin-inline-start: vw(106, 1080);
 
   @include sp {
     width: 30rem;
@@ -415,8 +416,8 @@ img {
 
 .fv-catch {
   position: absolute;
-  top: 42%;
-  left: 32%;
+  top: 42.4%;
+  left: 31.7%;
   z-index: 10;
   color: #ffffff;
   line-height: calc(70 / 40);
@@ -474,11 +475,11 @@ img {
 .about-text {
   z-index: 10;
   position: absolute;
-  top: 48%;
+  top: 49.5%;
   right: 40%;
   transform: translateY(-50%);
   display: flex;
-  column-gap: vw(45, 1080);
+  column-gap: vw(35, 1080);
 
   @include sp {
     // display: block;
@@ -501,7 +502,6 @@ img {
     writing-mode: vertical-rl;
     order: 2;
     font-size: vw(30, 1080);
-    font-weight: 500;
     // line-height: 118%;
     letter-spacing: 0.118em;
 
@@ -517,7 +517,6 @@ img {
     writing-mode: vertical-rl;
     order: 1;
     font-size: vw(18, 1080);
-    font-weight: 500;
     line-height: calc(48 / 18);
     letter-spacing: 0.37em;
 
@@ -533,12 +532,12 @@ img {
 
 .service {
   background-color: rgba(77, 150, 0, 0.102);
-  padding-block-start: 75px;
-  padding-block-end: 80px;
+  padding-block-start: 8rem;
+  padding-block-end: 8rem;
 
   @include sp {
-    padding-block-start: 50px;
-    padding-block-end: 50px;
+    padding-block-start: 5rem;
+    padding-block-end: 5rem;
 
   }
 
@@ -546,10 +545,11 @@ img {
 
 .title-wrap {
   display: flex;
-  font-size: 30px;
+  font-size: 3rem;
   justify-content: center;
   color: #4D9600;
-  letter-spacing: 9px;
+  letter-spacing: 0.9rem;
+  line-height: calc(33 / 30);
 }
 
 .title {
@@ -560,6 +560,7 @@ img {
   display: flex;
   justify-content: center;
   padding-block-end: 68px;
+  margin-block-start: 0.6rem;
 
   @include sp {
     padding-block-end: 37px;
@@ -590,7 +591,8 @@ img {
 .left-block {
   position: relative;
   z-index: 10;
-  width: 65.21%;
+  // width: 65.21%;
+  width: 64%;
 
   @include sp {
     width: 100%;
@@ -698,6 +700,10 @@ h3 {
   line-height: calc(33 /25);
   letter-spacing: 0;
 
+  @media (min-width: 767px) and (max-width: 880px) {
+    font-size: 2rem;
+  }
+
   @include sp {
     font-size: 20px;
     line-height: calc(25 / 20);
@@ -708,6 +714,10 @@ span {
   font-size: 1.6rem;
   line-height: calc(25 / 16);
   letter-spacing: 0;
+
+  @media (min-width: 767px) and (max-width: 880px) {
+    font-size: 1.4rem;
+  }
 
   @include tablet {
     font-size: 1.4rem;
@@ -726,8 +736,8 @@ span {
 
 // ここからworks
 .works {
-  padding-block-start: 70px;
-  padding-block-end: 97px;
+  padding-block-start: 8rem;
+  padding-block-end: 9.7rem;
 
   @include sp {
     padding-block-start: 45px;
@@ -738,7 +748,7 @@ span {
 
 .works-items {
   display: flex;
-  column-gap: 4%;
+  column-gap: 4.3%;
 
   @include sp {
     display: block;
@@ -864,11 +874,11 @@ span {
 // ここからNEWS
 .news {
   background-color: rgba(77, 150, 0, 0.102);
-  padding-block-start: 70px;
+  padding-block-start: 80px;
   padding-block-end: 80px;
 
   @include sp {
-    padding-block-start: 45px;
+    padding-block-start: 50px;
     padding-block-end: 50px;
   }
 }
@@ -1015,8 +1025,8 @@ span {
 
 // ここからcompany
 .company {
-  padding-block-start: 73px;
-  padding-block-end: 80px;
+  padding-block-start: 8rem;
+  padding-block-end: 8rem;
 
   @include sp {
     padding-block-start: 43px;
@@ -1036,24 +1046,40 @@ span {
   }
 }
 
+// .location-map {
+//   position: relative;
+//   width: 100%;
+//   max-height: 400px;
+//   height: 37vw;
+
+//   z-index: 2;
+
+//   @include sp {
+//     height: 300px;
+//   }
+// }
+
+// .location-map iframe {
+//   width: 100%;
+//   height: 100%;
+//   border: 0;
+//  }
+
 .location-map {
+  width: 600px;
+  max-width: 100%;
+  aspect-ratio: 3 / 2;
   position: relative;
-  width: 100%;
-  height: 400px;
   z-index: 2;
-
-  @include sp {
-    height: 300px;
-
-  }
+  align-self: flex-start;
 }
 
 .location-map iframe {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
-  border: 0;
 }
-
 
 .company-second-image img {
   width: 100%;
@@ -1276,11 +1302,12 @@ span {
     letter-spacing: 0;
   }
 }
+
 input,
 textarea {
   &::placeholder {
     color: rgba(0, 0, 0, 0.3);
-    font-size: 1.8rem; 
+    font-size: 1.8rem;
   }
 }
 
@@ -1678,18 +1705,19 @@ textarea {
 
 .law-item {
   // &:not(:first-child) {
-    // 最初以外に適用したいスタイル
-    margin-top: 2em;
+  // 最初以外に適用したいスタイル
+  margin-top: 2em;
   // }
 }
+
 .law-item-list li {
-  list-style: none; 
+  list-style: none;
   padding-left: 1em;
   text-indent: -1em;
 }
 
 .contact-address-item {
-  margin-top: 1em; 
+  margin-top: 1em;
 }
 
 // .text {
@@ -1706,7 +1734,7 @@ textarea {
     width: 100%;
     margin-block-start: 4.5rem;
   }
-  
+
   @media screen and (max-width: 370px) {
     width: 100%;
     margin-block-start: 5rem;
@@ -1766,8 +1794,9 @@ input[type="submit"]:hover {
 }
 
 .footer__nav {
-  margin-block-start: 25px;
-  margin-inline-start: 105px;
+  margin-block-start: 2.5rem;
+  margin-inline-start: 10.5rem;
+  margin-inline-end: 10.5rem;
 
   @include sp {
     margin-block-start: 0px;
@@ -1782,6 +1811,10 @@ input[type="submit"]:hover {
   font-size: 1.8rem;
   font-weight: 500;
   line-height: calc(33 / 18);
+
+  @media (min-width: 767px) and (max-width: 910px) {
+    font-size: 1.4rem;
+  }
 
   @include sp {
     font-size: 1.6rem;
