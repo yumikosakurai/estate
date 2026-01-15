@@ -199,6 +199,7 @@ img {
   }
 }
 
+.header {
 .nav-link {
   position: relative;
   text-decoration: none;
@@ -240,6 +241,7 @@ img {
       display: none;
     }
   }
+}
 }
 
 
@@ -1881,6 +1883,16 @@ input[type="submit"]:hover {
     margin-block-start: 30px;
 
   }
+}
+
+// .footer a{
+//   .nav__link:hover {
+//     opacity: 1;
+//   }
+// }
+
+.footer a:hover {
+  opacity: 1;
 }
 
 .sns img {
