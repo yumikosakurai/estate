@@ -2053,25 +2053,6 @@ input[type=submit]:hover {
   }
 }
 
-.footer__nav {
-  -webkit-margin-before: 2.8rem;
-          margin-block-start: 2.8rem;
-  -webkit-margin-start: 10.5rem;
-          margin-inline-start: 10.5rem;
-  -webkit-margin-end: 10.5rem;
-          margin-inline-end: 10.5rem;
-}
-@media (max-width: 767px) {
-  .footer__nav {
-    -webkit-margin-before: 0px;
-            margin-block-start: 0px;
-    -webkit-margin-start: 0px;
-            margin-inline-start: 0px;
-    -webkit-margin-end: 0;
-            margin-inline-end: 0;
-  }
-}
-
 .footer__nav ul {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2111,9 +2092,9 @@ input[type=submit]:hover {
   .footer__nav ul {
     font-size: 1.8rem;
     line-height: 1.8333333333;
-    -webkit-column-gap: 15%;
-       -moz-column-gap: 15%;
-            column-gap: 15%;
+    -webkit-column-gap: 9.5%;
+       -moz-column-gap: 9.5%;
+            column-gap: 9.5%;
     row-gap: 8px;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
