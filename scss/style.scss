@@ -1825,13 +1825,9 @@ input[type="submit"]:hover {
 
 .footer__nav {
   margin-block-start: 2.8rem;
-  // margin-inline-start: 10.5rem;
-  // margin-inline-end: 10.5rem;
 
   @include sp {
     margin-block-start: 0px;
-    // margin-inline-start: 0px;
-    // margin-inline-end: 0;
   }
 }
 
@@ -1883,12 +1879,6 @@ input[type="submit"]:hover {
 
   }
 }
-
-// .footer a{
-//   .nav__link:hover {
-//     opacity: 1;
-//   }
-// }
 
 .footer a:hover {
   opacity: 1;
