@@ -786,6 +786,7 @@ span {
   -webkit-column-gap: 4.3%;
      -moz-column-gap: 4.3%;
           column-gap: 4.3%;
+  cursor: pointer;
 }
 @media (max-width: 767px) {
   .works-items {
@@ -2050,6 +2051,17 @@ input[type=submit]:hover {
   .company-name {
     -webkit-padding-after: 20px;
             padding-block-end: 20px;
+  }
+}
+
+.footer__nav {
+  -webkit-margin-before: 2.8rem;
+          margin-block-start: 2.8rem;
+}
+@media (max-width: 767px) {
+  .footer__nav {
+    -webkit-margin-before: 0px;
+            margin-block-start: 0px;
   }
 }
 
