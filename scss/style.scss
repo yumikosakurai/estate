@@ -221,9 +221,7 @@ img {
     @include sp {
       display: none;
     }
-
   }
-
 
   &:hover::after {
     transform: scaleX(1);
@@ -231,18 +229,27 @@ img {
     @include sp {
       display: none;
     }
-
   }
 
-  &.is-active::after {
-    transform: scaleX(1);
-
-    @include sp {
-      display: none;
+  &:active::after,
+    &:focus-visible::after {
+      transform: scaleX(1);
     }
+
+
+
+  // &.is-active::after {
+  //   transform: scaleX(1);
+
+  //   @include sp {
+  //     display: none;
+  //   }
   }
 }
+.nav-link:focus {
+  outline: none;
 }
+
 
 
 .hamburger {
