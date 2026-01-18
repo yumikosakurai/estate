@@ -90,6 +90,16 @@ img {
 .fv__image {
   position: relative;
 }
+.fv__image::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.15);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 3;
+}
 
 .image-wrap {
   position: relative;
@@ -173,10 +183,6 @@ img {
           transform: scaleX(0);
   -webkit-transform-origin: left;
           transform-origin: left;
-  -webkit-transition: -webkit-transform 0.3s ease;
-  transition: -webkit-transform 0.3s ease;
-  transition: transform 0.3s ease;
-  transition: transform 0.3s ease, -webkit-transform 0.3s ease;
 }
 @media (max-width: 767px) {
   .header .nav-link::after {
@@ -195,6 +201,10 @@ img {
 .header .nav-link:active::after, .header .nav-link:focus-visible::after {
   -webkit-transform: scaleX(1);
           transform: scaleX(1);
+  -webkit-transition: -webkit-transform 0.2s ease;
+  transition: -webkit-transform 0.2s ease;
+  transition: transform 0.2s ease;
+  transition: transform 0.2s ease, -webkit-transform 0.2s ease;
 }
 
 .nav-link:focus {
