@@ -192,14 +192,13 @@ img {
     display: none;
   }
 }
-.header .nav-link.is-active::after {
+.header .nav-link:active::after, .header .nav-link:focus-visible::after {
   -webkit-transform: scaleX(1);
           transform: scaleX(1);
 }
-@media (max-width: 767px) {
-  .header .nav-link.is-active::after {
-    display: none;
-  }
+
+.nav-link:focus {
+  outline: none;
 }
 
 .hamburger {
