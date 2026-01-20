@@ -25,11 +25,11 @@ jQuery(function ($) {
 			prevEl: ".swiper-button-prev", // ← ボタン
 		},
 
-		// autoplay: {
-		// 	delay: 3000, // 自動再生したい場合のみ
-		// },
+		autoplay: {
+			delay: 3000, // 自動再生したい場合のみ
+		},
 
-		// effect: 'fade',
+		effect: 'fade',
 		speed: 1500,
 	});
 

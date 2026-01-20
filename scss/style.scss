@@ -92,7 +92,8 @@ a {
 }
 
 a:hover {
-  opacity: 0.3;
+  opacity: 0.7;
+  cursor: pointer;
 }
 
 img {
@@ -103,8 +104,8 @@ img {
 
 .inner {
   width: 100%;
-  max-width: 980px;
-  padding-inline: vw(30, 1080);
+  max-width: 920px;
+  // padding-inline: vw(30, 1080);
   margin-inline: auto;
 
   @include sp {
@@ -128,46 +129,11 @@ img {
   }
 }
 
-// ここからFV
-
-.fv__image {
-  position: relative;
-  &::before {
-    content: "";
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.15);
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 3;
-  }
+.swiper-slide img {
+  width: 100%;
+  display: block;
 }
 
-.image-wrap {
-  position: relative;
-
-  &__photo,
-  &__grid {
-    img {
-      width: 100%;
-      display: block;
-    }
-  }
-
-  &__grid {
-    position: absolute;
-    inset: 0;
-
-
-    img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      pointer-events: none;
-    }
-  }
-}
 
 .header {
   position: fixed;
@@ -209,7 +175,7 @@ img {
   }
 }
 
-.header {
+
 .nav-link {
   position: relative;
   text-decoration: none;
@@ -220,7 +186,7 @@ img {
     content: "";
     position: absolute;
     left: 0;
-    bottom: 25px;
+    bottom: 29px;
     width: 100%;
     height: 1px;
     background: #fff;
@@ -241,26 +207,16 @@ img {
   }
 
   &:active::after,
-    &:focus-visible::after {
-      transform: scaleX(1);
-      transition: transform 0.2s ease;
-    }
-
-
-
-  // &.is-active::after {
-  //   transform: scaleX(1);
-
-  //   @include sp {
-  //     display: none;
-  //   }
+  &:focus-visible::after {
+    transform: scaleX(1);
+    transition: transform 0.2s ease;
   }
+
 }
+
 .nav-link:focus {
   outline: none;
 }
-
-
 
 .hamburger {
   position: absolute;
@@ -361,7 +317,7 @@ img {
 
   ul {
     display: flex;
-    gap: vw(30, 1080); // 必要なら余白
+    gap: vw(30, 1080); 
     align-items: center;
 
     @include sp {
@@ -396,10 +352,30 @@ img {
 }
 
 // ここからmain
+
+// ここからFV
+
 #fv {
   position: relative;
   z-index: 1; // header より低く
 }
+
+.fv__image {
+  position: relative;
+
+  &::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.15);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 3;
+  }
+}
+
+
 
 .fv-catch {
   position: absolute;
@@ -425,10 +401,14 @@ img {
 }
 
 .fv-text {
+
+  text-shadow: 5px 5px 5px rgba(0, 0, 0, 1);
+
   font: {
     size: vw(40, 1080);
     weight: 600;
   }
+
 
   line-height: calc(70 / 40);
   padding-left: 0.5em;
@@ -486,9 +466,7 @@ img {
     writing-mode: vertical-rl;
     order: 2;
     font-size: vw(30, 1080);
-    // line-heightいらない
     letter-spacing: 0.118em;
-    // white-space: nowrap;
     width: vw(46.88, 1080);
 
     @include sp {
@@ -741,8 +719,7 @@ span {
 
 .works-items {
   display: flex;
-  column-gap: 4.3%;
-  cursor: pointer;
+  column-gap: calc(40 / 880 * 100%);
 
   @include sp {
     display: block;
@@ -752,10 +729,18 @@ span {
 
 .works-item {
   width: 200px;
+  transition: opacity 0.4s !important;
+  cursor: pointer;
+
 
   @include sp {
     width: 100%;
   }
+
+  &:hover {
+    opacity: 0.7 !important;
+  }
+
 }
 
 .works-image :first-child {
@@ -790,6 +775,10 @@ span {
   inset: 0;
   z-index: 9999;
 
+  hover {
+    opacity: 0.7;
+  }
+
   // 背景（薄暗い）
   &__bg {
     position: absolute;
@@ -806,7 +795,7 @@ span {
     justify-content: center;
     align-items: center;
     z-index: 2;
-    pointer-events: none;
+    cursor: pointer;
   }
 
   &__inner {
@@ -831,7 +820,6 @@ span {
     font-size: 15px;
     line-height: 1;
     padding: 0;
-    cursor: pointer;
   }
 }
 
@@ -843,11 +831,14 @@ span {
   box-sizing: border-box;
   pointer-events: all;
 
+
+
   @include sp {
     width: 315px;
     padding: 2rem 2rem 1.4rem;
   }
 }
+
 
 .modal-item__image {
   width: 100%;
@@ -881,7 +872,6 @@ span {
 .news__blocks {
   display: flex;
   column-gap: 6.52%;
-  // background-color:rgba(77, 150, 0, 0.102);
   max-width: 920px;
   margin: 0 auto;
 
@@ -899,7 +889,6 @@ span {
   /* はみ出し防止（重要） */
 
   h3 {
-    // width: 430px;
     height: 50px;
     background-color: #4D9600;
     color: #fff;
@@ -920,7 +909,7 @@ span {
   padding-inline-start: 20px;
   padding-inline-end: 20px;
   position: relative;
-  
+
   @include sp {
     padding-block-start: vw(13, 375);
     padding-block-end: vw(13, 375);
@@ -928,7 +917,7 @@ span {
     padding-inline-end: vw(20, 375);
 
   }
-  
+
 
   &::after {
     content: "";
@@ -945,11 +934,11 @@ span {
       width: calc(275 / 315 * 100%);
     }
   }
-  
+
   &:last-child::after {
     content: none;
   }
-    
+
   a {
     display: flex;
     column-gap: calc(69 / 390 * 100%);
@@ -959,7 +948,7 @@ span {
 
     }
   }
-    
+
   &:first-child {
     padding-block-start: 23px;
   }
@@ -1005,7 +994,7 @@ span {
     cursor: pointer;
 
     &:hover {
-      transform: translateX(6px);
+      transform: translateX(10px);
     }
 
     .news-arrow-text {
@@ -1056,14 +1045,8 @@ span {
 .location-map {
   position: relative;
   width: 100%;
-  // max-height: 400px;
-  // height: 37vw;
-
   z-index: 2;
 
-  @include sp {
-    // height: 300px;
-  }
 }
 
 .location-map iframe {
@@ -1164,11 +1147,16 @@ span {
   font-size: 2.5rem;
   line-height: calc(25 / 25);
   font-weight: 600;
+  pointer-events: none; // PCではクリック不可
+  cursor: default;
+
+  @include sp {
+    pointer-events: auto; // スマホでは有効
+  }
 
   @include sp-middle {
     font-size: 2rem;
   }
-
 }
 
 .e-mail {
@@ -1181,19 +1169,22 @@ span {
     font-size: 1.4rem;
   }
 }
+.contact-link-mail {
+  transition: opacity 0.4s;
+
+}
 
 .tel-link {
   display: flex;
   margin-block-start: 15px;
 }
 
-
 // ここからCONTACT
 
 .contact {
   padding-block-start: 80px;
   padding-block-end: 80px;
-  background-color: rgba(77, 150, 0, 0.102);
+  background: rgba(77, 150, 0, 0.15);
 
   @include sp {
     padding-block-start: 50px;
@@ -1241,6 +1232,7 @@ span {
 .form__input placeholder {
   font-size: 1.6rem;
   line-height: calc(25 / 16);
+  color: #A0A0A0;
 }
 
 .form__item {
@@ -1539,6 +1531,8 @@ input[type="email"] {
     border-radius: 4px;
     background: #fff;
     appearance: none;
+    cursor: pointer;
+
 
     @include sp {
       font-size: 1.6rem;
@@ -1555,7 +1549,6 @@ input[type="email"] {
     height: 16px;
     background: url("../images/triangle.png") no-repeat center / contain;
     transform: translateY(-50%);
-    pointer-events: none;
   }
 }
 
@@ -1780,10 +1773,10 @@ input[type="submit"] {
   color: #fff;
   font-size: 2rem;
   cursor: pointer;
-  transition: 0.4s ease;
+  transition: background-color 0.4s, color 0.4s;
   text-align: center;
   line-height: calc(33 / 20);
-  border: 1px solid transparent;
+  border: 1px solid #4D9600;
   display: flex;
   padding-bottom: 2px;
 
@@ -1797,7 +1790,6 @@ input[type="submit"] {
 input[type="submit"]:hover {
   color: #4D9600;
   background-color: #fff;
-  border: 1px solid #4D9600;
 }
 
 // ここからFOOTER
@@ -1897,9 +1889,7 @@ input[type="submit"]:hover {
   }
 }
 
-.footer a:hover {
-  opacity: 1;
-}
+
 
 .sns img {
   display: block;
@@ -1930,16 +1920,23 @@ input[type="submit"]:hover {
 
 .pagetop {
   position: fixed;
-  right: 20px;
-  bottom: 20px;
+  right: 6rem;
+  bottom: 6rem;
 
-  width: 60px;
-  height: 60px;
+  width: 68px;
+  height: 68px;
   z-index: 5;
 
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.3s ease;
+  transition: opacity 0.4s;
+
+  @include sp {
+    width: 50px;
+    height: 50px;
+    right: 2rem;
+
+  }
 
   &.is-show {
     opacity: 1;
@@ -1966,6 +1963,9 @@ input[type="submit"]:hover {
     border-left: 4px solid #fff;
 
     transform: translate(-50%, -40%) rotate(45deg);
-    pointer-events: none;
+  }
+  
+  &:hover {
+    opacity: 0.7;
   }
 }
