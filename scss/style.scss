@@ -1889,8 +1889,6 @@ input[type="submit"]:hover {
   }
 }
 
-
-
 .sns img {
   display: block;
   /* 余計な隙間防止 */
@@ -1954,8 +1952,6 @@ span {
  @include sp {
   width: 17px;
  } 
-
-  
 }
 
 
@@ -1963,23 +1959,8 @@ span {
     width: 100%;
     height: auto;
     display: block;
-    // border-radius: 50%;
   }
 
-  // &::before {
-  //   content: "";
-  //   position: absolute;
-  //   top: 50%;
-  //   left: 50%;
-
-  //   width: 14px;
-  //   height: 14px;
-  //   border-top: 4px solid #fff;
-  //   border-left: 4px solid #fff;
-
-  //   transform: translate(-50%, -40%) rotate(45deg);
-  // }
-    
   &:hover {
     opacity: 0.7;
   }
