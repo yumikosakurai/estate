@@ -1925,11 +1925,16 @@ input[type="submit"]:hover {
 
   width: 68px;
   height: 68px;
+  background: #4D9600;
+  border-radius: 50%;
   z-index: 5;
 
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.4s;
+
+  display: grid;
+  place-content: center;
 
   @include sp {
     width: 50px;
@@ -1937,34 +1942,44 @@ input[type="submit"]:hover {
     right: 2rem;
 
   }
-
+  
   &.is-show {
     opacity: 1;
     visibility: visible;
   }
 
+span {
+  display: block;
+  width: 23px;
+ @include sp {
+  width: 17px;
+ } 
+
+  
+}
+
 
   & img {
     width: 100%;
-    height: 100%;
+    height: auto;
     display: block;
-    border-radius: 50%;
+    // border-radius: 50%;
   }
 
-  &::before {
-    content: "";
-    position: absolute;
-    top: 50%;
-    left: 50%;
+  // &::before {
+  //   content: "";
+  //   position: absolute;
+  //   top: 50%;
+  //   left: 50%;
 
-    width: 14px;
-    height: 14px;
-    border-top: 4px solid #fff;
-    border-left: 4px solid #fff;
+  //   width: 14px;
+  //   height: 14px;
+  //   border-top: 4px solid #fff;
+  //   border-left: 4px solid #fff;
 
-    transform: translate(-50%, -40%) rotate(45deg);
-  }
-  
+  //   transform: translate(-50%, -40%) rotate(45deg);
+  // }
+    
   &:hover {
     opacity: 0.7;
   }

@@ -85,7 +85,7 @@ $(function () {
 
 });
 
-
+// ふわっと下から出てくる
 document.addEventListener("DOMContentLoaded", () => {
   AOS.init({
     once: true,
