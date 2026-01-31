@@ -712,8 +712,7 @@ span {
 
   @include sp {
     padding-block-start: 5rem;
-    // padding-block-end: 4.2rem;
-    padding-block-end: 2rem;
+    padding-block-end: 4.2rem;
 
   }
 }
@@ -759,7 +758,7 @@ span {
 
 // SP の最後だけ下余白 0 にする
 @include sp {
-  .works-item:last-child .works-text h3 {
+  .works-item:last-child .works-text {
     margin-block-end: 0;
   }
 }
