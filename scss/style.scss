@@ -104,8 +104,8 @@ img {
 
 .inner {
   width: 100%;
-  max-width: 920px;
-  // padding-inline: vw(30, 1080);
+  max-width: 980px;
+  padding-inline: vw(30, 1080);
   margin-inline: auto;
 
   @include sp {
@@ -712,7 +712,8 @@ span {
 
   @include sp {
     padding-block-start: 5rem;
-    padding-block-end: 4.2rem;
+    // padding-block-end: 4.2rem;
+    padding-block-end: 2rem;
 
   }
 }
@@ -1864,7 +1865,7 @@ input[type="submit"]:hover {
     font-size: 1.8rem;
     line-height: calc(33 / 18);
     column-gap: 9.5%;
-    row-gap: 8px;
+    row-gap: 5px;
     flex-wrap: wrap;
     justify-content: center;
     margin-block-start: 22px;
@@ -1884,7 +1885,7 @@ input[type="submit"]:hover {
 
   @include sp {
     column-gap: 9.5%;
-    margin-block-start: 30px;
+    margin-block-start: 25px;
 
   }
 }
