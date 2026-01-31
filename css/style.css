@@ -825,7 +825,7 @@ span {
 }
 
 @media (max-width: 767px) {
-  .works-item:last-child .works-blocks-text {
+  .works-item:last-child .works-text h3 {
     -webkit-margin-after: 0;
             margin-block-end: 0;
   }
