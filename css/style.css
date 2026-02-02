@@ -105,6 +105,9 @@ img {
   -webkit-transition: background-color 0.3s ease;
   transition: background-color 0.3s ease;
 }
+.header a:hover {
+  opacity: 1;
+}
 @media (max-width: 767px) {
   .header {
     height: 5rem;
@@ -211,15 +214,15 @@ img {
 }
 
 .hamburger span:nth-of-type(1) {
-  top: 9px;
+  top: 9.5px;
 }
 
 .hamburger span:nth-of-type(2) {
-  top: 21px;
+  top: 23px;
 }
 
 .hamburger span:nth-of-type(3) {
-  top: 33px;
+  top: 36.5px;
 }
 
 .hamburger.is-open span:nth-of-type(1) {
@@ -313,9 +316,9 @@ img {
       -ms-flex-align: center;
           align-items: center;
 }
-@media (max-width: 840px) {
+@media (max-width: 890px) {
   .header__nav ul li a {
-    font-size: 1.6rem;
+    font-size: 1.5rem;
   }
 }
 @media (max-width: 767px) {
@@ -431,6 +434,17 @@ img {
   right: 40%;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
+}
+@media (max-width: 767px) {
+  .about-text {
+    top: 50%;
+    left: 50%;
+    right: initial;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+  }
+}
+.about-text__inner {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -439,7 +453,7 @@ img {
           column-gap: 3.2407407407vw;
 }
 @media (max-width: 767px) {
-  .about-text {
+  .about-text__inner {
     -webkit-box-orient: vertical;
     -webkit-box-direction: reverse;
         -ms-flex-direction: column-reverse;
@@ -448,11 +462,6 @@ img {
         -ms-flex-align: center;
             align-items: center;
     row-gap: 6.4vw;
-    top: 50%;
-    left: 50%;
-    right: initial;
-    -webkit-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%);
   }
 }
 
@@ -545,8 +554,8 @@ img {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  -webkit-padding-after: 68px;
-          padding-block-end: 68px;
+  -webkit-margin-after: 68px;
+          margin-block-end: 68px;
   -webkit-margin-before: 0.6rem;
           margin-block-start: 0.6rem;
   -webkit-box-align: center;
@@ -555,8 +564,8 @@ img {
 }
 @media (max-width: 767px) {
   .title {
-    -webkit-padding-after: 38px;
-            padding-block-end: 38px;
+    -webkit-margin-after: 38px;
+            margin-block-end: 38px;
   }
 }
 
@@ -591,18 +600,18 @@ img {
   }
 }
 
-.left-block {
+.service-item__left-block {
   position: relative;
   z-index: 10;
   width: 65.21%;
 }
 @media (max-width: 767px) {
-  .left-block {
+  .service-item__left-block {
     width: 100%;
   }
 }
 
-.left-block .right-text {
+.service-item__left-block .right-text {
   text-align: right;
   display: block;
   width: 100%;
@@ -611,14 +620,14 @@ img {
           margin-block-start: 19px;
 }
 @media (max-width: 767px) {
-  .left-block .right-text {
+  .service-item__left-block .right-text {
     text-align: left;
     -webkit-margin-before: 5px;
             margin-block-start: 5px;
   }
 }
 
-.right-black {
+.service-item__right-block {
   position: relative;
   margin-left: -19.5%;
   z-index: 2;
@@ -626,7 +635,7 @@ img {
   width: 54.34%;
 }
 @media (max-width: 767px) {
-  .right-black {
+  .service-item__right-block {
     width: 100%;
     margin-left: unset;
     margin-top: 1.6%;
@@ -645,7 +654,7 @@ img {
 }
 
 @media (max-width: 767px) {
-  .second-image {
+  .second-image img {
     height: 146px;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -654,7 +663,7 @@ img {
 }
 
 @media (max-width: 767px) {
-  .second-block-image {
+  .second-block-image img {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -677,7 +686,7 @@ img {
   }
 }
 
-.service-text {
+.service-item__service-text {
   position: absolute;
   top: 20%;
   /* 画像の中での位置を調整 */
@@ -690,7 +699,7 @@ img {
   font-weight: 600;
 }
 @media (max-width: 767px) {
-  .service-text {
+  .service-item__service-text {
     top: 13%;
     left: 6%;
   }
@@ -709,35 +718,35 @@ img {
   }
 }
 
-h3 {
+.service-item__service-text h3 {
   font-size: 2.5rem;
   line-height: 1.32;
   letter-spacing: 0;
 }
 @media (min-width: 767px) and (max-width: 880px) {
-  h3 {
+  .service-item__service-text h3 {
     font-size: 2rem;
   }
 }
 @media (max-width: 767px) {
-  h3 {
+  .service-item__service-text h3 {
     font-size: 20px;
     line-height: 1.25;
   }
 }
 
-span {
+.service-item__service-text p {
   font-size: 1.6rem;
   line-height: 1.5625;
   letter-spacing: 0;
 }
 @media (min-width: 767px) and (max-width: 880px) {
-  span {
+  .service-item__service-text p {
     font-size: 1.4rem;
   }
 }
 @media (min-width: 767px) and (max-width: 858px) {
-  span {
+  .service-item__service-text p {
     font-size: 1.4rem;
   }
 }
@@ -843,9 +852,6 @@ span {
   inset: 0;
   z-index: 9999;
 }
-.modal hover {
-  opacity: 0.7;
-}
 .modal__bg {
   position: absolute;
   inset: 0;
@@ -853,8 +859,7 @@ span {
   z-index: 1;
 }
 .modal__content {
-  position: absolute;
-  inset: 0;
+  position: relative;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -865,12 +870,14 @@ span {
       -ms-flex-align: center;
           align-items: center;
   z-index: 2;
-  cursor: pointer;
+  height: 100%;
+  pointer-events: none;
 }
 .modal__inner {
   position: relative;
   background: none;
   padding: 0;
+  pointer-events: all;
 }
 .modal__close {
   position: absolute;
@@ -946,9 +953,8 @@ span {
 }
 
 .news__blocks {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   -webkit-column-gap: 6.52%;
      -moz-column-gap: 6.52%;
           column-gap: 6.52%;
@@ -957,22 +963,18 @@ span {
 }
 @media (max-width: 767px) {
   .news__blocks {
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
-    gap: 50px;
+    grid-template-columns: 1fr;
+    gap: 45px;
   }
 }
 
 .news-block {
   position: relative;
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
   /* 幅を均等に */
   min-width: 0;
   /* はみ出し防止（重要） */
+  background-color: #fff;
+  padding-bottom: 31px;
 }
 .news-block h3 {
   height: 50px;
@@ -991,8 +993,12 @@ span {
           padding-inline-start: 20px;
 }
 
+.news-block__items {
+  -webkit-margin-before: 10px;
+          margin-block-start: 10px;
+}
+
 .news-block__item {
-  background-color: #fff;
   -webkit-padding-before: 13px;
           padding-block-start: 13px;
   -webkit-padding-after: 13px;
@@ -1032,9 +1038,6 @@ span {
     width: 87.3015873016%;
   }
 }
-.news-block__item:last-child::after {
-  content: none;
-}
 .news-block__item a {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1049,13 +1052,6 @@ span {
        -moz-column-gap: 6.0317460317%;
             column-gap: 6.0317460317%;
   }
-}
-.news-block__item:first-child {
-  -webkit-padding-before: 23px;
-          padding-block-start: 23px;
-}
-.news-block__item:last-child {
-  height: 74px;
 }
 
 .news-block-item__date {
@@ -1078,55 +1074,45 @@ span {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
-  -webkit-padding-before: 0.7rem;
-          padding-block-start: 0.7rem;
+  -webkit-margin-before: 0.7rem;
+          margin-block-start: 0.7rem;
 }
 
 .news-block__more {
-  text-align: right;
+  margin-top: 23px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
 }
 .news-block__more .arrow-text {
+  display: block;
   position: relative;
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
-  display: inline-flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  font-size: 20px;
-  gap: 10px;
-  font-weight: 600;
-  color: #4D9600;
-  width: 80px;
   -webkit-transition: -webkit-transform 0.3s ease;
   transition: -webkit-transform 0.3s ease;
   transition: transform 0.3s ease;
   transition: transform 0.3s ease, -webkit-transform 0.3s ease;
   cursor: pointer;
+  margin-right: 53.02px;
 }
 .news-block__more .arrow-text:hover {
   -webkit-transform: translateX(10px);
           transform: translateX(10px);
 }
 .news-block__more .arrow-text .news-arrow-text {
-  white-space: nowrap;
-  position: absolute;
-  z-index: 1;
-  top: 50%;
-  -webkit-transform: translateY(-50%);
-          transform: translateY(-50%);
   color: #4D9600;
-  margin: 0;
-  line-height: 1.65;
+  line-height: 1;
   font-size: 2rem;
   font-weight: 600;
 }
-.news-block__more .arrow-text img {
+.news-block__more .arrow-text span:has(img) {
+  width: 80px;
   display: block;
-  position: relative;
-  z-index: 2;
-  -webkit-padding-before: 24px;
-          padding-block-start: 24px;
+  position: absolute;
+  top: 57%;
+  left: 0;
 }
 
 .company {
@@ -1178,11 +1164,6 @@ span {
   }
 }
 
-.company-second-image img {
-  width: 100%;
-  display: block;
-}
-
 .right-black-company {
   margin-top: 21.73%;
   position: relative;
@@ -1200,7 +1181,7 @@ span {
   }
 }
 
-.company-second-image {
+.right-black-company img {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1218,6 +1199,11 @@ span {
           transform: translate(-50%, -50%);
   z-index: 3;
   color: #fff;
+}
+@media (min-width: 767px) and (max-width: 858px) {
+  .location-info {
+    left: 68%;
+  }
 }
 @media (max-width: 767px) {
   .location-info {
@@ -1328,8 +1314,8 @@ span {
 }
 
 .contact-title {
-  -webkit-padding-after: 35px;
-          padding-block-end: 35px;
+  -webkit-margin-after: 30px;
+          margin-block-end: 30px;
 }
 
 .contact-text {
@@ -1762,6 +1748,7 @@ input[type=email] {
   background: url("../images/triangle.png") no-repeat center/contain;
   -webkit-transform: translateY(-50%);
           transform: translateY(-50%);
+  pointer-events: none;
 }
 
 .form-detail {
@@ -1849,6 +1836,11 @@ textarea {
   padding-left: 40px;
   font-size: 1.8rem;
   line-height: 1.3888888889;
+}
+@media (min-width: 767px) and (max-width: 858px) {
+  .form-checkbox span {
+    font-size: 1.5rem;
+  }
 }
 @media (max-width: 767px) {
   .form-checkbox span {
@@ -2007,7 +1999,6 @@ input[type=submit] {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  padding-bottom: 2px;
 }
 @media (max-width: 767px) {
   input[type=submit] {

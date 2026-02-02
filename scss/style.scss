@@ -146,6 +146,11 @@ img {
 
   transition: background-color 0.3s ease;
 
+  a:hover {
+    opacity: 1;
+  }
+
+
   @include sp {
     height: 5rem;
   }
@@ -153,6 +158,8 @@ img {
   &.is-bg {
     background-color: #4D9600;
   }
+
+
 }
 
 .header__inner {
@@ -245,15 +252,15 @@ img {
 
 
 .hamburger span:nth-of-type(1) {
-  top: 9px;
+  top: 9.5px;
 }
 
 .hamburger span:nth-of-type(2) {
-  top: 21px;
+  top: 23px;
 }
 
 .hamburger span:nth-of-type(3) {
-  top: 33px;
+  top: 36.5px;
 }
 
 .hamburger.is-open span:nth-of-type(1) {
@@ -301,6 +308,7 @@ img {
   font-size: 1.8rem;
   line-height: 100%;
 
+
   @include sp {
     width: 30rem;
     background: #4D9600;
@@ -317,7 +325,7 @@ img {
 
   ul {
     display: flex;
-    gap: vw(30, 1080); 
+    gap: vw(30, 1080);
     align-items: center;
 
     @include sp {
@@ -331,10 +339,10 @@ img {
         display: flex;
         align-items: center;
 
-        @media (max-width: 840px) {
-          font-size: 1.6rem;
+        @media (max-width: 890px) {
+          font-size: 1.5rem;
         }
-
+        
         @include sp {
           width: 100%;
           height: 5.8rem;
@@ -447,17 +455,27 @@ img {
   top: 49.5%;
   right: 40%;
   transform: translateY(-50%);
-  display: flex;
-  column-gap: vw(35, 1080);
+  // display: flex;
+  // column-gap: vw(35, 1080);
 
   @include sp {
-    flex-direction: column-reverse;
-    align-items: center;
-    row-gap: vw(24, 375);
+    // flex-direction: column-reverse;
+    // align-items: center;
+    // row-gap: vw(24, 375);
     top: 50%;
     left: 50%;
     right: initial;
     transform: translate(-50%, -50%);
+  }
+ &__inner {
+    display: flex;
+    column-gap: vw(35, 1080);
+
+    @include sp {
+      flex-direction: column-reverse;
+      align-items: center;
+      row-gap: vw(24, 375);
+    }
   }
 }
 
@@ -532,12 +550,12 @@ img {
   line-height: calc(33 / 20);
   display: flex;
   justify-content: center;
-  padding-block-end: 68px;
+  margin-block-end: 68px;
   margin-block-start: 0.6rem;
   align-items: center;
 
   @include sp {
-    padding-block-end: 38px;
+    margin-block-end: 38px;
 
   }
 }
@@ -562,7 +580,7 @@ img {
   }
 }
 
-.left-block {
+.service-item__left-block {
   position: relative;
   z-index: 10;
   width: 65.21%;
@@ -572,7 +590,7 @@ img {
   }
 }
 
-.left-block .right-text {
+.service-item__left-block .right-text {
   text-align: right;
   display: block;
   width: 100%;
@@ -586,7 +604,7 @@ img {
 }
 
 
-.right-black {
+.service-item__right-block {
   position: relative;
   margin-left: -19.5%;
   z-index: 2;
@@ -611,19 +629,20 @@ img {
   }
 }
 
-.second-image {
+.second-image img {
   @include sp {
     height: 146px;
     display: flex;
   }
 }
 
-.second-block-image {
+.second-block-image img {
   @include sp {
     display: flex;
     height: 171px;
   }
 }
+
 
 .left-text {
   margin-block-start: 19px;
@@ -636,7 +655,7 @@ img {
   }
 }
 
-.service-text {
+.service-item__service-text {
   position: absolute;
   top: 20%;
   /* 画像の中での位置を調整 */
@@ -666,7 +685,7 @@ img {
   }
 }
 
-h3 {
+.service-item__service-text h3 {
   font-size: 2.5rem;
   line-height: calc(33 /25);
   letter-spacing: 0;
@@ -681,7 +700,7 @@ h3 {
   }
 }
 
-span {
+.service-item__service-text p {
   font-size: 1.6rem;
   line-height: calc(25 / 16);
   letter-spacing: 0;
@@ -775,9 +794,9 @@ span {
   inset: 0;
   z-index: 9999;
 
-  hover {
-    opacity: 0.7;
-  }
+  // &:hover {
+  //   opacity: 0.7;
+  // }
 
   // 背景（薄暗い）
   &__bg {
@@ -786,22 +805,28 @@ span {
     background-color: rgba(0, 0, 0, 0.6);
     z-index: 1;
   }
-
+    
   // コンテンツ（画像・テキスト）
   &__content {
-    position: absolute;
-    inset: 0;
+    // position: absolute;
+    // inset: 0;
+
+    position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 2;
-    cursor: pointer;
+    // cursor: pointer;
+
+    height: 100%;
+    pointer-events: none;
   }
 
   &__inner {
     position: relative; // ← ✖の基準はここ
     background: none;
     padding: 0;
+    pointer-events: all;
   }
 
   &__close {
@@ -870,23 +895,28 @@ span {
 }
 
 .news__blocks {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
   column-gap: 6.52%;
   max-width: 920px;
   margin: 0 auto;
 
   @include sp {
-    flex-direction: column;
-    gap: 50px;
+    // flex-direction: column;
+    grid-template-columns: 1fr;
+    gap: 45px;
   }
 }
 
 .news-block {
   position: relative;
-  flex: 1;
+  // flex: 1;
   /* 幅を均等に */
   min-width: 0;
   /* はみ出し防止（重要） */
+  background-color: #fff;
+  padding-bottom: 31px;
+
 
   h3 {
     height: 50px;
@@ -901,9 +931,12 @@ span {
   }
 }
 
+.news-block__items {
+ margin-block-start: 10px;
+}
 
 .news-block__item {
-  background-color: #fff;
+  // background-color: #fff;
   padding-block-start: 13px;
   padding-block-end: 13px;
   padding-inline-start: 20px;
@@ -935,9 +968,9 @@ span {
     }
   }
 
-  &:last-child::after {
-    content: none;
-  }
+  // &:last-child::after {
+  //   content: none;
+  // }
 
   a {
     display: flex;
@@ -949,14 +982,16 @@ span {
     }
   }
 
-  &:first-child {
-    padding-block-start: 23px;
-  }
 
-  &:last-child {
-    height: 74px;
-  }
+  // &:first-child {
+  //   padding-block-start: 23px;
+  // }
+
+  // &:last-child {
+  //   height: 31px;
+  // }
 }
+
 
 .news-block-item__date {
   font-size: 1.6rem;
@@ -975,46 +1010,43 @@ span {
   -webkit-line-clamp: 2;
   /* 行数を指定 */
   flex: 1;
-  padding-block-start: 0.7rem;
+  margin-block-start: 0.7rem;
 }
 
+
+
 .news-block__more {
-  text-align: right;
+  margin-top: 23px;
+  display: flex;
+  justify-content: flex-end;
+
 
   .arrow-text {
+    display: block;
     position: relative;
-    display: inline-flex;
-    align-items: center;
-    font-size: 20px;
-    gap: 10px;
-    font-weight: 600;
-    color: #4D9600;
-    width: 80px;
     transition: transform 0.3s ease;
     cursor: pointer;
-
+    margin-right: 53.02px;
+    
     &:hover {
       transform: translateX(10px);
     }
-
+    
     .news-arrow-text {
-      white-space: nowrap;
-      position: absolute;
-      z-index: 1;
-      top: 50%;
-      transform: translateY(-50%); // ← 縦中央固定
       color: #4D9600;
-      margin: 0; // 
-      line-height: calc(33 /20); // ← 安定させる
+      line-height: 1; 
       font-size: 2rem;
       font-weight: 600;
+      
     }
-
-    img {
+    
+    span:has(img) {
+      width: 80px;
       display: block;
-      position: relative;
-      z-index: 2; // ← 矢印を上に
-      padding-block-start: 24px;
+      position: absolute;
+      top: 57%;
+      left: 0;
+      
     }
   }
 }
@@ -1029,7 +1061,6 @@ span {
     padding-block-end: 5rem;
 
   }
-
 }
 
 .contact-info {
@@ -1060,10 +1091,10 @@ span {
   }
 }
 
-.company-second-image img {
-  width: 100%;
-  display: block;
-}
+// .right-black-company img {
+//   width: 100%;
+//   display: block;
+// }
 
 .right-black-company {
   margin-top: 21.73%;
@@ -1081,7 +1112,7 @@ span {
   }
 }
 
-.company-second-image {
+.right-black-company img {
   display: flex;
   width: 500px;
   width: 100%;
@@ -1097,6 +1128,10 @@ span {
   z-index: 3;
 
   color: #fff; // 緑の上なので白文字
+
+  @include tablet {
+   left: 68%; 
+  }
 
   @include sp {
     left: 40%;
@@ -1169,6 +1204,7 @@ span {
     font-size: 1.4rem;
   }
 }
+
 .contact-link-mail {
   transition: opacity 0.4s;
 
@@ -1194,7 +1230,8 @@ span {
 }
 
 .contact-title {
-  padding-block-end: 35px;
+  // padding-block-end: 35px;
+  margin-block-end: 30px;
 }
 
 .contact-text {
@@ -1205,7 +1242,6 @@ span {
   @include sp {
     margin-inline-start: 0;
   }
-
 }
 
 .form {
@@ -1549,6 +1585,7 @@ input[type="email"] {
     height: 16px;
     background: url("../images/triangle.png") no-repeat center / contain;
     transform: translateY(-50%);
+    pointer-events: none;
   }
 }
 
@@ -1630,8 +1667,13 @@ textarea {
     font-size: 1.8rem;
     line-height: calc(25 / 18);
 
+    @include tablet {
+      font-size: 1.5rem;
+    }
+
     @include sp {
       padding-left: 30px;
+
     }
 
     &::before {
@@ -1778,7 +1820,7 @@ input[type="submit"] {
   line-height: calc(33 / 20);
   border: 1px solid #4D9600;
   display: flex;
-  padding-bottom: 2px;
+  // padding-bottom: 2px;
 
   @include sp {
     font-size: 2rem;
@@ -1940,19 +1982,20 @@ input[type="submit"]:hover {
     right: 2rem;
 
   }
-  
+
   &.is-show {
     opacity: 1;
     visibility: visible;
   }
 
-span {
-  display: block;
-  width: 23px;
- @include sp {
-  width: 17px;
- } 
-}
+  span {
+    display: block;
+    width: 23px;
+
+    @include sp {
+      width: 17px;
+    }
+  }
 
 
   & img {

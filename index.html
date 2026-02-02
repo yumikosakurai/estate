@@ -23,15 +23,19 @@
 	<link rel="icon" href="images/favicon.png" type="image/png" />
 
 
-	<link rel="stylesheet" href="https://use.typekit.net/mzd4mgq.css" />
-
+	<!-- <link rel="stylesheet" href="https://use.typekit.net/mzd4mgq.css" /> -->
+	<!-- googlefont設定 -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
+	
+	<link rel="stylesheet" href="./css/reset.css" />
 	<!-- Swiper CSS -->
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
-
-	<link rel="stylesheet" href="./css/reset.css" />
-	<link rel="stylesheet" href="./css/style.css" />
 	<link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+
+	<link rel="stylesheet" href="./css/style.css" />
 
 	<!-- JQu -->
 	<script src="https://code.jquery.com/jquery-3.7.1.min.js"
@@ -77,13 +81,12 @@
 			<div class="fv-content">
 				<div class="fv-wrap">
 					<div class="fv__image">
-						
+
 						<div class="swiper">
 							<div class="swiper-wrapper">
 								<!-- スライド１ -->
 								<div class="swiper-slide">
-									<!-- <picture class="image-wrap__photo"> -->
-									<picture>	
+									<picture>
 										<source media="(max-width:767px)" srcset="images/sp_first-view-01.jpg" />
 										<img src="images/photo1.jpg" alt="FV大きな家" />
 									</picture>
@@ -91,8 +94,7 @@
 
 								<!-- スライド２ -->
 								<div class="swiper-slide">
-									<!-- <picture class="image-wrap__photo"> -->
-									<picture>	
+									<picture>
 										<source media="(max-width:767px)" srcset="images/sp_first-view-02.jpg" />
 										<img src="images/photo2.jpg" alt="FV2番目" />
 									</picture>
@@ -100,8 +102,7 @@
 
 								<!-- スライド３ -->
 								<div class="swiper-slide">
-									<!-- <picture class="image-wrap__photo"> -->
-									<picture>	
+									<picture>
 										<source media="(max-width:767px)" srcset="images/sp_first-view-03.jpg" />
 										<img src="images/photo3.jpg" alt="FV3番目" />
 									</picture>
@@ -131,19 +132,21 @@
 					</picture>
 				</div>
 				<div class="about-text">
-					<h2>伝統とイマを繋ぐ</h2>
-					<div class="about-catch">
-						<p>
-							古来から伝わる伝統文化<br>
-							昔からそこにある材料<br>
-							その土地に長い間かけて<br>
-							最適化してきた<br>
-							たくさんのヒントを<br>
-							イマを生きる私たちの<br>
-							心地よさに取り入れ<br>
-							新たな技術革新を<br>
-							起こし続ける会社です<br>
-						</p>
+					<div class="about-text__inner" data-aos="fade-up">
+						<h2>伝統とイマを繋ぐ</h2>
+						<div class="about-catch">
+							<p>
+								古来から伝わる伝統文化<br>
+								昔からそこにある材料<br>
+								その土地に長い間かけて<br>
+								最適化してきた<br>
+								たくさんのヒントを<br>
+								イマを生きる私たちの<br>
+								心地よさに取り入れ<br>
+								新たな技術革新を<br>
+								起こし続ける会社です<br>
+							</p>
+						</div>
 					</div>
 				</div>
 			</div>
@@ -158,80 +161,98 @@
 					<div class="service__items">
 
 						<div class="service__item service-item" data-aos="fade-up" data-aos-delay="0">
-							<div class="left-block">
-								<picture class="photo-image">
-									<source media="(max-width:767px)" srcset="images/sp_service_01.jpg">
-									<img src="images/pc_service_01.jpg" alt="新築">
-								</picture>
+							<div class="service-item__left-block">
+								<div class="service-item__image">
+									<picture>
+										<source media="(max-width:767px)" srcset="images/sp_service_01.jpg">
+										<img src="images/pc_service_01.jpg" alt="新築">
+									</picture>
+								</div>
 								<p class="left-text">静岡県U.I様自宅</p>
 							</div>
-							<div class="right-black">
-								<picture class="second-image">
-									<source media="(max-width:767px)" srcset="images/menu01-sp.jpg">
-									<img src="images/menu01.jpg" alt="緑の長方形">
-								</picture>
-								<h3 class="service-text">
-									新築<br class="pc-only">
-									（土地探し〜建築）<br>
-									<span>
+							<div class="service-item__right-block second-image">
+								<div class="service-item__bg">
+									<picture>
+										<source media="(max-width:767px)" srcset="images/menu01-sp.jpg">
+										<img src="images/menu01.jpg" alt="緑の長方形">
+									</picture>
+								</div>
+								<div class="service-item__service-text">
+									<h3>
+										新築<br class="pc-only">
+										（土地探し〜建築）<br>
+									</h3>
+									<p>
 										土地探しから建築、施工まで<br>
 										サポートいたします。<br>
 										風水的観点からもご提案。<br>
-									</span>
-								</h3>
+									</p>
+								</div>
 							</div>
 						</div>
 
 
 
 						<div class="service__item service-item second-item" data-aos="fade-up" data-aos-delay="150">
-							<div class="left-block">
-								<picture class="photo-image">
-									<source media="(max-width:767px)" srcset="images/sp_service_02.jpg">
-									<img src="images/pc_service_02.jpg" alt="リフォーム">
-								</picture>
+							<div class="service-item__left-block">
+								<div class="service-item__image">
+									<picture>
+										<source media="(max-width:767px)" srcset="images/sp_service_02.jpg">
+										<img src="images/pc_service_02.jpg" alt="リフォーム">
+									</picture>
+								</div>
 								<p class="right-text">北海道富良野市ブックカフェ</p>
 							</div>
-							<div class="right-black second-block">
-								<picture class="second-image second-block-image">
-									<source media="(max-width:767px)" srcset="images/menu01-sp.jpg">
-									<img src="images/menu01.jpg" alt="緑の長方形">
-								</picture>
-								<h3 class="service-text second-text">
-									リフォーム<br>
-									リノベーション<br>
-									<span class="second-text-text">
+							<div class="service-item__right-block second-block second-block-image">
+								<div class="service-item__bg">
+									<picture>
+										<source media="(max-width:767px)" srcset="images/menu01-sp.jpg">
+										<img src="images/menu01.jpg" alt="緑の長方形">
+									</picture>
+								</div>
+								<div class="service-item__service-text second-text">
+									<h3>
+										リフォーム<br>
+										リノベーション<br>
+									</h3>
+									<p class="second-text-text">
 										温かみと雰囲気をそのままに<br>
 										住み心地、使い心地を<br>
 										追求しご提供いたします。<br>
-									</span>
-								</h3>
+									</p>
+								</div>
 							</div>
 						</div>
 
 
 						<div class="service__item service-item" data-aos="fade-up" data-aos-delay="300">
-							<div class="left-block">
-								<picture class="photo-image">
-									<source media="(max-width:767px)" srcset="images/sp_service_03.jpg">
-									<img src="images/pc_service_03.jpg" alt="都市計画〜開発">
-								</picture>
+							<div class="service-item__left-block">
+								<div class="service-item__image">
+									<picture>
+										<source media="(max-width:767px)" srcset="images/sp_service_03.jpg">
+										<img src="images/pc_service_03.jpg" alt="都市計画〜開発">
+									</picture>
+								</div>
 								<p class="left-text">広島県竹原市</p>
 							</div>
-							<div class="right-black">
-								<picture class="second-image second-block-image">
-									<source media="(max-width:767px)" srcset="images/menu01-sp.jpg">
-									<img src="images/menu01.jpg" alt="緑の長方形">
-								</picture>
-								<h3 class="service-text third-text">
-									都市計画〜開発<br>
-									公共施設<br>
-									<span>
+							<div class="service-item__right-block second-block-image">
+								<div class="service-item__bg">
+									<picture>
+										<source media="(max-width:767px)" srcset="images/menu01-sp.jpg">
+										<img src="images/menu01.jpg" alt="緑の長方形">
+									</picture>
+								</div>
+								<div class="service-item__service-text third-text">
+									<h3>
+										都市計画〜開発<br>
+										公共施設<br>
+									</h3>
+									<p>
 										都市計画から都市開発まで<br>
 										ご提案いたします。<br>
 										公共施設もさらに居心地良く。<br>
-									</span>
-								</h3>
+									</p>
+								</div>
 							</div>
 						</div>
 					</div>
@@ -248,72 +269,83 @@
 
 					<div class="works-items">
 
-						<div class="works-item" data-aos="fade-up" data-aos-delay="0">
-							<div class="works-image">
-								<div class="card js-open-modal" data-img="images/pc_works_modal_01.jpg" data-text="【新築】 長崎県T.O様自宅">
+						<div class="works-item">
+							<div class="works-item__aos" data-aos="fade-up" data-aos-delay="0">
+								<div class="works-image">
+									<div class="card js-open-modal" data-img="images/pc_works_modal_01.jpg" data-text="【新築】 長崎県T.O様自宅">
 
-									<picture>
-										<source media="(max-width:768px)" srcset="images/sp_works_01.jpg">
-										<img src="images/pc_works_01.jpg" alt="新築 長崎県T.O様自宅">
-									</picture>
+										<picture>
+											<source media="(max-width:768px)" srcset="images/sp_works_01.jpg">
+											<img src="images/pc_works_01.jpg" alt="新築 長崎県T.O様自宅">
+										</picture>
 
-									<div class="works-text">
-										<h3>
-											【新築】<br class="pc-only">
-											長崎県T.O様自宅
-										</h3>
+										<div class="works-text">
+											<h3>
+												【新築】<br class="pc-only">
+												長崎県T.O様自宅
+											</h3>
+										</div>
 									</div>
 								</div>
 							</div>
 						</div>
 
-						<div class="works-item" data-aos="fade-up" data-aos-delay="100">
-							<div class="works-image">
-								<div class="card js-open-modal" data-img="images/pc_works_modal_02.jpg" data-text="リノベーション">
+						<div class="works-item">
+							<div class="works-item__aos" data-aos="fade-up" data-aos-delay="100">
+								<div class="works-image">
+									<div class="card js-open-modal" data-img="images/pc_works_modal_02.jpg" data-text="リノベーション">
 
-									<picture>
-										<source media="(max-width:768px)" srcset="images/sp_works_02.jpg">
-										<img src="images/pc_works_02.jpg" alt="リノベーション">
-									</picture>
+										<picture>
+											<source media="(max-width:768px)" srcset="images/sp_works_02.jpg">
+											<img src="images/pc_works_02.jpg" alt="リノベーション">
+										</picture>
 
-									<div class="works-text">
-										<h3>
-											【リノベーション】<br>
-											京都府カトリック丹波教会
-										</h3>
+										<div class="works-text">
+											<h3>
+												【リノベーション】<br>
+												京都府カトリック丹波教会
+											</h3>
+										</div>
 									</div>
 								</div>
 							</div>
 						</div>
 
-						<div class="works-item" data-aos="fade-up" data-aos-delay="200">
-							<div class="works-image">
-								<div class="card js-open-modal" data-img="images/pc_works_modal_03.jpg" data-text="新築 東京都A.F様自宅件事務所">
-									<picture>
-										<source media="(max-width:768px)" srcset="images/sp_works_03.jpg">
-										<img src="images/pc_works_03.jpg" alt="【新築】 東京都A.F様自宅件事務所">
-									</picture>
-									<div class="works-text">
-										<h3>
-											【新築】<br>
-											東京都A.F様自宅件事務所
-										</h3>
+						<!-- <div class="works-item" data-aos="fade-up" data-aos-delay="200"> -->
+						<div class="works-item">
+							<div class="works-item__aos" data-aos="fade-up" data-aos-delay="200">
+								<div class="works-image">
+									<div class="card js-open-modal" data-img="images/pc_works_modal_03.jpg" data-text="新築 東京都A.F様自宅件事務所">
+										<picture>
+											<source media="(max-width:768px)" srcset="images/sp_works_03.jpg">
+											<img src="images/pc_works_03.jpg" alt="【新築】 東京都A.F様自宅件事務所">
+										</picture>
+										<div class="works-text">
+											<h3>
+												【新築】<br>
+												東京都A.F様自宅件事務所
+											</h3>
+										</div>
 									</div>
 								</div>
 							</div>
 						</div>
-						<div class="works-item" data-aos="fade-up" data-aos-delay="300">
-							<div class="works-image">
-								<div class="card js-open-modal" data-img="images/pc_works_modal_04.jpg" data-text="都市開発 山形県銀山温泉協同組合">
-									<picture>
-										<source media="(max-width:768px)" srcset="images/sp_works_04.jpg">
-										<img src="images/pc_works_04.jpg" alt="都市開発 山形県銀山温泉協同組合">
-									</picture>
-									<div class="works-text">
-										<h3>
-											【都市開発】<br>
-											山形県銀山温泉協同組合
-										</h3>
+
+						<!-- <div class="works-item" data-aos="fade-up" data-aos-delay="300"> -->
+						<div class="works-item">
+							<div class="works-item__aos" data-aos="fade-up" data-aos-delay="300">
+								<div class="works-image">
+									<div class="card js-open-modal" data-img="images/pc_works_modal_04.jpg" data-text="都市開発 山形県銀山温泉協同組合">
+										<picture>
+											<source media="(max-width:768px)" srcset="images/sp_works_04.jpg">
+											<img src="images/pc_works_04.jpg" alt="都市開発 山形県銀山温泉協同組合">
+										</picture>
+										<div class="works-text">
+											<h3>
+												【都市開発】<br>
+												山形県銀山温泉協同組合
+											</h3>
+										</div>
 									</div>
 								</div>
 							</div>
@@ -361,15 +393,31 @@
 										</div>
 									</a>
 								</li>
-								<li class="news-block__item news-block-item">
-									<div class="news-block__more">
+								<!-- <li class="news-block__item news-block-item"> -->
+								<!-- <div class="news-block__more">
 										<div class="arrow-text">
 											<span class="news-arrow-text">more</span>
 											<img src="images/pass.png" alt="矢印">
 										</div>
-									</div>
-								</li>
+									</div> -->
+								<!-- </li> -->
 							</ul>
+							<div class="news-block__more">
+								<a class="arrow-text">
+									<span class="news-arrow-text">more</span>
+									<span>
+										<img src="images/pass.png" alt="矢印">
+									</span>
+								</a>
+							</div>
+
+							<!-- <div class="news-block__more">
+									<div class="arrow-text">
+										<span class="news-arrow-text">more</span>
+										<img src="images/pass.png" alt="矢印">
+									</div>
+								</div> -->
+
 						</div>
 
 						<div class="news__block news-block" data-aos="fade-up">
@@ -401,16 +449,26 @@
 										</div>
 									</a>
 								</li>
-								<li class="news-block__item news-block-item">
-									<div class="news-block__more">
-										<div class="arrow-text">
+								<!-- <div class="news-block__more">
+										<a class="arrow-text">
 											<span class="news-arrow-text">more</span>
-											<img src="images/pass.png" alt="矢印">
-										</div>
-									</div>
-								</li>
-
+											<span>
+												<img src="images/pass.png" alt="矢印">
+											</span>
+										</a>
+									</div> -->
+								<!-- </li> -->
 							</ul>
+
+							<div class="news-block__more">
+								<a class="arrow-text">
+									<span class="news-arrow-text">more</span>
+									<span>
+										<img src="images/pass.png" alt="矢印">
+									</span>
+								</a>
+							</div>
+
 						</div>
 					</div>
 				</div>
@@ -425,7 +483,7 @@
 					<p class="title">会社概要</p>
 
 					<div class="contact-info">
-						<div class="location-map">
+						<div class="location-map" data-aos="fade-up" data-aos-delay="0">
 							<iframe
 								src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d6712.633420077972!2d129.879061!3d32.73078!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3515537316d3cc2d%3A0x534f0ac7488092ef!2zKOagqinnjonmnKjlu7roqK0!5e0!3m2!1sja!2sjp!4v1765248505040!5m2!1sja!2sjp"
 								width="" height="" style="border:0;" allowfullscreen="" loading="lazy"
@@ -433,7 +491,7 @@
 							</iframe>
 						</div>
 						<div class="right-black-company" data-aos="fade-up" data-aos-delay="100">
-							<picture class="company-second-image">
+							<picture>
 								<source media="(max-width:768px)" srcset="images/menu01-sp.jpg">
 								<img src="images/menu01.jpg" alt="緑の長方形">
 							</picture>
@@ -578,7 +636,7 @@
 
 								<dl class="form__item">
 									<dt class="form__label">
-										<span class="text-title">個人情報保護方針</span>
+										<h3 class="text-title">個人情報保護方針</h3>
 									</dt>
 									<dd class="form__input">
 										<div class="privacy-wrap">
@@ -691,15 +749,16 @@
 			<div class="inner">
 				<div class="footer-box">
 					<p class="company-name">
-						<a href="#">株式会社 北村建設興業</a></p>
+						<a href="#">株式会社 北村建設興業</a>
+					</p>
 					<div class="footer__nav">
 						<ul>
-						<li><a href="#about">ABOUT</a></li>
-						<li><a href="#service">SERVICE</a></li>
-						<li><a href="#works">WORKS</a></li>
-						<li><a href="#news">NEWS</a></li>
-						<li><a href="#company">COMPANY</a></li>
-						<li><a href="#contact">CONTACT</a></li>
+							<li><a href="#about">ABOUT</a></li>
+							<li><a href="#service">SERVICE</a></li>
+							<li><a href="#works">WORKS</a></li>
+							<li><a href="#news">NEWS</a></li>
+							<li><a href="#company">COMPANY</a></li>
+							<li><a href="#contact">CONTACT</a></li>
 						</ul>
 					</div>
 					<div class="footer-sns sns">
@@ -719,16 +778,17 @@
 		</div>
 		<div class="footer-copyright">
 			<div class="copyright">
-				<p class="mark">©︎Copyright0000<br class="sp-only"> kitamurakensetukogyo</p>
+				<p class="mark pc-only">&copy;Copyright2022　kitamurakensetukogyo</p>
+				<p class="mark sp-only">&copy;Copyright0000<br>kitamurakensetukogyo</p>
 			</div>
 		</div>
 		<a href="#" class="pagetop">
-		<span>
-			<img src="./images/icon-to-top.svg" alt="矢印">
-		</span>
+			<span>
+				<img src="./images/icon-to-top.svg" alt="矢印">
+			</span>
 		</a>
 	</footer>
-		
+
 
 	<div class="modal">
 		<div class="modal__bg"></div>
@@ -756,31 +816,32 @@
 
 	<!-- Swiper本体（必須） -->
 	<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-
+	
+	<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+	
 	<!-- あなたが作る main.js（Swiperを動かすコード） -->
 	<script src="./js/script.js"></script>
 
-	<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
-	<script>
+	<!-- <script>
 		document.addEventListener('DOMContentLoaded', function () {
 			AOS.init({
 				once: true
 			});
 		});
-	</script>
-	<!-- jQuery本体 -->
+	</script> -->
+	<!-- jQuery本体
 	<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-
+ -->
 	<!-- 自分で書いたスクリプト -->
-	<script>
+	<!-- <script>
 		$(function () {
 			$('.nav-link').on('click', function () {
 				$('.nav-link').removeClass('is-active');
 				$(this).addClass('is-active');
 			});
 		});
-	</script>
+	</script> -->
 
 
 

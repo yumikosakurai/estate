@@ -90,9 +90,10 @@ document.addEventListener("DOMContentLoaded", () => {
   AOS.init({
     once: true,
     offset: 120,
-    duration: 900,
+    duration: 1400,
     easing: 'ease-out-cubic',
     anchorPlacement: 'top-bottom'
   });
 });
+
 
