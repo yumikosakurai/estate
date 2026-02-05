@@ -35,9 +35,6 @@
   }
 }
 
-.pc-only {
-  display: inline;
-}
 
 @include sp {
   .pc-only {
@@ -146,9 +143,6 @@ img {
 
   transition: background-color 0.3s ease;
 
-  a:hover {
-    opacity: 1;
-  }
 
 
   @include sp {
@@ -158,8 +152,6 @@ img {
   &.is-bg {
     background-color: #4D9600;
   }
-
-
 }
 
 .header__inner {
@@ -180,6 +172,10 @@ img {
     display: flex;
     gap: 30px;
   }
+
+  a:hover {
+    opacity: 1;
+  }
 }
 
 
@@ -199,6 +195,7 @@ img {
     background: #fff;
     transform: scaleX(0);
     transform-origin: left;
+    transition: transform 0.3s ease;
 
     @include sp {
       display: none;
@@ -342,7 +339,7 @@ img {
         @media (max-width: 890px) {
           font-size: 1.5rem;
         }
-        
+
         @include sp {
           width: 100%;
           height: 5.8rem;
@@ -455,19 +452,15 @@ img {
   top: 49.5%;
   right: 40%;
   transform: translateY(-50%);
-  // display: flex;
-  // column-gap: vw(35, 1080);
 
   @include sp {
-    // flex-direction: column-reverse;
-    // align-items: center;
-    // row-gap: vw(24, 375);
     top: 50%;
     left: 50%;
     right: initial;
     transform: translate(-50%, -50%);
   }
- &__inner {
+
+  &__inner {
     display: flex;
     column-gap: vw(35, 1080);
 
@@ -789,14 +782,19 @@ img {
 }
 
 .modal {
-  display: none;
   position: fixed;
   inset: 0;
   z-index: 9999;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
 
-  // &:hover {
-  //   opacity: 0.7;
-  // }
+  // is-open 
+  &.is-open {
+    opacity: 1;
+    visibility: visible;
+  }
+
 
   // 背景（薄暗い）
   &__bg {
@@ -805,18 +803,15 @@ img {
     background-color: rgba(0, 0, 0, 0.6);
     z-index: 1;
   }
-    
+
   // コンテンツ（画像・テキスト）
   &__content {
-    // position: absolute;
-    // inset: 0;
 
     position: relative;
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 2;
-    // cursor: pointer;
 
     height: 100%;
     pointer-events: none;
@@ -848,6 +843,11 @@ img {
   }
 }
 
+body.is-modal-open {
+  position: fixed;
+  width: 100%;
+}
+
 .modal-item {
   position: relative;
   background-color: #fff;
@@ -874,7 +874,6 @@ img {
 
   @include sp {
     padding-block-start: 0.7rem;
-
   }
 }
 
@@ -896,13 +895,12 @@ img {
 
 .news__blocks {
   display: grid;
-  grid-template-columns: repeat(2,1fr);
+  grid-template-columns: repeat(2, 1fr);
   column-gap: 6.52%;
   max-width: 920px;
   margin: 0 auto;
 
   @include sp {
-    // flex-direction: column;
     grid-template-columns: 1fr;
     gap: 45px;
   }
@@ -910,7 +908,6 @@ img {
 
 .news-block {
   position: relative;
-  // flex: 1;
   /* 幅を均等に */
   min-width: 0;
   /* はみ出し防止（重要） */
@@ -932,11 +929,10 @@ img {
 }
 
 .news-block__items {
- margin-block-start: 10px;
+  margin-block-start: 10px;
 }
 
 .news-block__item {
-  // background-color: #fff;
   padding-block-start: 13px;
   padding-block-end: 13px;
   padding-inline-start: 20px;
@@ -968,9 +964,6 @@ img {
     }
   }
 
-  // &:last-child::after {
-  //   content: none;
-  // }
 
   a {
     display: flex;
@@ -981,14 +974,6 @@ img {
 
     }
   }
-
-
-  // &:first-child {
-  //   padding-block-start: 23px;
-  // }
-
-  // &:last-child {
-  //   height: 31px;
   // }
 }
 
@@ -1027,26 +1012,26 @@ img {
     transition: transform 0.3s ease;
     cursor: pointer;
     margin-right: 53.02px;
-    
+
     &:hover {
       transform: translateX(10px);
     }
-    
+
     .news-arrow-text {
       color: #4D9600;
-      line-height: 1; 
+      line-height: 1;
       font-size: 2rem;
       font-weight: 600;
-      
+
     }
-    
+
     span:has(img) {
       width: 80px;
       display: block;
       position: absolute;
       top: 57%;
       left: 0;
-      
+
     }
   }
 }
@@ -1091,10 +1076,6 @@ img {
   }
 }
 
-// .right-black-company img {
-//   width: 100%;
-//   display: block;
-// }
 
 .right-black-company {
   margin-top: 21.73%;
@@ -1130,7 +1111,7 @@ img {
   color: #fff; // 緑の上なので白文字
 
   @include tablet {
-   left: 68%; 
+    left: 68%;
   }
 
   @include sp {
@@ -1230,7 +1211,6 @@ img {
 }
 
 .contact-title {
-  // padding-block-end: 35px;
   margin-block-end: 30px;
 }
 
@@ -1271,14 +1251,6 @@ img {
   color: #A0A0A0;
 }
 
-.form__item {
-
-  &--column {
-    flex-direction: column;
-  }
-
-}
-
 .flex-dl {
   display: flex;
 
@@ -1293,7 +1265,7 @@ img {
 
   @include sp {
     display: block;
-    margin-block-start: 30px;
+    margin-block-start: 40px;
   }
 }
 
@@ -1328,9 +1300,43 @@ img {
   }
 }
 
-.form__item.form-dl:not(:first-of-type) {
-  @include sp {
-    margin-block-start: 18px;
+.form__item {
+
+  &.form-type {
+    margin-block-start: 4.8rem;
+
+    @include sp {
+      margin-block-start: 3.1rem;
+    }
+
+  }
+
+  &--column {
+    flex-direction: column;
+  }
+
+  &.form-detail {
+    margin-block-start: 5.3rem;
+
+    @include sp {
+      margin-block-start: 2.9rem;
+    }
+  }
+
+  &.contact-check {
+    margin-block-start: 4.8rem;
+
+    @include sp {
+      margin-block-start: 3rem;
+    }
+  }
+
+  &.form-privacy {
+    margin-block-start: 4.8rem;
+
+    @include sp {
+      margin-block-start: 2.8rem;
+    }
   }
 }
 
@@ -1341,6 +1347,9 @@ img {
   align-items: center;
   line-height: calc(33 / 20);
   width: 17rem;
+  white-space: nowrap;
+
+
 
   @include sp {
     width: 100%;
@@ -1348,10 +1357,6 @@ img {
     line-height: calc(33 / 20);
     letter-spacing: 0;
   }
-}
-
-.form__label-name {
-  padding-block-start: 12px;
 }
 
 input,
@@ -1417,7 +1422,6 @@ textarea {
 
 .form__la {
   align-items: unset;
-  padding-top: 10px;
 }
 
 .form__input {
@@ -1547,13 +1551,6 @@ input[type="email"] {
   }
 }
 
-.form-type {
-  padding-block-start: 5px;
-
-  @include sp {
-    padding-block-start: 10px;
-  }
-}
 
 .select-wrap {
   position: relative;
@@ -1591,6 +1588,7 @@ input[type="email"] {
 
 .form-detail {
   display: block;
+  margin-block-start: 5.3rem;
 }
 
 
@@ -1610,17 +1608,6 @@ textarea {
   }
 }
 
-.contact-check {
-  padding-top: 0.5rem;
-
-  @include sp {
-    padding-top: 10px;
-  }
-
-  &__title {
-    white-space: nowrap;
-  }
-}
 
 // 内容のチェックボックス
 .form-checkbox {
@@ -1717,7 +1704,6 @@ textarea {
 .text-title {
   font-size: 2rem;
   line-height: calc(33 / 20);
-  margin-block-start: 0.5rem;
   margin-block-end: 1rem;
 
   @include sp {
@@ -1820,7 +1806,6 @@ input[type="submit"] {
   line-height: calc(33 / 20);
   border: 1px solid #4D9600;
   display: flex;
-  // padding-bottom: 2px;
 
   @include sp {
     font-size: 2rem;
