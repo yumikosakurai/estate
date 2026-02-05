@@ -10,8 +10,7 @@ jQuery(function ($) {
 		$(".header__nav").removeClass("is-open");
 	});
 
-
-  // スライダー
+	// スライダー
 	const swiper = new Swiper(".swiper", {
 		loop: true, // 画像が無限にループ
 
@@ -29,71 +28,82 @@ jQuery(function ($) {
 			delay: 3000, // 自動再生したい場合のみ
 		},
 
-		effect: 'fade',
+		effect: "fade",
 		speed: 1500,
 	});
 
 	// モーダル
+
+	let scrollPosition = 0;
 	$(".works-item").click(function () {
+		scrollPosition = $(window).scrollTop();
+
 		const modalImage = $(this).find(".card").data("img");
 		const modalText = $(this).find(".card").data("text");
+
 		$("#modalImg").attr("src", modalImage);
 		$("#modalText").text(modalText);
-		$(".modal").show();
+
+		$(".modal").addClass("is-open");
+		$("body")
+		.addClass("is-modal-open")
+		 .css("top", -scrollPosition + "px");
 	});
 	$(".modal__bg, .modal__close").click(function () {
-		$(".modal").hide();
+		$(".modal").removeClass("is-open");
+
+		$("body")
+		.removeClass("is-modal-open")
+		.css("top", "");
+
+  $(window).scrollTop(scrollPosition);
 	});
 
 	// ナビの下線
 	$(function () {
-  $('.nav-link').on('click', function () {
-    $('.nav-link').removeClass('is-active');
-    $(this).addClass('is-active');
-  });
-});
+		$(".nav-link").on("click", function () {
+			$(".nav-link").removeClass("is-active");
+			$(this).addClass("is-active");
+		});
+	});
 
-// トップに戻るボタンが消える
+	// トップに戻るボタンが消える
 
-$(window).on('load', function () {
-  const $pagetop = $('.pagetop');
-  // const fvHeight = $('#fv').outerHeight();
+	$(window).on("load", function () {
+		const $pagetop = $(".pagetop");
 
-  $(window).on('scroll', function () {
-    if ($(this).scrollTop() > 100) {
-      $pagetop.addClass('is-show');
-    } else {
-      $pagetop.removeClass('is-show');
-    }
-  });
-});
+		$(window).on("scroll", function () {
+			if ($(this).scrollTop() > 100) {
+				$pagetop.addClass("is-show");
+			} else {
+				$pagetop.removeClass("is-show");
+			}
+		});
+	});
 
-// aboutからナビの背景に色をつける
+	// aboutからナビの背景に色をつける
 
-$(function () {
-  const $header = $('.header');
-  const aboutTop = $('#about').offset().top;
+	$(function () {
+		const $header = $(".header");
+		const aboutTop = $("#about").offset().top;
 
-  $(window).on('scroll', function () {
-    if ($(this).scrollTop() >= aboutTop) {
-      $header.addClass('is-bg');
-    } else {
-      $header.removeClass('is-bg');
-    }
-  });
-});
-
+		$(window).on("scroll", function () {
+			if ($(this).scrollTop() >= aboutTop) {
+				$header.addClass("is-bg");
+			} else {
+				$header.removeClass("is-bg");
+			}
+		});
+	});
 });
 
 // ふわっと下から出てくる
 document.addEventListener("DOMContentLoaded", () => {
-  AOS.init({
-    once: true,
-    offset: 120,
-    duration: 1400,
-    easing: 'ease-out-cubic',
-    anchorPlacement: 'top-bottom'
-  });
+	AOS.init({
+		once: true,
+		offset: 120,
+		duration: 1400,
+		easing: "ease-out-cubic",
+		anchorPlacement: "top-bottom",
+	});
 });
-
-
