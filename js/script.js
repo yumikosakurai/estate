@@ -56,7 +56,7 @@ jQuery(function ($) {
 		.removeClass("is-modal-open")
 		.css("top", "");
 
-  $(window).scrollTop(scrollPosition);
+  // $(window).scrollTop(scrollPosition);
 	});
 
 	// ナビの下線
