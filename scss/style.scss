@@ -76,10 +76,10 @@ html {
   }
 }
 
-html,
-body {
-  overflow-x: hidden;
-}
+// html,
+// body {
+//   overflow-x: hidden;
+// }
 
 
 a {
@@ -844,7 +844,8 @@ img {
 }
 
 body.is-modal-open {
-  position: fixed;
+  // position: fixed;
+    overflow: hidden;
   width: 100%;
 }
 
