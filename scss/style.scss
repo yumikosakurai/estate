@@ -795,6 +795,16 @@ img {
     visibility: visible;
   }
 
+  &.is-show {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &.is-hidden {
+    opacity: 0;
+    visibility: hidden;
+  }
+  
 
   // 背景（薄暗い）
   &__bg {
@@ -845,7 +855,7 @@ img {
 
 body.is-modal-open {
   // position: fixed;
-    overflow: hidden;
+  overflow: hidden;
   width: 100%;
 }
 
@@ -866,15 +876,16 @@ body.is-modal-open {
 }
 
 
+
 .modal-item__image {
   width: 100%;
 }
 
 .modal-item__name {
-  padding-block-start: 0.9rem;
+  margin-top: 0.9rem;
 
   @include sp {
-    padding-block-start: 0.7rem;
+    margin-top: 0.7rem;
   }
 }
 
@@ -975,6 +986,7 @@ body.is-modal-open {
 
     }
   }
+
   // }
 }
 
@@ -1973,6 +1985,12 @@ input[type="submit"]:hover {
     opacity: 1;
     visibility: visible;
   }
+
+  &.is-hidden {
+    opacity: 0;
+    visibility: hidden;
+  }
+  
 
   span {
     display: block;

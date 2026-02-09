@@ -854,6 +854,14 @@ img {
   opacity: 1;
   visibility: visible;
 }
+.modal.is-show {
+  opacity: 1;
+  visibility: visible;
+}
+.modal.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+}
 .modal__bg {
   position: absolute;
   inset: 0;
@@ -929,13 +937,11 @@ body.is-modal-open {
 }
 
 .modal-item__name {
-  -webkit-padding-before: 0.9rem;
-          padding-block-start: 0.9rem;
+  margin-top: 0.9rem;
 }
 @media (max-width: 767px) {
   .modal-item__name {
-    -webkit-padding-before: 0.7rem;
-            padding-block-start: 0.7rem;
+    margin-top: 0.7rem;
   }
 }
 
@@ -2232,6 +2238,10 @@ input[type=submit]:hover {
 .pagetop.is-show {
   opacity: 1;
   visibility: visible;
+}
+.pagetop.is-hidden {
+  opacity: 0;
+  visibility: hidden;
 }
 .pagetop span {
   display: block;
