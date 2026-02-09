@@ -46,17 +46,20 @@ jQuery(function ($) {
 
 		$(".modal").addClass("is-open");
 		$("body")
-		.addClass("is-modal-open")
-		 .css("top", -scrollPosition + "px");
+			.addClass("is-modal-open")
+			.css("top", -scrollPosition + "px");
+
+			$(".pagetop").addClass("is-hidden");
 	});
+
 	$(".modal__bg, .modal__close").click(function () {
 		$(".modal").removeClass("is-open");
 
-		$("body")
-		.removeClass("is-modal-open")
-		.css("top", "");
+		$("body").removeClass("is-modal-open").css("top", "");
 
-  // $(window).scrollTop(scrollPosition);
+		$(".pagetop").removeClass("is-hidden");
+
+		// $(window).scrollTop(scrollPosition);
 	});
 
 	// ナビの下線
