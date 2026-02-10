@@ -59,7 +59,6 @@ jQuery(function ($) {
 
 		$(".pagetop").removeClass("is-hidden");
 
-		// $(window).scrollTop(scrollPosition);
 	});
 
 	// ナビの下線
