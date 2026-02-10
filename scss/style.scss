@@ -836,8 +836,8 @@ img {
 
   &__close {
     position: absolute;
-    top: 0.1rem;
-    right: 0.1rem;
+    top: 0.4rem;
+    right: 0.4rem;
     width: 1.5rem;
     height: 1.5rem;
 
@@ -847,11 +847,12 @@ img {
 
     background: none;
     border: none;
-    font-size: 15px;
+    font-size: 1.8rem;
     line-height: 1;
     padding: 0;
   }
 }
+
 
 body.is-modal-open {
   // position: fixed;
