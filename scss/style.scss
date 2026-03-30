@@ -1073,7 +1073,7 @@ body.is-modal-open {
 }
 
 .right-black-company {
-  margin-top: 22%;
+  margin-top: 21.5%;
   position: relative;
   margin-left: -20%;
   z-index: 1;
@@ -1181,7 +1181,7 @@ body.is-modal-open {
 }
 
 .contact-title {
-  margin-block-end: 30px;
+  margin-block-end: 35px;
 }
 
 .contact-text {
@@ -1199,7 +1199,6 @@ body.is-modal-open {
     padding-left: 0;
     padding-right: 0;
   }
-
 }
 
 .form {
@@ -1656,6 +1655,9 @@ textarea {
 }
 .form__label-privacy {
  margin-block-end: 1rem; 
+ @include sp {
+   margin-block-end: 0;
+ }
 }
 
 .text-title {
