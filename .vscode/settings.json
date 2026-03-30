@@ -6,6 +6,7 @@
         "savePath": "~../css"
       }
     ],
+    "livePreview.defaultPreviewPath": "/index.html",
 
   }
 
