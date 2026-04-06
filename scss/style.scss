@@ -161,6 +161,9 @@ img {
   margin-inline: auto;
   color: white;
   padding-inline: 3rem;
+  @include sp {
+    padding-inline: 2rem;
+  }
 }
 
 
@@ -759,22 +762,16 @@ img {
   }
 }
 
-.works-image :first-child {
-  margin-block-start: 0;
-}
-
-.works-photo {
-  aspect-ratio: 200 / 200;
+.works-image {
   overflow: hidden;
-
-  img {
-    width: 100%;
-    height: 100%;
-    display: block;
-    object-fit: cover;
+ img {
+  aspect-ratio:  200 / 200;
+  object-fit: cover;
+  @include sp {
+    aspect-ratio:  315 / 250;
   }
 }
-
+}
 .works-text {
   margin-block-start: 19px;
 
@@ -794,8 +791,11 @@ img {
 .works-text h3 {
   font-size: 1.6rem;
   line-height: calc(25 / 16);
-  margin-block-start: 1.9rem;
+  // @include sp {
+  //   margin-block-start: 0;
+  // }
 }
+
 
 .modal {
   position: fixed;
@@ -1562,6 +1562,16 @@ textarea {
 
   @media screen and (max-width: 767px) {
     font-size: 1.8rem;
+  }
+}
+.contact-check__title {
+  display: block;
+  @include sp {
+    padding-block-start: 0;
+    line-height: 1.35;
+  }
+  span {
+    display: inline-block;
   }
 }
 
